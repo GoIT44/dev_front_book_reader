@@ -1,8 +1,17 @@
 // import React from "react";
-// // import styles from "Container.module.css";
+import style from "./Container.module.css";
 
 // function Container({ children }) {
 //   return <div className={styles.container}>{children}</div>;
 // }
 
 // export default Container;
+const Container = ({children}) => {
+    return (
+        <div className={style.container}>
+            {children}
+        </div>
+    );
+}
+
+export default Container;
