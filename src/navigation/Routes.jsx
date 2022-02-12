@@ -13,9 +13,13 @@ const Routes = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        {isMobile && (
+        {isMobile ? (
           <PublicRoute restricted exact path="/">
             <InfoPage />
+          </PublicRoute>
+        ) : (
+          <PublicRoute restricted exact path="/">
+            <RegisterPage />
           </PublicRoute>
         )}
         <PublicRoute restricted exact path="/register" redirectTo="/login">

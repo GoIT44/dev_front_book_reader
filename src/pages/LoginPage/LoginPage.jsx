@@ -3,10 +3,8 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import authOperations from "../../redux/auth/auth-operations";
 import styles from "../LoginPage/LoginPage.module.css";
 import { useDispatch } from "react-redux";
-import InfoPage from "../InfoPage";
 import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
-import useMedia from "../../components/hooks";
 
 const initialState = {
   email: "",
@@ -14,7 +12,6 @@ const initialState = {
   passwordCheck: "",
 };
 const RegisterForm = () => {
-  const isDesc = useMedia.useMedia().DESK;
   const dispatch = useDispatch();
   const onSubmit = (values) => {
     if (values.password === values.passwordCheck) {
