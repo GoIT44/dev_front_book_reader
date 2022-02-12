@@ -1,11 +1,14 @@
 import './App.css';
+import LibraryModal from './LibraryModal/LibraryModal';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <LibraryModal/>
+      {/* <header className="App-header">
+      </header> */}
     </div>
+
   );
 }
 
