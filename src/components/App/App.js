@@ -1,10 +1,13 @@
-import './App.css';
+import "./App.css";
+import TrainingSection from "../TrainingSection/TrainingSection";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div>
+      <header></header>
+      <main>
+        <TrainingSection />
+      </main>
     </div>
   );
 }
