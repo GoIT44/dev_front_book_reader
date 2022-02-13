@@ -1,0 +1,22 @@
+.bookSelect {
+    display: block;
+    text-align: center;
+}
+
+.btn__wrap{
+    text-align: center;
+}
+
+.btn__add {
+    display: inline-block;
+    width: 171px;
+    height: 42px;
+    margin-top: 28px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #242A37;
+    background-color: #F6F7FB;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+}

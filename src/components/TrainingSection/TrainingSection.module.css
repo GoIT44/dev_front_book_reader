@@ -1,10 +1,8 @@
 .section {
-    min-width: 320px;
-    height: 648px;
     text-align: left;
     padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     background-color: #F6F7FB;
     ;
 }
@@ -40,18 +38,7 @@
     background-color: #F6F7FB;
 }
 
-.btn__add{
-    width: 171px;
-    height: 42px;
-    margin-top: 28px;
-    text-align: center;
-    border-radius: 4px;
-    border: 1px solid #242A37;
-    background-color: #F6F7FB;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: Montserrat, sans-serif;
-}
+
 
 .svg__wrap{
     width: 20px;

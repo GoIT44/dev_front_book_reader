@@ -2,14 +2,7 @@ import "./App.css";
 import TrainingSection from "../TrainingSection/TrainingSection";
 
 function App() {
-  return (
-    <div>
-      <header></header>
-      <main>
-        <TrainingSection />
-      </main>
-    </div>
-  );
+  return <TrainingSection />;
 }
 
 export default App;
