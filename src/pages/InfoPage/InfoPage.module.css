@@ -1,0 +1,110 @@
+.content {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 93px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.title {
+  font-family: Abril Fatface;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 38px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: normal;
+    color: #242a37;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .title {
+    margin-top: 103px;
+    margin-bottom: 52px;
+  }
+}
+
+.list {
+  padding: 0;
+}
+.list_title {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 38px;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .list_title {
+    font-style: normal;
+    color: #242a37;
+  }
+}
+
+.list_item {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+}
+.vector {
+  display: block;
+  margin-right: 11px;
+}
+.list_item_text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #898f9f;
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 1280px) {
+  .list_item_text {
+    line-height: 38px;
+    display: block;
+    margin: 0;
+  }
+}
+
+.InfoPageBtn {
+  display: flex;
+}
+.BtnSignIn {
+  display: block;
+  margin-bottom: 10px;
+  width: 127px;
+  height: 40px;
+  left: 25px;
+  top: 550px;
+  padding: 11px;
+  background: #fff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+.BtnSignUp {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 16px;
+  width: 127px;
+  height: 40px;
+  left: 168px;
+  top: 550px;
+  background: #ff6b08;
+  color: #ffffff;
+  border: none;
+  padding: 11px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
