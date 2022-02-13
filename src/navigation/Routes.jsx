@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Switch } from "react-router-dom";
-import PrivateRoute from "../components/Routes/PrivateRoutes";
+// import PrivateRoute from "../components/Routes/PrivateRoutes";
 import PublicRoute from "../components/Routes/PublicRoutes";
 import InfoPage from "../pages/InfoPage";
 import useMedia from "../components/hooks";
