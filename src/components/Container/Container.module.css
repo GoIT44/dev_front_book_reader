@@ -1,11 +1,27 @@
-@media (min-width: 768px) {
-  
-}
+@value min-width-tablet from '../../styles/variables.module.css';
+@value max-width-desktop from '../../styles/variables.module.css';
 
-@media (min-width: 1280px) {
-  
-}
 .container {
-    margin: 15px;
+    width: 320px;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+@media (min-width:  min-width-tablet) {
+    .container{
+        width: 768px;
+        padding-right: 45px;
+        padding-left: 45px;
+
+    }
+}
+
+@media (min-width: max-width-desktop) {
+    .container{
+        width: 1280px;
+        padding-right: 39px;
+        padding-left: 39px;
+    }
+}

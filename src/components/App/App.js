@@ -1,4 +1,3 @@
-import Timer from '../Timer/Timer';
 import Routes from "../../navigation/Routes";
 import Navbar from "../Navbar";
 // import { useDispatch, useSelector } from "react-redux";
@@ -17,13 +16,13 @@ function App() {
     // dispatch(authOperations.CheckedIsLoginCurrentUser(token))
   }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-      <Navbar />
+    // <div className="App">
+    //   <header className="App-header">
+    //   <Navbar />
       <Routes />
-      </header>
-      <Timer/>
-    </div>
+      // </header>
+      
+    // </div>
     
   );
 }
