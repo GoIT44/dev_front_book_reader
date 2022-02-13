@@ -1,0 +1,102 @@
+@value fontMontserrat from '../styles/variables.module.css';
+@value main-text-color from '../styles/variables.module.css';
+@value accent-color from '../styles/variables.module.css';
+@value secondary-text-color from '../styles/variables.module.css';
+@value background-white-color from '../styles/variables.module.css';
+@value input-text-color from '../styles/variables.module.css';
+@value background-primary-color from '../styles/variables.module.css';
+
+.resultBox{
+    background-color: background-white-color;
+    padding: 10px 13px 13px 17px;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
+
+.formStatistic{
+    flex-wrap: wrap;
+}
+
+.resultBoxTitle{
+    display: flex;
+    width: 270px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 38px;
+    color: #FFFFFF;
+    background-color: #B1B5C2;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
+
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+}
+
+.inputWrapper:first-child{
+    margin-right: 20px;
+}
+.inputDate{
+    font-family: fontMontserrat;
+    width: 270px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 38px;
+    color: main-text-color;
+    background-color: background-primary-color;
+    border: 1px solid input-text-color;
+    outline: none;
+
+}
+.inputDate::-webkit-calendar-picker-indicator{
+    background-image: url('../images/Polygon.svg');
+    /* background-color: black; */
+    width: 13px;
+    height: 7px;
+    padding: 0;
+    margin: 0;
+}
+
+.inputDate::-moz-placeholder {
+    color: blue;
+    font-family: 'Comic Sans MS';
+}
+
+.labelStatistic{
+    margin-top: 20px;
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 22px;
+    color: secondary-text-color;
+}
+.formButton{
+    width: 171px;
+    height: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 38px;
+    color: background-white-color;
+    background-color: #F6F7FB;
+    border: none;
+    padding: 0 20px;
+    margin-bottom: 100px;
+}
+.resultBoxTitleStatistic{
+    position: relative;
+}
