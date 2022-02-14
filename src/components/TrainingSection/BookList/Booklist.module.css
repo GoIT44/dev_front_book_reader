@@ -4,6 +4,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     border-top: 1px solid #E0E5EB;
+    background-color: #F6F7FB;
 }
 
 .booklist{
@@ -33,7 +34,6 @@
 
 .book__title{
     margin-left: 29px;
-    margin-right: 21px;
     font-size: 12px;
     font-weight: 500;
     font-family: Montserrat, sans-serif;
@@ -68,7 +68,7 @@
     display: none
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) and (max-width: 1199px) {
     .twoDots{
         display: none
     }
@@ -84,6 +84,7 @@
         margin-bottom: 30px;
         border-top: 1px solid #E0E5EB;
         border-bottom: 1px solid #E0E5EB;
+        background-color: #F6F7FB;
     }
 
     .booklist {
@@ -92,19 +93,22 @@
 
     .book__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin-bottom: 14px;
+        margin-top: 14px;
     }
 
     .container__flex {
         display: flex;
-        margin-top: 14px;
+        margin-top: 0;
     }
 
     .flatSvg__wrap {
         width: 22px;
         height: 17px;
-        margin-right: 20px;
+        margin-right: 17px;
+        margin-top: 22px;
+        margin-bottom: 22px;
     }
 
     
@@ -115,39 +119,37 @@
     .dotsTab__visible{
         width: 10px;
         height: 17px;
+        margin-top: 22px;
+        margin-bottom: 22px;
     }
 
     .book__title {
-        margin-left: 29px;
-        margin-right: 21px;
-        font-size: 12px;
+        margin-left: 0;
+        font-size: 14px;
         font-weight: 500;
         font-family: Montserrat, sans-serif;
         color: #898F9F
     }
 
     .bookAuthor__title {
-        margin-left: 29px;
-        margin-right: 21px;
-        font-size: 12px;
+        margin-left: 275px;
+        font-size: 14px;
         font-weight: 500;
         font-family: Montserrat, sans-serif;
         color: #898F9F
     }
 
     .bookYear__title {
-        margin-left: 29px;
-        margin-right: 37px;
-        font-size: 12px;
+        margin-left: 133px;
+        font-size: 14px;
         font-weight: 500;
         font-family: Montserrat, sans-serif;
         color: #898F9F
     }
 
     .bookPages__title {
-        margin-left: 29px;
-        margin-right: 26px;
-        font-size: 12px;
+        margin-left: 50px;
+        font-size: 14px;
         font-weight: 500;
         font-family: Montserrat, sans-serif;
         color: #898F9F
@@ -156,4 +158,96 @@
     .ishidden__mob{
         display: block;
     }
+}
+
+@media screen and (min-width: 1200px) {
+.twoDots {
+    display: none
+}
+
+.ishidden__tab {
+    display: none
+}
+
+.booklist__wrap {
+    max-width: 886px;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid #E0E5EB;
+    border-bottom: 1px solid #E0E5EB;
+    background-color: #F6F7FB;
+}
+
+.booklist {
+    margin-bottom: 0px;
+}
+
+.book__list {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+.container__flex {
+    display: flex;
+    margin-top: 0;
+}
+
+.flatSvg__wrap {
+    width: 22px;
+    height: 17px;
+    margin-right: 17px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+
+.dotsSvg__wrap {
+    display: none;
+}
+
+.dotsTab__visible {
+    width: 10px;
+    height: 17px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.book__title {
+    margin-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color: #898F9F
+}
+
+.bookAuthor__title {
+    margin-left: 292px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color: #898F9F
+}
+
+.bookYear__title {
+    margin-left: 172px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color: #898F9F
+}
+
+.bookPages__title {
+    margin-left: 68px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color: #898F9F
+}
+
+.ishidden__mob {
+    display: block;
+}
 }

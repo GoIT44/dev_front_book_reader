@@ -20,7 +20,7 @@ const Booklist = () => {
           </div>
           <div className={styles.ishidden__mob}>
             <div className={styles.container__flex}>
-              <div className={styles.bookAuthor__title}>
+              <div className={styles.book__title}>
                 Book title<span className={styles.twoDots}>:</span>
               </div>
               <div className={styles.dotsSvg__wrap}>
