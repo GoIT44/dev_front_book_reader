@@ -1,8 +1,18 @@
-.booklist{
+.booklist__wrap {
     width: 100%;
     height: 100%;
     margin-top: 30px;
+    margin-bottom: 30px;
     border-top: 1px solid #E0E5EB;
+}
+
+.booklist{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E0E5EB;
+}
+
+.book__list{
+    margin-bottom: 30px;
 }
 
 .container__flex{
@@ -21,7 +31,129 @@
     height: 17px;
 }
 
-.bookAuthor__title{
+.book__title{
     margin-left: 29px;
     margin-right: 21px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color:#898F9F
+}
+.bookAuthor__title {
+    margin-left: 29px;
+    margin-right: 21px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color:#898F9F
+}
+.bookYear__title {
+    margin-left: 29px;
+    margin-right: 37px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color:#898F9F
+}
+.bookPages__title {
+    margin-left: 29px;
+    margin-right: 26px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color:#898F9F
+}
+
+.ishidden__mob{
+    display: none
+}
+
+@media screen and (min-width: 768px){
+    .twoDots{
+        display: none
+    }
+
+    .ishidden__tab {
+        display: none
+    }
+
+    .booklist__wrap {
+        width: 100%;
+        height: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-top: 1px solid #E0E5EB;
+        border-bottom: 1px solid #E0E5EB;
+    }
+
+    .booklist {
+        margin-bottom: 0px;
+    }
+
+    .book__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+    }
+
+    .container__flex {
+        display: flex;
+        margin-top: 14px;
+    }
+
+    .flatSvg__wrap {
+        width: 22px;
+        height: 17px;
+        margin-right: 20px;
+    }
+
+    
+    .dotsSvg__wrap {
+        display: none;
+    }
+    
+    .dotsTab__visible{
+        width: 10px;
+        height: 17px;
+    }
+
+    .book__title {
+        margin-left: 29px;
+        margin-right: 21px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: Montserrat, sans-serif;
+        color: #898F9F
+    }
+
+    .bookAuthor__title {
+        margin-left: 29px;
+        margin-right: 21px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: Montserrat, sans-serif;
+        color: #898F9F
+    }
+
+    .bookYear__title {
+        margin-left: 29px;
+        margin-right: 37px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: Montserrat, sans-serif;
+        color: #898F9F
+    }
+
+    .bookPages__title {
+        margin-left: 29px;
+        margin-right: 26px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: Montserrat, sans-serif;
+        color: #898F9F
+    }
+
+    .ishidden__mob{
+        display: block;
+    }
 }

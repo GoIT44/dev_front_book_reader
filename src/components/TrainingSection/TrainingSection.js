@@ -3,7 +3,7 @@
 // import { useSelector, useDispatch } from "react-redux";
 
 import Booklist from "./BookList/Booklist";
-import ResultBox from "../../example/ResultBox";
+// import ResultBox from "../../example/ResultBox";
 
 // import Box from "@mui/material/Box";
 // import { ReactComponent as ReactLogo } from "../../images/training_page_icons/arrow-back.svg";
@@ -40,7 +40,7 @@ const TrainingSection = () => {
     // </Box>
     <>
       <Booklist />
-      <ResultBox />
+      {/* <ResultBox /> */}
     </>
   );
 };
