@@ -81,6 +81,7 @@
 
 .InfoPageBtn {
   display: flex;
+  justify-content: center;
 }
 .BtnSignIn {
   display: block;

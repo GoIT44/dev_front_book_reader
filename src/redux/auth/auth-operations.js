@@ -13,6 +13,7 @@ const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const data = await onSignUp(credentials);
+      Notify.success("Вы успешно зарегистрированы!");
       return data;
     } catch (error) {
       return rejectWithValue(Notify.failure(error.response.data.message));
@@ -28,7 +29,7 @@ const logIn = createAsyncThunk(
       token.set(data.accessToken);
       return data;
     } catch (error) {
-     return  rejectWithValue(Notify.failure(error.response.data.message));
+      return rejectWithValue(Notify.failure(error.response.data.message));
     }
   }
 );
