@@ -5,6 +5,7 @@ export const addResultOperations = (result) => async (dispatch, getState)=>{
     try {
         // здесь будет уходить запрос на добавление в базу данных результата
         dispatch(addResultSuccess(result))
+        // console.log(getState().resultTraining.result)
     } catch (error) {
         dispatch(addResultError(error.message))
     }

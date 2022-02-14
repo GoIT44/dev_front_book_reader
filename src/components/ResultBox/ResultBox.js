@@ -37,7 +37,7 @@ const ResultBox = () => {
                     <label className={style.labelStatistic} htmlFor="statisticInputDate">
                     Дата
                     </label>
-                        <input type="date" name='date' value={result.date} onChange={onChange} className={style.inputDate} id='statisticInputDate'/>
+                        <input type="date" name='date' value={result.date} min={result.date} onChange={onChange} className={style.inputDate} id='statisticInputDate'/>
                 </div>
                 <div className={style.inputWrapper}>
                     <label className={style.labelStatistic} htmlFor='statisticInputText'>

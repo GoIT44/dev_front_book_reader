@@ -3,18 +3,33 @@ import Timer from '../../components/Timer/Timer';
 import Container from '../../components/Container/Container'
 import ResultBox from '../../components/ResultBox/ResultBox';
 import StatisticChart from '../../components/StatisticChart/StatisticChart';
+import { flexbox } from '@mui/system';
 const StatisticPage = () => {
+    const style = {
+        width: 866,
+        height: 214,
+
+      }
+      const styles = {
+          display: "flex",
+      }
     return (
         <section>
             <Container>
-                <div>
+                <div style={styles}>
+
                     <Timer/>
-                </div>
-                <div>
+                
+                
                     <SideBarStatistics/>
+                
+                <div style={style}></div>
                 </div>
-                <ResultBox/>
+                
+            </Container>
+            <Container>
                 <StatisticChart/>
+                <ResultBox/>
             </Container>
         </section>
     );
