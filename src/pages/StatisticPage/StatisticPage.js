@@ -2,6 +2,7 @@ import SideBarStatistics from '../../components/SideBarStatistics/SideBarStatist
 import Timer from '../../components/Timer/Timer';
 import Container from '../../components/Container/Container'
 import ResultBox from '../../components/ResultBox/ResultBox';
+import StatisticChart from '../../components/StatisticChart/StatisticChart';
 const StatisticPage = () => {
     return (
         <section>
@@ -13,6 +14,7 @@ const StatisticPage = () => {
                     <SideBarStatistics/>
                 </div>
                 <ResultBox/>
+                <StatisticChart/>
             </Container>
         </section>
     );

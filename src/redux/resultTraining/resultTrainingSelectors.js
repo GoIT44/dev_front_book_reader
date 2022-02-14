@@ -1,0 +1,1 @@
+export const getResultSelector = (state)=> state.resultTraining.result;
