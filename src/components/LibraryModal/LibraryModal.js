@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styles from "./LibraryModal.module.css"
 import Modal from '../Modal';
 
-import book from "../../../assets/svg/book.svg"
-import vector from '../../../assets/svg/vector.svg';
-import flag from '../../../assets/svg/flag.svg';
+import book from "../../assets/svg/book.svg"
+import vector from '../../assets/svg/vector.svg';
+import flag from '../../assets/svg/flag.svg';
 
 const LibraryModal = () =>{
     const [isOpenModal, setIsOpenModal] = useState(true);

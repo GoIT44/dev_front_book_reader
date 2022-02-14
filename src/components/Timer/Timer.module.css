@@ -1,0 +1,103 @@
+@value fontMontserrat from '../../styles/variables.module.css';
+@value fontOpenSans from '../../styles/variables.module.css';
+@value secondary-text-color from '../../styles/variables.module.css';
+@value number-color from '../../styles/variables.module.css';
+@value background-white-color from '../../styles/variables.module.css';
+@value min-width-tablet from '../../styles/variables.module.css';
+@value max-width-desktop from '../../styles/variables.module.css';
+
+
+.timersWrapper{
+    display: flex;
+    flex-direction: column;
+};
+
+.timer{
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.timer:not(:last-child){
+    margin-bottom: 10px;
+}
+.timerTitle{
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    color: secondary-text-color;
+}
+.timerWrapper{
+    display: flex;
+    justify-content: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 10px;
+    width: 270px;
+    background-color: background-white-color;
+    box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+};
+
+.timerWrapper:not(:last-child){
+    margin-right: 10px;
+}
+.timerBlock{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.timerBlock:not(:last-child){
+    margin-right: 10px;
+
+}
+.timerItem{
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 38px;
+}
+
+
+.timerWord{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    /* line-height: 38px; */
+    color: secondary-text-color;
+    margin-right: 10px;
+}
+
+.timerDote{
+    margin-left: 10px;
+}
+
+@media (min-width: min-width-tablet) {
+    .timersWrapper{
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 34px
+    };
+    .timer{
+        margin-bottom: 0;
+    }
+    .timer:first-child{
+        margin-right: 30px;
+    }
+    .timerWrapper{
+        width: 290px;
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+}
+@media (min-width: max-width-desktop){
+    .timer:first-child{
+        margin-right: 68px;
+    }
+}

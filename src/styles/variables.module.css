@@ -1,0 +1,29 @@
+/* fonts */
+
+@value fontMontserrat: Montserrat, Arial, sans-serif;
+@value fontOpenSans: Open Sans, Arial, sans-serif;
+@value fontAbrilFatface: Abril Fatface, Arial, cursive;
+
+/* color */
+@value background-primary-color: #F6F7FB;
+@value background-secondary-color: #E5E5E5;
+@value background-white-color: #FFFFFF;
+@value background-card-color: #B1B5C2;
+@value accent-color: #FF6B08;
+@value main-text-color: #242A37;
+@value secondary-text-color: #898F9F;
+@value black-text-color: #000000;
+@value white-text-color: #ffffff;
+@value number-color: #091E3F;
+@value input-text-color: #A6ABB9;
+@value card-number-color: #F5F7FA;
+@value background-overlay-color: rgba(43, 43, 43, 0.1);
+
+/* breakpoints */
+
+@value max-width-desktop: 1280px;
+@value max-width-tablet: 1279px;
+@value min-width-tablet: 768px;
+@value max-width-mobile: 480px;
+@value min-width-mobile: 320px;
+
