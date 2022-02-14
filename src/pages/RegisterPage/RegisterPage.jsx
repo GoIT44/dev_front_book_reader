@@ -12,6 +12,7 @@ const initialState = {
   email: "",
   password: "",
   passwordCheck: "",
+  name: "",
 };
 const RegisterForm = () => {
   const isDesc = useMedia.useMedia().DESK;
@@ -21,15 +22,15 @@ const RegisterForm = () => {
     if (values.password === values.passwordCheck) {
       return dispatch(
         authOperations.register({
-          email: values.email,
-          password: values.password,
+          email: data.email,
+          password: data.password,
+          name: data.name,
         })
       );
     }
     Notify.failure("Password doesn't match");
   };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
-
   return (
     <>
       <div className={styles.container}>
@@ -38,7 +39,7 @@ const RegisterForm = () => {
             <form
               className={styles.registerForm}
               onSubmit={handleSubmit}
-              autoComplete="off"
+              autoComplete="on"
             >
               <button className={styles.googleBtn}>
                 <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
@@ -96,10 +97,10 @@ const RegisterForm = () => {
                   className={styles.authInput}
                   type="password"
                   onChange={handleChange}
-                  name="checkPassword"
+                  name="passwordCheck"
                   required
                   placeholder="..."
-                  value={data.checkPassword}
+                  value={data.passwordCheck}
                 />
               </label>
               <button className={styles.registerBtn}>
