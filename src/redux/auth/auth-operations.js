@@ -60,29 +60,10 @@ const logOut = createAsyncThunk(
   }
 );
 
-// const CheckedIsLoginCurrentUser = createAsyncThunk(
-//   "auth/checked",
-//   async (_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue();
-//     }
-//     token.set(persistedToken);
-//     try {
-//       const data = await CheckedCurrentUser(persistedToken);
-//       return data;
-//     } catch (err) {
-//       return thunkAPI.rejectWithValue();
-//     }
-//   }
-// );
-
 const authOperations = {
   register,
   logIn,
   logOut,
-  // CheckedIsLoginCurrentUser,
   googleIn,
 };
 export default authOperations;

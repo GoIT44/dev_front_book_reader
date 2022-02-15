@@ -30,13 +30,13 @@ const LoginForm = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.innerWrapper}>
-            <Link
+            <a
               className={styles.googleBtn}
-              to="https://api-br.herokuapp.com/api/auth/google"
+              href="https://api-br.herokuapp.com/api/auth/google"
             >
               <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
               <p className={styles.googleBtnText}>Google</p>
-            </Link>
+            </a>
             <form
               className={styles.registerForm}
               onSubmit={handleSubmit}

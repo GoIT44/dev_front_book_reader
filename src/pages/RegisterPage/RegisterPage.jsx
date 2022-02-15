@@ -7,6 +7,8 @@ import InfoPage from "../InfoPage";
 import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
 import useMedia from "../../components/hooks";
+import { useLocation } from "react-router-dom";
+import { token } from "../../services/auth";
 
 const initialState = {
   email: "",
@@ -34,6 +36,10 @@ const RegisterForm = () => {
   //   dispatch(authOperations.googleIn());
   // };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
+  const location = useLocation();
+  const tokens = location.search.slice(1).split("=")[1];
+  token.set(tokens);
+
   return (
     <>
       <div className={styles.container}>

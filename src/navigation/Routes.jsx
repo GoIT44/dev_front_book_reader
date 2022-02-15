@@ -30,10 +30,10 @@ const Routes = () => {
         <PublicRoute restricted exact path="/login">
           <LoginPage />
         </PublicRoute>
-        <PublicRoute restricted exact path="/google-auth">
+        {/* <PublicRoute restricted exact path="/google-auth">
           <LoginPage />
-        </PublicRoute>
-        <PublicRoute path="http://localhost:3000/google-auth1/">
+        </PublicRoute> */}
+        <PublicRoute path="/google-auth">
           <GooglePage />
         </PublicRoute>
         {/* <PrivateRoute exact path="/" redirectTo="/login">
