@@ -1,5 +1,4 @@
 import useForm from "../../components/hooks/useForm";
-import { Notify } from "notiflix/build/notiflix-notify-aio";
 import authOperations from "../../redux/auth/auth-operations";
 import styles from "../LoginPage/LoginPage.module.css";
 import { useDispatch } from "react-redux";
@@ -9,20 +8,16 @@ import { Link } from "react-router-dom";
 const initialState = {
   email: "",
   password: "",
-  passwordCheck: "",
 };
-const RegisterForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
-  const onSubmit = (values) => {
-    if (values.password === values.passwordCheck) {
-      return dispatch(
-        authOperations.register({
-          email: values.email,
-          password: values.password,
-        })
-      );
-    }
-    Notify.failure("Password doesn't match");
+  const onSubmit = () => {
+    return dispatch(
+      authOperations.logIn({
+        email: data.email,
+        password: data.password,
+      })
+    );
   };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
 
@@ -57,7 +52,6 @@ const RegisterForm = () => {
               </label>
               <label className={styles.registerInput}>
                 <span className={styles.registerInputname}>
-                  {" "}
                   Пароль <span className={styles.star}>*</span>
                 </span>
                 <input
@@ -94,4 +88,4 @@ const RegisterForm = () => {
     </>
   );
 };
-export default RegisterForm;
+export default LoginForm;

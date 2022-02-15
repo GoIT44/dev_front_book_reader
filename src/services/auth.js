@@ -1,8 +1,7 @@
 import axios from "axios";
 
-
 export const instance = axios.create({
-  baseURL:""
+  baseURL: "https://api-br.herokuapp.com/api",
 });
 
 export const token = {
@@ -14,7 +13,7 @@ export const token = {
   },
 };
 export async function onSignUp(credentials) {
-  const { data } = await instance.post("/auth/signup", credentials);
+  const { data } = await instance.post("/auth/register", credentials);
   return data;
 }
 export async function onLogIn(credentials) {
