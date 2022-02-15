@@ -6,6 +6,7 @@ body {
     font-family: 'Abril Fatface', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F6F7FB;
 }
 
 code {
