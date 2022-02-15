@@ -1,0 +1,208 @@
+@value fontMontserrat from '../../styles/variables.module.css';
+@value main-text-color from '../../styles/variables.module.css';
+@value accent-color from '../../styles/variables.module.css';
+@value secondary-text-color from '../../styles/variables.module.css';
+@value background-white-color from '../../styles/variables.module.css';
+@value input-text-color from '../../styles/variables.module.css';
+@value background-primary-color from '../../styles/variables.module.css';
+@value min-width-tablet from '../../styles/variables.module.css';
+@value max-width-desktop from '../../styles/variables.module.css';
+
+
+.resultBox{
+    background-color: background-white-color;
+    padding: 10px 13px 13px 17px;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
+.formStatistic{
+    display: flex;
+    flex-wrap: wrap;
+}
+.resultBoxTitle{
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 38px;
+    color: main-text-color;
+    text-align: center;
+    text-transform: uppercase;
+}
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+}
+.inputWrapper:first-child{
+    margin-right: 20px;
+}
+.inputDate{
+    font-family: fontMontserrat;
+    width: 110px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 38px;
+    color: main-text-color;
+    background-color: background-primary-color;
+    border: 1px solid input-text-color;
+    outline: none;
+
+}
+.inputDate::-webkit-calendar-picker-indicator{
+    background-image: url('../../images/Polygon.svg');
+    /* background-color: black; */
+    width: 13px;
+    height: 7px;
+    padding: 0;
+    margin: 0;
+}
+
+.labelStatistic{
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 22px;
+    color: secondary-text-color;
+}
+.formButton{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 38px;
+    color: background-white-color;
+    background-color: accent-color;
+    border: none;
+    padding: 0 20px;
+    margin-bottom: 24px;
+}
+.resultBoxTitleStatistic{
+    position: relative;
+}
+.resultBoxTitleStatistic::after{
+    content: ' ';
+    position: absolute;
+    top: 19px;
+    right: 0;
+    width: 73px;
+    height: 1px;
+    background-color: #E0E5EB;
+}
+.resultBoxTitleStatistic::before{
+    content: ' ';
+    position: absolute;
+    top: 19px;
+    left: 0;
+    width: 73px;
+    height: 1px;
+    background-color: #E0E5EB;
+}
+.statisticList{
+    display: flex;
+    flex-direction: column;
+    
+}
+.statisticItem{
+    display: flex;
+    justify-content: space-between;
+}
+.statisticItem p {
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+
+}
+.dateTime{
+    color: secondary-text-color;
+}
+
+@media (min-width: min-width-tablet){
+    .resultBox{
+        padding: 21px 84px;
+    }
+    .resultBoxTitle{
+        font-size: 14px;
+    }
+    .formButton{
+        margin: 0 0 0 30px;
+        padding: 0 43px;
+        height: 40px;
+    }
+    .formStatistic{
+        align-items: center;
+    }
+    .statisticList{
+        width: 50%;
+    }
+    .resultBoxTitleStatistic{
+        text-align: left;
+    }
+    .resultBoxTitleStatistic::before{
+        display: none;
+    }
+    .resultBoxTitleStatistic::after{
+        content: ' ';
+        position: absolute;
+        top: 19px;
+        left: 112px;
+        width: 128px;
+        height: 1px;
+        background-color: #E0E5EB;
+    }
+}
+@media (min-width: max-width-desktop){
+    .resultBox{
+        width: 275px;
+        padding: 10px 16px 13px 19px;
+    }
+    .resultBoxTitle{
+        font-size: 12px;
+    }
+    .formButton{
+        width: 100%;
+        margin: 0;
+    }
+    .resultBoxTitleStatistic{
+        
+        text-align: center;
+    }
+    
+    .resultBoxTitleStatistic::after{
+        content: ' ';
+        position: absolute;
+        display: block;
+        top: 19px;
+        right: 0;
+        width: 73px;
+        height: 1px;
+        background-color: #E0E5EB;
+    }
+    .resultBoxTitleStatistic::before{
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 19px;
+        left: 0;
+        width: 73px;
+        height: 1px;
+        background-color: #E0E5EB;
+    }
+    .statisticList{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .statisticItem{
+        display: flex;
+        justify-content: space-between;
+    }
+}
