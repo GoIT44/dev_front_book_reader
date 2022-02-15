@@ -44,6 +44,9 @@ export const authSlice = createSlice({
       state.user = initialState.user;
       state.token = "";
     },
+    [authOperations.googleIn.fulfilled](state, { payload }) {
+      // state.token = payload.data.token;
+    },
   },
 });
 

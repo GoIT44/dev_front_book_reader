@@ -4,6 +4,7 @@ import { Switch } from "react-router-dom";
 import PublicRoute from "../components/Routes/PublicRoutes";
 import InfoPage from "../pages/InfoPage";
 import useMedia from "../components/hooks";
+import GooglePage from "../pages/Google-auth/GooglePage";
 
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage"));
@@ -27,6 +28,12 @@ const Routes = () => {
         </PublicRoute>
         <PublicRoute restricted exact path="/login">
           <LoginPage />
+        </PublicRoute>
+        <PublicRoute restricted exact path="/google-auth">
+          <LoginPage />
+        </PublicRoute>
+        <PublicRoute path="http://localhost:3000/google-auth1/">
+          <GooglePage />
         </PublicRoute>
         {/* <PrivateRoute exact path="/" redirectTo="/login">
          <></>

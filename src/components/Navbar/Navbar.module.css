@@ -12,6 +12,7 @@
 .navbarLogo {
   display: block;
   margin: 0;
+  margin-left: 25px;
   font-family: Abril Fatface;
   font-style: normal;
   font-weight: normal;
@@ -24,8 +25,93 @@
     justify-content: start;
   }
 }
-@media screen and (min-width: 767px) {
-  .navbarLogo {
-    margin-left: 25px;
+
+.bookButton {
+  background-color: #f5f7fa;
+  border-radius: 50%;
+  border: none;
+}
+
+.homeButton {
+  border: none;
+  margin-left: 14px;
+  background: none;
+  padding: 0;
+}
+.logoutButton {
+  margin-left: 14px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 38px;
+  /* text-decoration-line: underline; */
+  color: #242a37;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navButtons {
+  display: flex;
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.borderLine {
+  border-left: 1px solid #e0e5eb;
+  margin-left: 11px;
+}
+
+.borderLineBottom {
+  border-bottom: 1px solid #242a37;
+  margin-left: -41px;
+  margin-bottom: 11px;
+  width: 43px;
+}
+.user {
+  display: flex;
+  padding: 0;
+}
+.userMonogram {
+  margin: 0;
+  margin-left: 60px;
+  width: 33px;
+  height: 33px;
+  background-color: #f5f7fa;
+  border-radius: 50%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 38px;
+  color: #242a37;
+}
+
+@media screen and (min-width: 768px) {
+  .userMonogram {
+    margin-left: 255px;
   }
+}
+
+@media screen and (min-width: 1280px) {
+  .userMonogram {
+    margin-left: 511px;
+  }
+}
+.userName {
+  margin: 0;
+  margin-left: 11px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 38px;
+  color: #242a37;
+}
+.userSymbol {
+  width: 33px;
+  height: 33px;
+  padding: 16px 11px;
 }
