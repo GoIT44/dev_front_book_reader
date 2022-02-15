@@ -4,7 +4,8 @@ import {
   onSignUp,
   onLogIn,
   onLogOut,
-  CheckedCurrentUser,
+  // CheckedCurrentUser,
+  googleAuth,
 } from "../../services/auth";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 
@@ -34,6 +35,19 @@ const logIn = createAsyncThunk(
   }
 );
 
+const googleIn = createAsyncThunk(
+  "auth/google",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const data = await googleAuth(credentials);
+      token.set(data.accessToken);
+      return data;
+    } catch (error) {
+      return rejectWithValue(Notify.failure(error.response.data.message));
+    }
+  }
+);
+
 const logOut = createAsyncThunk(
   "auth/logout",
   async (_, { rejectWithValue }) => {
@@ -46,28 +60,29 @@ const logOut = createAsyncThunk(
   }
 );
 
-const CheckedIsLoginCurrentUser = createAsyncThunk(
-  "auth/checked",
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue();
-    }
-    token.set(persistedToken);
-    try {
-      const data = await CheckedCurrentUser(persistedToken);
-      return data;
-    } catch (err) {
-      return thunkAPI.rejectWithValue();
-    }
-  }
-);
+// const CheckedIsLoginCurrentUser = createAsyncThunk(
+//   "auth/checked",
+//   async (_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const persistedToken = state.auth.token;
+//     if (persistedToken === null) {
+//       return thunkAPI.rejectWithValue();
+//     }
+//     token.set(persistedToken);
+//     try {
+//       const data = await CheckedCurrentUser(persistedToken);
+//       return data;
+//     } catch (err) {
+//       return thunkAPI.rejectWithValue();
+//     }
+//   }
+// );
 
 const authOperations = {
   register,
   logIn,
   logOut,
-  CheckedIsLoginCurrentUser,
+  // CheckedIsLoginCurrentUser,
+  googleIn,
 };
 export default authOperations;

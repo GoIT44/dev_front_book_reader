@@ -30,6 +30,9 @@ const RegisterForm = () => {
     }
     Notify.failure("Password doesn't match");
   };
+  const googleAuth = () => {
+    dispatch(authOperations.googleIn());
+  };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
   return (
     <>
@@ -41,7 +44,11 @@ const RegisterForm = () => {
               onSubmit={handleSubmit}
               autoComplete="on"
             >
-              <button className={styles.googleBtn}>
+              <button
+                className={styles.googleBtn}
+                onClick={googleAuth}
+                type="button"
+              >
                 <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
                 <p className={styles.googleBtnText}>Google</p>
               </button>

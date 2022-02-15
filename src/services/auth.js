@@ -7,6 +7,7 @@ export const instance = axios.create({
 export const token = {
   set(token) {
     instance.defaults.headers.authorization = `Bearer ${token}`;
+    console.log(instance.defaults.headers.authorization);
   },
   unset() {
     instance.defaults.headers.common["Authorisation"] = "";
@@ -22,10 +23,14 @@ export async function onLogIn(credentials) {
 }
 
 export async function onLogOut() {
-  const { data } = await instance.post("/auth/logout");
+  const { data } = await instance.get("/auth/logout");
   return data;
 }
-export async function CheckedCurrentUser() {
-  const { data } = await instance.get("/auth/current");
+// export async function CheckedCurrentUser() {
+//   const { data } = await instance.get("/auth/google-redirect");
+//   return data;
+// }
+export async function googleAuth() {
+  const { data } = await instance.get("/auth/google");
   return data;
 }
