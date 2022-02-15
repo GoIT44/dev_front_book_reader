@@ -1,70 +1,49 @@
-import React from "react";
-import { ReactComponent as ReactLogoFlat } from "../../../images/training_page_icons/flat.svg";
-import { ReactComponent as ReactLogoDots } from "../../../images/training_page_icons/dots.svg";
+import { style } from "@mui/system";
+import React, { useState, useEffect } from "react";
 import styles from "./Booklist.module.css";
+import BooksListItem from "./BookListItem/BooksListItem";
 
 const Booklist = () => {
+  // const [screenWidth, setScreenWidth] = useState(null);
+  // const [books, setBooks] = useState([]);
+
+  const books = [
+    {
+      title:
+        "Bookdsjfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      year: 2002,
+      author: "Author",
+      pages: 356,
+    },
+    {
+      title: "Animate Book",
+      year: 2007,
+      author: "Animate Author",
+      pages: 549,
+    },
+    {
+      title: "Interesting Book",
+      year: 2000,
+      author: "Ivan Franko",
+      pages: 326,
+    },
+  ];
+
+  // useEffect(() => {
+  //   setScreenWidth(window.screen.width);
+  // }, [screenWidth]);
+
   return (
-    <div className={styles.booklist__wrap}>
-      <ul className={styles.booklist}>
-        <li className={styles.book__list}>
-          <div className={styles.ishidden__tab}>
-            <div className={styles.container__flex}>
-              <div className={styles.flatSvg__wrap}>
-                <ReactLogoFlat />
-              </div>
-              <div className={styles.dotsSvg__wrap}>
-                <ReactLogoDots />
-              </div>
-            </div>
-          </div>
-          <div className={styles.ishidden__mob}>
-            <div className={styles.container__flex}>
-              <div className={styles.book__title}>
-                Book title<span className={styles.twoDots}>:</span>
-              </div>
-              <div className={styles.dotsSvg__wrap}>
-                <ReactLogoDots />
-              </div>
-            </div>
-          </div>
-          <div className={styles.container__flex}>
-            <div className={styles.bookAuthor__title}>
-              Author<span className={styles.twoDots}>:</span>
-            </div>
-            <div className={styles.dotsSvg__wrap}>
-              <ReactLogoDots />
-            </div>
-          </div>
-          <div className={styles.container__flex}>
-            <div className={styles.bookYear__title}>
-              Year<span className={styles.twoDots}>:</span>
-            </div>
-            <div className={styles.dotsSvg__wrap}>
-              <ReactLogoDots />
-            </div>
-          </div>
-          <div className={styles.container__flex}>
-            <div className={styles.bookPages__title}>
-              Pages<span className={styles.twoDots}>:</span>
-            </div>
-            <div className={styles.dotsSvg__wrap}>
-              <ReactLogoDots />
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div className={styles.ishidden__mob}>
-        <div className={styles.container__flex}>
-          <div className={styles.flatSvg__wrap}>
-            <ReactLogoFlat />
-          </div>
-          <div className={styles.dotsTab__visible}>
-            <ReactLogoDots />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ul className={styles.bookList}>
+      {books.map((book) => (
+        <BooksListItem
+          title={book.title}
+          author={book.author}
+          year={book.year}
+          pages={book.pages}
+        />
+      ))}
+    </ul>
   );
 };
 

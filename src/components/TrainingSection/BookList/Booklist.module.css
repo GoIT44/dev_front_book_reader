@@ -64,18 +64,7 @@
     color:#898F9F
 }
 
-.ishidden__mob{
-    display: none
-}
-
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-    .twoDots{
-        display: none
-    }
-
-    .ishidden__tab {
-        display: none
-    }
 
     .booklist__wrap {
         width: 100%;
@@ -154,20 +143,12 @@
         font-family: Montserrat, sans-serif;
         color: #898F9F
     }
-
-    .ishidden__mob{
-        display: block;
-    }
 }
 
 @media screen and (min-width: 1200px) {
-.twoDots {
+/* .ishidden__tab {
     display: none
-}
-
-.ishidden__tab {
-    display: none
-}
+} */
 
 .booklist__wrap {
     max-width: 886px;
@@ -245,9 +226,5 @@
     font-weight: 500;
     font-family: Montserrat, sans-serif;
     color: #898F9F
-}
-
-.ishidden__mob {
-    display: block;
 }
 }
