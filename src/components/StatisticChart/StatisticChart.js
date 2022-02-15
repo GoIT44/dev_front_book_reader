@@ -88,7 +88,10 @@ const StatisticChart = () => {
     const chartRef = React.createRef()
     console.dir(chartRef)
     return (
+      <div className={style.chartWrapper}>
+        <h3 className={style.titleChart}>Кількість сторінок / день <span>34</span></h3>
         <Line ref={chartRef} options={options} data={data}/>
+      </div>
     );
 }
 

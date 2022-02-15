@@ -1,5 +1,24 @@
+@value fontMontserrat from '../../styles/variables.module.css';
+@value main-text-color from '../../styles/variables.module.css';
+@value background-white-color from '../../styles/variables.module.css';
+
+.chartWrapper{
+    background-color: background-white-color;
+    /* padding: 14px 21px 39px; */
+    /* height: 290px; */
+}
 .chart{
     background-color: white;
     /* width: 227px!important; 
     height: 190px!important; */
+}
+.titleChart{
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 38px;
+    color: main-text-color;
+    text-transform: uppercase;
+    text-align: center;
 }

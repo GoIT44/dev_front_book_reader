@@ -24,7 +24,7 @@ function App() {
         <Routes />
       </header>
       <LibraryModal/>
-      <Timer />
+      {/* <Timer /> */}
     </div>
 
   );

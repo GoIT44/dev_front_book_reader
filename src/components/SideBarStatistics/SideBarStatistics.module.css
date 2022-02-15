@@ -10,7 +10,7 @@
 
 .sideBar{
     text-align: center;
-    margin-bottom: 33px;
+    /* margin-bottom: 33px; */
 }
 .sideBarTitle{
     font-family: fontMontserrat;
@@ -28,7 +28,7 @@
 .sideBarList{
     display: flex;
     padding: 30px 19px 30px 28px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     /* justify-content: space-around; */
     background-color: white-text-color;
     box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
