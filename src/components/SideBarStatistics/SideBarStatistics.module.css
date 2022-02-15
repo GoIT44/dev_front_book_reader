@@ -1,0 +1,127 @@
+@value fontMontserrat from '../../styles/variables.module.css';
+@value fontOpenSans from '../../styles/variables.module.css';
+@value white-text-color from '../../styles/variables.module.css';
+@value background-card-color from '../../styles/variables.module.css';
+@value number-color from '../../styles/variables.module.css';
+@value card-number-color from '../../styles/variables.module.css';
+@value accent-color from '../../styles/variables.module.css';
+@value min-width-tablet from '../../styles/variables.module.css';
+@value max-width-desktop from '../../styles/variables.module.css';
+
+.sideBar{
+    text-align: center;
+    margin-bottom: 33px;
+}
+.sideBarTitle{
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 38px;
+    padding: 11px 25px;
+    height: 60px;
+    /* margin-bottom: 30px; */
+    color: white-text-color;
+    background-color: background-card-color;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
+.sideBarList{
+    display: flex;
+    padding: 30px 19px 30px 28px;
+    margin-bottom: 30px;
+    /* justify-content: space-around; */
+    background-color: white-text-color;
+    box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
+}
+.sideBarItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebarNumber{
+    font-family: fontOpenSans;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 38px;
+    width: 63px;
+    height: 63px;
+    margin-bottom: 6px;
+    color: number-color;
+    background-color: card-number-color;
+    box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
+}
+.sideBarText{
+    font-family: fontMontserrat;
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    /* margin-bottom: 30px; */
+}
+.sideBarItem:last-child .sidebarNumber{
+    color: accent-color;
+}
+@media (min-width: min-width-tablet) {
+    .sideBar{
+        display: flex;
+        align-items: flex-start;
+        padding: 20px 30px 15px;
+        background-color: white-text-color;
+        box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
+    }
+    .sideBarTitle{
+        margin-top: 3px;
+        padding: 11px 27px;
+        margin-right: 19px;
+        /* margin: 23px 19px 42px 30px; */
+    }
+    .sidebarNumber{
+        width: 100px;
+        height: 60px;
+    }
+    .sideBarList{
+        align-items: flex-start;
+        /* margin-top: 20px; */
+        margin-bottom: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+    .sideBarItem:not(:last-child){
+        margin-right: 12px;
+    }
+    .sideBarText{
+        width: 100px;
+        /* margin-bottom: 15px; */
+    }
+}
+@media (min-width: max-width-desktop) {
+    .sideBar{
+        flex-direction: column;
+        padding: 0;
+        width: 275px;
+    }
+    .sideBarTitle{
+        margin-top: 0;
+        margin-right: 0;
+    }
+    .sideBarList{
+        padding: 72px 17px 76px;
+        justify-content: space-around;
+    }
+    .sidebarNumber{
+        width: 66px;
+        height: 66px;
+    }
+    .sideBarItem:not(:last-child){
+        margin-right: 22px;
+    }
+    .sideBarText{
+        width: 60px;
+    }
+}
