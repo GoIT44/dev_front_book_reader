@@ -9,6 +9,8 @@ import { useEffect } from "react";
 import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
+import LibraryForm from "../LibraryForm/LibraryForm";
+
 function App() {
   const jwt = useSelector(fetchToken);
   token.set(jwt);
@@ -25,6 +27,7 @@ function App() {
       </header>
       <LibraryModal/>
       <Timer />
+      <LibraryForm />
     </div>
 
   );

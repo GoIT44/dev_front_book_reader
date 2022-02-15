@@ -1,0 +1,187 @@
+
+    .formWrapper{
+        /* background-color: green; */
+        /* outline: solid black 1px; */
+
+    }
+
+    @media screen and (min-width: 1280px){
+        .formWrapper{
+            padding-right: 85px;
+        }
+    }
+
+    .bookForm {
+            width: 270px;
+            margin: 0 auto;
+        /* outline: solid rgb(255, 0, 0) 1px; */
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        .bookForm{
+            width: 594px;
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        .bookForm{
+        display: flex;
+        flex-direction: row;
+        width: 1117px;
+    }
+}
+
+
+
+    .bookFormModal {
+        background-color: #f6f7fb;
+        padding: 25px;
+        min-width: 320px;
+    }
+
+    .bookFormList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    @media screen and (min-width: 767px) {
+        .bookFormList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+        }
+
+    @media screen and (min-width: 1280px) {
+    .bookFormList {
+        flex-wrap: nowrap;
+
+    }
+    }
+    .bookFormListItem {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1279px) {
+    .bookFormListItem:first-child {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+    .bookFormListItem {
+        flex-basis: 145px
+    }
+    .bookFormListItem:nth-child(2) {
+        flex-basis: 250px
+    }
+    }
+        @media screen and (min-width: 1280px) {
+            .bookFormListItem{
+                flex-basis: auto;
+                width: 130px;
+            }
+            .bookFormListItem:first-child{
+                width: 346px;
+            }
+            .bookFormListItem:nth-child(2) {
+                width: 250px
+            }
+
+            .bookFormListItem:not(:last-child) {
+    margin-right: 15px;
+            }
+            
+        }
+
+
+    .bookFormListItemTitle {
+        display: block;
+        text-align: left;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13.5px;
+        line-height: 38px;
+        line-height: 2.71;
+        color: #898f9f;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .bookFormInput {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2.71;
+        width: 100%;
+        height: 42px;
+        border: 1px solid #a6abb9;
+        padding: 0px 10px;
+        margin: 0;
+        background-color: transparent;
+
+
+        
+
+    }
+    .bookFormInput:hover,
+    .bookFormInput:focus {
+        background-color: #fff;
+
+        border: none;
+        outline: none;
+        box-shadow: inset 0px 1px 2px rgba(29, 29, 27, 0.15);
+    }
+    .bookFormError {
+        font-family: 'Montserrat-Regular';
+        color: #e63946;
+        font-size: 13px;
+    }
+
+    .bookFormBtn {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        padding: 2px 58px;
+        margin: 35px 0 0 0;
+        border: 1px solid #242a37;
+        background-color: #f6f7fb;
+        outline: none;
+        height: 40px;
+        width: 171px;
+    }
+
+    @media screen and (min-width: 768px) {
+    .bookFormBtn {
+        margin-top: 40px;
+    }
+    }
+
+    @media screen and (min-width: 1280px) {
+    .bookFormBtn {
+        /* margin: 36px 0px 0px 41px; */
+        margin: 38px 0 0 45px;
+    }
+    }
+
+    .bookFormBtn:hover,
+    .bookFormBtn:focus {
+        color: #f6f7fb;
+        background-color: #ff6b08;
+        border: none;
+        outline: none;
+    }
+
+    /* .bookFormBtnBack {
+        display: flex;
+        border: none;
+        outline: none;
+        background-color: inherit;
+    } */
