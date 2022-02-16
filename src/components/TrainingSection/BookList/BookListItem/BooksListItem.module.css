@@ -1,5 +1,6 @@
 @value fontMontserrat from '../../../../styles/variables.module.css';
 @value main-text-color from '../../../../styles/variables.module.css';
+@value background-primary-color from '../../../../styles/variables.module.css';
 @value secondary-text-color from '../../../../styles/variables.module.css';
 @value min-width-tablet from '../../../../styles/variables.module.css';
 @value max-width-desktop from '../../../../styles/variables.module.css';
@@ -16,9 +17,9 @@
     margin-bottom: 14px;
 }
 .delete__btn{
-    border: none;
-    background-color: #fff;
     margin-left: auto;
+    border: none;
+    background-color: background-primary-color;
 }
 .bookDescrList{
     display: flex;
@@ -38,20 +39,20 @@
     justify-content: center;
 } */
 .titleBook{
+    width: 200px;
     margin-left: 13px;
     font-family: fontMontserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-    overflow: scroll;
+    word-wrap: break-word;
     color: main-text-color;
 }
 .bookDesc{
     composes: titleBook;
     display: inline-block;
     line-height: 12px;
-    text-align: center;
     margin-bottom: 0;
     margin-left: 30px;
 }
@@ -65,17 +66,24 @@ span{
     color: secondary-text-color;
     text-align: left;
 }
+.dots{
+    margin-left: 13px;
+    width: 200px;
+    margin-left: 13px;
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    word-wrap: break-word;
+    color: main-text-color;
+}
 
-@media (min-width-tablet) {
-    .bookItem{
-        display: flex;
-        flex-direction: column;
-       
-    }
-    .titleBook{
-        display: inline-block;
-    }
+@media screen and (min-width:768px) {
+    
     .bookDescrList{
+        width: 100vh;
         flex-direction: row;
     }
+    
 }

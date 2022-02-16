@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
-import * as Yup from 'yup';
+// import * as Joi from "joi";
+import * as Yup from "yup";
 
-
-import { addBookOperation } from '../../redux/operations/bookOperation';
-
+import { addBookOperation } from "../../redux/operations/bookOperation";
 
 const getYear = () => {
   return new Date().getFullYear();
@@ -25,18 +23,18 @@ const getYear = () => {
 
 const schema = Yup.object().shape({
   title: Yup.string()
-      .min(2, 'Занадто коротка назва!')
-      .required('Заповніть поле "Назва книги"'),
+    .min(2, "Занадто коротка назва!")
+    .required('Заповніть поле "Назва книги"'),
   author: Yup.string().required('Заповніть поле "Автор книги"'),
   year: Yup.number()
-      .min(1500, 'Min значення 1500')
-      .max(getYear(), 'Не більш, ніж поточний рік')
-      .required('Заповніть поле "Рік випуску"')
-      .typeError('Введіть число'),
+    .min(1500, "Min значення 1500")
+    .max(getYear(), "Не більш, ніж поточний рік")
+    .required('Заповніть поле "Рік випуску"')
+    .typeError("Введіть число"),
   numberOfPages: Yup.number()
-      .min(1, 'Min значення 1')
-      .required('Заповніть поле "Кількість сторінок"')
-      .typeError('Введіть число'),
+    .min(1, "Min значення 1")
+    .required('Заповніть поле "Кількість сторінок"')
+    .typeError("Введіть число"),
 });
 
 const initialState = {
@@ -46,12 +44,11 @@ const initialState = {
   numberOfPages: "",
 };
 
-
 const LibraryForm = () => {
   const dispatch = useDispatch();
   const [state] = useState({ ...initialState });
 
-  const onHandlerSubmit = values => {
+  const onHandlerSubmit = (values) => {
     dispatch(addBookOperation(values));
   };
 
@@ -64,7 +61,7 @@ const LibraryForm = () => {
           onHandlerSubmit({ ...values });
 
           actions.resetForm({ ...state });
-      }}
+        }}
       >
         {({ values }) => (
           <div className={styles.formWrapper}>

@@ -14,7 +14,7 @@ import Booklist from "./BookList/Booklist";
 
 // const initialState = { startDate: "", finishDate: "" };
 
-const TrainingSectionModal = () => {
+const TrainingSection = () => {
   return (
     <>
       {/* <Box
@@ -49,4 +49,4 @@ const TrainingSectionModal = () => {
   );
 };
 
-export default TrainingSectionModal;
+export default TrainingSection;
