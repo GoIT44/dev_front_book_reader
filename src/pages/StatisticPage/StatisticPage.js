@@ -14,6 +14,9 @@ const StatisticPage = () => {
                 <div className={style.grids}>
                     <div className={style.gridsTimer}>
                         <Timer/>
+                        <div className={style.wrapperBookList}>
+                            <Booklist/> 
+                        </div>
                     </div>
                     <div className={style.gridsSideBar}>
                         <SideBarStatistics/>

@@ -61,10 +61,10 @@ const StatisticChart = () => {
     for (let i = 1; arrDays.length < dayOfTraining; i++) {
         arrDays.push(i)
     } // массив для отрисовки оси х
-    // console.log('totalPageRead', totalPageRead)
-    // console.log('arrPageOfDay.length', arrPageOfDay.length)
-    // console.log('arrPageOfDay', arrPageOfDay)
-    // console.log('arrAveragePageOfDay', arrAveragePageOfDay)
+    console.log('totalPageRead', totalPageRead)
+    console.log('arrPageOfDay.length', arrPageOfDay.length)
+    console.log('arrPageOfDay', arrPageOfDay)
+    console.log('arrAveragePageOfDay', arrAveragePageOfDay)
     const labels = arrDays;
 
       const data = {

@@ -34,6 +34,22 @@ const Booklist = () => {
 
   return (
       <ul className={styles.bookList}>
+        <li className={styles.bookItemTitle}>
+          <ul className={styles.bookDescrList}>
+                <li className={styles.bookDescrItem}>
+                    <p className={styles.subTitle}>Назва книги</p>
+                </li>
+                <li className={styles.bookDescrItem}>
+                    <p className={styles.subTitle}>Автор</p>
+                </li>
+                <li className={styles.bookDescrItem}>
+                    <p className={styles.subTitle}>Рік</p>
+                </li>
+                <li className={styles.bookDescrItem}>
+                    <p className={styles.subTitle}>Стор</p>
+                </li>
+          </ul>
+        </li>
             {books.map((book)=><BooksListItem 
             title={book.title}
             author={book.author}

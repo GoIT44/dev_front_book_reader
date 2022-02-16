@@ -91,6 +91,9 @@
     .timer:first-child{
         margin-right: 30px;
     }
+    .timer:not(:last-child){
+        margin-bottom: 0;
+    }
     .timerWrapper{
         width: 290px;
         padding-left: 38px;
