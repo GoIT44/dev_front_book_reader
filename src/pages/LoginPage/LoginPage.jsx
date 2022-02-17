@@ -4,6 +4,8 @@ import styles from "../LoginPage/LoginPage.module.css";
 import { useDispatch } from "react-redux";
 import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { token } from "../../services/auth";
 
 const initialState = {
   email: "",
@@ -20,21 +22,26 @@ const LoginForm = () => {
     );
   };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
-
+  const location = useLocation();
+  const tokens = location.search.slice(1).split("=")[1];
+  token.set(tokens);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.innerWrapper}>
+            <Link
+              className={styles.googleBtn}
+              to="https://api-br.herokuapp.com/api/auth/google"
+            >
+              <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
+              <p className={styles.googleBtnText}>Google</p>
+            </Link>
             <form
               className={styles.registerForm}
               onSubmit={handleSubmit}
               autoComplete="off"
             >
-              <button className={styles.googleBtn}>
-                <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
-                <p className={styles.googleBtnText}>Google</p>
-              </button>
               <label className={styles.registerInput}>
                 <span className={styles.registerInputname}>
                   Електронна адреса <span className={styles.star}>*</span>

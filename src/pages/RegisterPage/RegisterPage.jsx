@@ -30,21 +30,27 @@ const RegisterForm = () => {
     }
     Notify.failure("Password doesn't match");
   };
+  // const googleAuth = () => {
+  //   dispatch(authOperations.googleIn());
+  // };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
   return (
     <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.innerWrapper}>
+            <a
+              className={styles.googleBtn}
+              href="https://api-br.herokuapp.com/api/auth/google"
+            >
+              <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
+              <p className={styles.googleBtnText}>Google</p>
+            </a>
             <form
               className={styles.registerForm}
               onSubmit={handleSubmit}
               autoComplete="on"
             >
-              <button className={styles.googleBtn}>
-                <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
-                <p className={styles.googleBtnText}>Google</p>
-              </button>
               <label className={styles.registerInput}>
                 <span className={styles.registerInputname}>
                   Ім’я <span className={styles.star}>*</span>
