@@ -36,14 +36,17 @@ export const authSlice = createSlice({
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
     },
-    [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
-      state.user.email = payload.data.email;
-      state.userId = payload.data.id;
-    },
-    [authOperations.CheckedIsLoginCurrentUser.rejected](state, { payload }) {
-      state.user = initialState.user;
-      state.token = "";
-    },
+    // [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
+    //   state.user.email = payload.data.email;
+    //   state.userId = payload.data.id;
+    // },
+    // [authOperations.CheckedIsLoginCurrentUser.rejected](state, { payload }) {
+    //   state.user = initialState.user;
+    //   state.token = "";
+    // },
+    // [authOperations.googleIn.fulfilled](state, { payload }) {
+    //   // state.token = payload.data.token;
+    // },
   },
 });
 
