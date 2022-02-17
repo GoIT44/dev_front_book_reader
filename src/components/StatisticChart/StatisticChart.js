@@ -36,15 +36,26 @@ const StatisticChart = () => {
         
         const options = {
             responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
+            plugins: {
+              legend: {
+                display: false
+              },
+              title: {
+                display: false,
+              },
+              
+        },
+        scales: {
+          y: {
             display: false,
-           
           },
-          
+        
+          x: {
+            ticks: {
+              display: false,
+            },
+  
+          },
         },
     };
     const totalPage = 600 // общее количество страниц которое нужно прочитать
@@ -71,24 +82,25 @@ const StatisticChart = () => {
         labels,
         datasets: [
             {
-                
+            label: "Факт",
             data: arrDays.map((day, idx) => arrPageOfDay[idx]),
             borderColor: '#242A37',
             backgroundColor: '#242A37',
             lineTension: 0.5,
           },
           {
-            label: 'Dataset 2',
+            label: 'План',
             data: arrDays.map((day, idx) => arrAveragePageOfDay[idx+1]),
             borderColor: '#FF6B08',
             backgroundColor: '#FF6B08',
           },
         ],
     };
-    const chartRef = React.createRef()
-    console.dir(chartRef)
     return (
-        <Line ref={chartRef} options={options} data={data}/>
+      <div className={style.chartWrapper}>
+        <h3 className={style.titleChart}>Кількість сторінок / день <span>34</span></h3>
+        <Line options={options} data={data}/>
+      </div>
     );
 }
 

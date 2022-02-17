@@ -22,11 +22,13 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <Navbar />
-      <Routes />
-      <LibraryModal />
-      <Timer />
-      <LibraryForm />
+      <div className="App">
+        <Navbar />
+        <Routes />
+        <LibraryModal />
+        <Timer />
+        <LibraryForm />
+      </div>
     </div>
   );
 }
