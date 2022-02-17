@@ -69,6 +69,7 @@
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #E0E5EB;
+    border-bottom: 1px solid #E0E5EB;
 }
 .title__listItem{
     margin-top: 14px;
@@ -89,16 +90,21 @@
         height: 100%;
         margin-top: 30px;
         margin-bottom: 30px;
-        border-top: 1px solid #E0E5EB;
+        /* border-top: 1px solid #E0E5EB; */
         border-bottom: 1px solid #E0E5EB;
         background-color: #F6F7FB;
     }
 
     .booklist {
-        margin-bottom: 0px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        /* border-top: 1px solid #E0E5EB; */
+        margin-bottom: 25px;
     }
 
     .book__list {
+        width: 678px;
         display: flex;
         justify-content: flex-start;
         margin-bottom: 14px;
@@ -252,5 +258,6 @@
 
 .title__list {
     display: flex;
+    margin-top: 40px;
 }
 }

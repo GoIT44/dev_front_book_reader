@@ -10,6 +10,9 @@
     border-bottom: 1px solid #E0E5EB;
     border-top: 1px solid #E0E5EB;
 }
+.bookItem:first-child {
+    border-top: none;
+}
 .flex__centered{
     display: flex;
     align-items: center;
@@ -32,12 +35,12 @@
     margin-bottom: 18px;
     
 }
-/* .bookDescrItem:first-child{
+.bookDescrItem:first-child{
     justify-content: flex-start;
 }
 .bookDescrItem:last-child{
-    justify-content: center;
-} */
+    justify-content: flex-end;
+}
 .titleBook{
     width: 200px;
     margin-left: 13px;
@@ -80,10 +83,24 @@ span{
 }
 
 @media screen and (min-width:768px) {
-    
+    .bookItem{
+    padding-top: 25px;
+    margin-bottom: 25px;
+    border-bottom: none;
+
+    }
     .bookDescrList{
         width: 100vh;
         flex-direction: row;
     }
-    
+
+    .bookDescrItem {
+        margin-bottom: 0px;
+    }
+
+    .titleBook__centered {
+        display: flex;
+        align-items: center;
+    margin-bottom: 0;
+    }
 }

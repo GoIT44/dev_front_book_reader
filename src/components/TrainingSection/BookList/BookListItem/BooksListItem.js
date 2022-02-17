@@ -15,18 +15,18 @@ const BooksListItem = ({ title = "...", author, year, pages }) => {
           {screenSize.MOB ? (
             <h3 className={style.titleBook}>{title}</h3>
           ) : (
-            <ul className={style.flex__centered}>
+            <ul className={style.titleBook__centered}>
               <li key={nanoid()} className={style.bookDescrItem}>
-                <p className={style.bookDesc}>{title}</p>
+                <div className={style.titleBook}>{title}</div>
               </li>
               <li key={nanoid()} className={style.bookDescrItem}>
-                <p className={style.bookDesc}>{author}</p>
+                <div className={style.bookDesc}>{author}</div>
               </li>
               <li key={nanoid()} className={style.bookDescrItem}>
-                <p className={style.bookDesc}>{year}</p>
+                <div className={style.bookDesc}>{year}</div>
               </li>
               <li key={nanoid()} className={style.bookDescrItem}>
-                <p className={style.bookDesc}>{pages}</p>
+                <div className={style.bookDesc}>{pages}</div>
               </li>
             </ul>
           )}
