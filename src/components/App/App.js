@@ -9,6 +9,8 @@ import { useEffect } from "react";
 import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
+import LibraryPage from '../../pages/library/LibraryPage'
+
 import LibraryForm from "../LibraryForm/LibraryForm";
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
       <LibraryModal />
       <Timer />
       <LibraryForm />
+      {jwt && <LibraryPage/>}
     </div>
   );
 }

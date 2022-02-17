@@ -26,7 +26,8 @@ const logIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const data = await onLogIn(credentials);
-      token.set(data.accessToken);
+      token.set(data.data.token);   
+
       return data;
     } catch (error) {
       return rejectWithValue(Notify.failure(error.response.data.message));
