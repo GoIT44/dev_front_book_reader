@@ -36,15 +36,26 @@ const StatisticChart = () => {
         
         const options = {
             responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
+            plugins: {
+              legend: {
+                display: false
+              },
+              title: {
+                display: false,
+              },
+              
+        },
+        scales: {
+          y: {
             display: false,
-           
           },
-          
+        
+          x: {
+            ticks: {
+              display: false,
+            },
+  
+          },
         },
     };
     const totalPage = 600 // общее количество страниц которое нужно прочитать
@@ -61,36 +72,34 @@ const StatisticChart = () => {
     for (let i = 1; arrDays.length < dayOfTraining; i++) {
         arrDays.push(i)
     } // массив для отрисовки оси х
-    console.log('totalPageRead', totalPageRead)
-    console.log('arrPageOfDay.length', arrPageOfDay.length)
-    console.log('arrPageOfDay', arrPageOfDay)
-    console.log('arrAveragePageOfDay', arrAveragePageOfDay)
+    // console.log('totalPageRead', totalPageRead)
+    // console.log('arrPageOfDay.length', arrPageOfDay.length)
+    // console.log('arrPageOfDay', arrPageOfDay)
+    // console.log('arrAveragePageOfDay', arrAveragePageOfDay)
     const labels = arrDays;
 
       const data = {
         labels,
         datasets: [
             {
-                
+            label: "Факт",
             data: arrDays.map((day, idx) => arrPageOfDay[idx]),
             borderColor: '#242A37',
             backgroundColor: '#242A37',
             lineTension: 0.5,
           },
           {
-            label: 'Dataset 2',
+            label: 'План',
             data: arrDays.map((day, idx) => arrAveragePageOfDay[idx+1]),
             borderColor: '#FF6B08',
             backgroundColor: '#FF6B08',
           },
         ],
     };
-    const chartRef = React.createRef()
-    console.dir(chartRef)
     return (
       <div className={style.chartWrapper}>
         <h3 className={style.titleChart}>Кількість сторінок / день <span>34</span></h3>
-        <Line ref={chartRef} options={options} data={data}/>
+        <Line options={options} data={data}/>
       </div>
     );
 }
