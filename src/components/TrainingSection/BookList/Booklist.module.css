@@ -44,7 +44,7 @@
     }
     .bookList{
         width: 678px;
-        height: 220px;
+        height: 280px;
         overflow-y: scroll;
     }
 }
@@ -52,7 +52,7 @@
 @media (min-width: max-width-desktop){
     .bookList {
         width: 886px;
-        height: 174px;
+        height: 233px;
         overflow-y: scroll;
 }
 .bookItemTitle {

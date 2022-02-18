@@ -15,9 +15,9 @@ const TrainingPeriodBlock = function () {
       <div className={styles.dateInputBlock}>
         <ul className={styles.input__list}>
           <li className={styles.input__item}>
-            <FormControl sx={{ m: 1, minWidth: 270 }}>
+            <FormControl sx={{ m: 1, minWidth: 270, height: 42 }}>
               <DatePicker
-                label="Start"
+                label="Початок"
                 value={startValue}
                 onChange={(newValue) => {
                   setStartValue(newValue);
@@ -27,9 +27,9 @@ const TrainingPeriodBlock = function () {
             </FormControl>
           </li>
           <li className={styles.input__item}>
-            <FormControl sx={{ m: 1, minWidth: 270 }}>
+            <FormControl sx={{ m: 1, minWidth: 270, height: 42 }}>
               <DatePicker
-                label="Finish"
+                label="Завершення"
                 value={finishValue}
                 onChange={(newValue) => {
                   setFinishValue(newValue);

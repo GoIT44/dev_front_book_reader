@@ -1,10 +1,7 @@
 // import { style } from "@mui/system";
-// import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
-import iconSprite from "../../../images/icons-sprite.svg";
-import BooksListItem from "./BooksListItem/BooksListItem";
 import styles from "./Booklist.module.css";
-import style from "./BooksListItem/BooksListItem.module.css";
+import BooksListItem from "./BooksListItem/BooksListItem";
 
 const Booklist = () => {
   const books = [
@@ -57,14 +54,7 @@ const Booklist = () => {
           />
         ))
       ) : (
-        <li className={style.bookItem}>
-          <div className={style.iconWrapper}>
-            <svg className={style.iconBookList} width="22px" height="17px">
-              <use xlinkHref={`${iconSprite}#icon-book`} />
-            </svg>
-            <span className={style.titleBook}> ...</span>
-          </div>
-        </li>
+        <BooksListItem />
       )}
     </ul>
   );

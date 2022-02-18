@@ -36,11 +36,15 @@ const BooksListItem = ({
         </li>
       </ul>
       <div className={style.iconWrapper}>
-        <button className={style.btnDelete} /*onClick={onHandleDelete}*/>
-          <svg className={style.iconBookList} width="14px" height="18px">
-            <use xlinkHref={`${iconSprite}#icon-delete`} />
-          </svg>
-        </button>
+        {title === "..." ? (
+          <div></div>
+        ) : (
+          <button className={style.btnDelete} /*onClick={onHandleDelete}*/>
+            <svg className={style.iconBookList} width="14px" height="18px">
+              <use xlinkHref={`${iconSprite}#icon-delete`} />
+            </svg>
+          </button>
+        )}
       </div>
     </li>
   );

@@ -2,46 +2,37 @@
 // import { useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
-import Booklist from "./BookList/Booklist";
+// import Booklist from "./BookList/Booklist";
+
 // import ResultBox from "../../example/ResultBox";
 // import TrainingModalBtn from "../TrainingModalBtn/TrainingModalBtn";
 
-// import Box from "@mui/material/Box";
-// import { ReactComponent as ReactLogo } from "../../images/training_page_icons/arrow-back.svg";
-// import TrainingPeriodBlock from "./TrainingForm/TrainingPeriodBlock/TrainingPeriodBlock";
-// import styles from "./TrainingSection.module.css";
-// import BookSelect from "./TrainingForm/BookSelect/BookSelect";
+import Box from "@mui/material/Box";
+import { ReactComponent as ReactLogo } from "../../images/training_page_icons/arrow-back.svg";
+import Form from "./Form/Form";
+import styles from "./TrainingSection.module.css";
 
 // const initialState = { startDate: "", finishDate: "" };
 
 const TrainingSection = () => {
   return (
     <>
-      {/* <Box
-        sx={{
-          width: {
-            mobile: "100%",
-          },
-          height: "100%",
-        }}
-      >
-        <section className={styles.section}>
-          <button className={styles.btn__back}>
-            <div className={styles.svg__wrap}>
-              <ReactLogo />
-            </div>
-          </button>
-          <div className={styles.section__centeredWrap}>
-            <div className={styles.section__titleWrap}>
-              <h2 className={styles.section__title}>My training</h2>
-            </div>
-            <TrainingPeriodBlock />
-            <BookSelect />
+      <section className={styles.section}>
+        <button className={styles.btn__back}>
+          <div className={styles.svg__wrap}>
+            <ReactLogo />
           </div>
-        </section>
-      </Box> */}
-
-      <Booklist />
+        </button>
+        <div className={styles.section__centeredWrap}>
+          <div className={styles.section__titleWrap}>
+            <h2 className={styles.section__title}>Моє тренування</h2>
+          </div>
+          <div className={styles.flex__position}>
+            <Form />
+          </div>
+        </div>
+      </section>
+      {/* <Booklist /> */}
 
       {/* <ResultBox /> */}
       {/* <TrainingModalBtn /> */}
