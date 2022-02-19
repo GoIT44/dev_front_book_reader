@@ -1,20 +1,26 @@
 import React from "react";
-import BookSelect from "./BookSelect/BookSelect";
+import useMedia from "../../hooks/useMedia";
+import TitleSection from "./TitleSection/TitleSection";
 import TrainingPeriodBlock from "./TrainingPeriodBlock/TrainingPeriodBlock";
+import BookSelect from "./BookSelect/BookSelect";
 import styles from "./Form.module.css";
 
-const TrainingForm = () => {
+const Form = () => {
+  const { MOB } = useMedia();
   return (
-    <>
-      <TrainingPeriodBlock />
-      <div className={styles.flex__centered}>
-        <BookSelect />
-        <div className={styles.btn__wrap}>
-          <button className={styles.btn__add}>Add</button>
+    !MOB && (
+      <>
+        <TitleSection />
+        <TrainingPeriodBlock />
+        <div className={styles.flex__centered}>
+          <BookSelect />
+          <div className={styles.btn__wrap}>
+            <button className={styles.btn__add}>Додати</button>
+          </div>
         </div>
-      </div>
-    </>
+      </>
+    )
   );
 };
 
-export default TrainingForm;
+export default Form;

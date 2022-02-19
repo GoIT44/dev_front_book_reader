@@ -47,6 +47,35 @@ const BookSelect = () => {
           </Select>
         </FormControl>
       </div>
+
+      {/* <div className={styles.select__wrap}>
+        <FormControl sx={{ m: 1, maxWidth: 270, height: 42 }}>
+          <InputLabel id="demo-simple-select-autowidth-label">
+            Choose books from the library
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select"
+            value={books}
+            onChange={handleChange}
+            placeholder={"Обрати книги з бiлiотеки"}
+            autoWidth
+            label={"Обрати книги з бiлiотеки"}
+          >
+            <MenuItem value="">
+              <em>-------</em>
+            </MenuItem>
+            <MenuItem value={20}>
+              Scrum. A revolutionary method of project management.
+            </MenuItem>
+            <MenuItem value={21}>
+              Deadline. A novel about project management.
+            </MenuItem>
+            <MenuItem value={22}>
+              5 Defects of the team. Proverbs about leadership.
+            </MenuItem>
+          </Select>
+        </FormControl>
+      </div> */}
     </div>
   );
 };

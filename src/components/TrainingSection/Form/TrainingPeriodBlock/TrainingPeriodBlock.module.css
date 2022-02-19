@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 768px) {
   .input__list {
-    /* width: 100vh; */
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -37,5 +37,10 @@
 
   .select__wrap {
     width: 482px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .input__item:not(:last-child) {
+    margin-bottom: 0;
   }
 }

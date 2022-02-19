@@ -10,7 +10,7 @@
 
 .sideBar {
   text-align: center;
-  /* margin-bottom: 33px; */
+  margin-bottom: 30px;
 }
 .sideBarTitle {
   font-family: fontMontserrat;
@@ -20,16 +20,15 @@
   line-height: 38px;
   padding: 11px 25px;
   height: 60px;
-  /* margin-bottom: 30px; */
   color: white-text-color;
   background-color: background-card-color;
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
 }
 .sideBarList {
   display: flex;
-  padding: 30px 19px 30px 28px;
+  padding: 55px 25px;
   /* margin-bottom: 30px; */
-  /* justify-content: space-around; */
+  justify-content: center;
   background-color: white-text-color;
   box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.1);
 }
@@ -38,6 +37,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+.sideBarItem:not(:last-child) {
+  margin-right: 20px;
 }
 .sidebarNumber {
   font-family: fontOpenSans;
@@ -48,35 +51,40 @@
   font-weight: bold;
   font-size: 35px;
   line-height: 38px;
-  width: 63px;
-  height: 63px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 6px;
   color: number-color;
   background-color: card-number-color;
   box-shadow: 4px 4px 8px rgba(36, 42, 55, 0.15);
 }
+
 .sideBarText {
+  display: block;
+  width: 100px;
   font-family: fontMontserrat;
 
   font-style: normal;
   font-weight: 500;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 14px;
+  line-height: 17px;
   /* margin-bottom: 30px; */
 }
 
 @media (min-width: min-width-tablet) {
   .sideBar {
     display: flex;
+    width: 678px;
     align-items: flex-start;
-    padding: 20px 30px 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 23px 45px 15px;
     background-color: white-text-color;
     box-shadow: 0px 2px 3px rgba(9, 30, 63, 0.25);
   }
   .sideBarTitle {
-    margin-top: 3px;
     padding: 11px 27px 11px 28px;
-    margin-right: 19px;
+    margin-right: 78px;
     /* margin: 23px 19px 42px 30px; */
   }
   .sidebarNumber {
@@ -91,10 +99,12 @@
     box-shadow: none;
   }
   .sideBarItem:not(:last-child) {
-    margin-right: 12px;
+    margin-right: 35px;
   }
   .sideBarText {
     width: 100px;
+    font-size: 11px;
+    line-height: 13px;
     /* margin-bottom: 15px; */
   }
 }
@@ -102,24 +112,33 @@
   .sideBar {
     flex-direction: column;
     width: 275px;
-    align-items: center;
+    margin-left: 41px;
+    height: fit-content;
+    padding: 0;
+    margin-bottom: 0;
+    justify-content: start;
   }
   .sideBarTitle {
     margin-top: 0;
     margin-right: 0;
   }
   .sideBarList {
-    padding: 72px 17px 76px;
+    padding: 55px 28px;
     justify-content: space-around;
   }
   .sidebarNumber {
-    width: 66px;
-    height: 66px;
+    font-size: 45px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 14px;
   }
   .sideBarItem:not(:last-child) {
-    margin-right: 22px;
+    margin-right: 20px;
   }
   .sideBarText {
-    width: 60px;
+    font-size: 14px;
+    line-height: 17px;
+    width: 66px;
+    height: 34px;
   }
 }

@@ -1,0 +1,61 @@
+@value fontMontserrat from '../../../styles/variables.module.css';
+@value accent-color from '../../../styles/variables.module.css';
+
+.section__centeredWrap {
+  text-align: left;
+}
+
+.flex__position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn__wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin-bottom: 40px;
+  width: 171px;
+  height: 42px;
+  color: #fff;
+  background-color: accent-color;
+  border: none;
+  font-size: 14px;
+  font-family: fontMontserrat;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .section__centeredWrap {
+    width: 678px;
+  }
+  .flex__position {
+    width: 100%;
+  }
+  .btn {
+    width: 200px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .section__centeredWrap {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    width: 100%;
+  }
+  .flex__position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 886px;
+  }
+  .btn {
+    width: 200px;
+    height: 40px;
+  }
+}

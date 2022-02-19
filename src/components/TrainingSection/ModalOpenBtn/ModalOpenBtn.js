@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as ReactLogoBtnMore } from "../../images/training_page_icons/more.svg";
-import styles from "./TrainingModalBtn.module.css";
+import { ReactComponent as ReactLogoBtnMore } from "../../../images/training_page_icons/more.svg";
+import styles from "./ModalOpenBtn.module.css";
 
 const TrainingModalBtn = () => {
   const onHandleClick = () => {};

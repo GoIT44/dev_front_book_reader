@@ -11,7 +11,7 @@
 import "./App.css";
 
 // import LibraryForm from "../LibraryForm/LibraryForm";
-import TrainingSection from "../TrainingSection/TrainingSection";
+import TrainingPage from "../../pages/TrainingPage/TrainingPage";
 
 function App() {
   // const jwt = useSelector(fetchToken);
@@ -28,7 +28,7 @@ function App() {
       <LibraryModal />
       <Timer />
       <LibraryForm /> */}
-      <TrainingSection />
+      <TrainingPage />
     </div>
   );
 }

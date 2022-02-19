@@ -7,7 +7,6 @@ const BooksListItem = ({
   year = "...",
   pages = "...",
 }) => {
-  // useSelector прочитана книга или нет и менять класы на иконках
   return (
     <li className={style.bookItem}>
       <div className={style.iconWrapper}>
