@@ -10,7 +10,7 @@
 .timersWrapper{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 };
 
 .timer{
@@ -83,13 +83,16 @@
     .timersWrapper{
         flex-direction: row;
         justify-content: center;
-        margin-bottom: 34px
+        /* margin-bottom: 34px */
     };
     .timer{
         margin-bottom: 0;
     }
     .timer:first-child{
         margin-right: 30px;
+    }
+    .timer:not(:last-child){
+        margin-bottom: 0;
     }
     .timerWrapper{
         width: 290px;
