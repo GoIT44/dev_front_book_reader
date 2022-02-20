@@ -1,0 +1,42 @@
+@value fontMontserrat from '../../styles/variables.module.css';
+@value main-text-color from '../../styles/variables.module.css';
+@value secondary-text-color from '../../styles/variables.module.css';
+@value min-width-tablet from '../../styles/variables.module.css';
+@value max-width-desktop from '../../styles/variables.module.css';
+
+
+.bookItemTitle{
+    display: none;
+}
+@media (min-width: min-width-tablet) {
+    .bookDescrList{
+        display: flex;
+        /* justify-content: space-between; */
+    }
+    .bookItemTitle{
+        display: block;
+    }
+    .subTitle{
+        font-family: fontMontserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 38px;
+        color: secondary-text-color;
+    }
+    .bookDescrItem{
+        /* width: 39%; */
+    }
+    .bookDescrItem:nth-child(1){
+        width: 39%;
+    }
+    .bookDescrItem:nth-child(2){
+        width: 28%;
+    }
+    .bookDescrItem:nth-child(3){
+        width: 16%;
+    }
+    .bookDescrItem:nth-child(4){
+        width: 17%;
+    }
+}

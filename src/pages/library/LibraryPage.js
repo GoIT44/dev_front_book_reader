@@ -17,9 +17,9 @@ const LibraryPage =() => {
     const isAuth = useSelector(fetchToken);
     console.log("Is auth" , isAuth);
 
-    const booksWillRead = useSelector(getWillRead);
-    const bookNowRead = useSelector(getNowRead);
-    const bookFinished = useSelector(getFinishRead);
+    // const booksWillRead = useSelector(getWillRead);
+    // const bookNowRead = useSelector(getNowRead);
+    // const bookFinished = useSelector(getFinishRead);
     // const isTraining = useSelector(getUserTraining);
 
     useEffect(() => {
