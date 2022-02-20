@@ -30,6 +30,9 @@ const Navbar = () => {
           <HomeButton />
         </button>
         <span className={styles.borderLine}></span>
+        <p className={styles.userMonogramMob}>
+          <span className={styles.userSymbol}>N</span>
+        </p>
         <button className={styles.logoutButton} onClick={logoutButton}>
           Вихід
         </button>
