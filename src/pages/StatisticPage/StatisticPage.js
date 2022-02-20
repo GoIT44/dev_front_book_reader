@@ -5,21 +5,24 @@ import ResultBox from "../../components/ResultBox/ResultBox";
 import StatisticChart from "../../components/StatisticChart/StatisticChart";
 import style from "./StatisticPage.module.css";
 import Booklist from "../../components/BookList/Booklist";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { getTraining } from '../../redux/resultTraining/resultTrainingOperations';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCurrentTraining } from "../../services/training";
 import { getTrainingOperations } from "../../redux/training/trainingOperations";
+import { fetchToken } from "../../redux/auth/auth-selectors";
 
 const StatisticPage = () => {
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //     dispatch(getTrainingOperations());
-  // }, [dispatch])
+  const dispatch = useDispatch()
+  const isAuth = useSelector(fetchToken);
+  useEffect(() => {
+    if(isAuth) dispatch(getTrainingOperations());
+  }, [dispatch])
+
   return (
     <section>
       <Container>
-        {/* <div className={style.grids}>
+        <div className={style.grids}>
                     <div className={style.gridsTimer}>
                         <Timer/>
                         <div className={style.wrapperBookList}>
@@ -38,7 +41,7 @@ const StatisticPage = () => {
                     <div className={style.gridsResultBox}>
                         <ResultBox/>
                     </div>
-                </div> */}
+                </div>
       </Container>
     </section>
   );

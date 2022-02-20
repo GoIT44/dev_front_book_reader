@@ -3,16 +3,14 @@ import iconSprite from '../../../images/icons-sprite.svg'
 import { useSelector } from 'react-redux';
 import { getTotalBook, readBook } from '../../../redux/training/trainingSelectors';
 
-const BooksListItem = ({title, author, year, pages, id}) => {
-    const booksTraining = useSelector(getTotalBook);
-    const readBookNow = booksTraining.find(item=>item.id===id)
-    console.log(readBookNow)
-    // useSelector прочитана книга или нет и менять класы на иконках
+const BooksListItem = ({title, author, year, pages, id, read}) => {
+    // const booksTraining = useSelector(getTotalBook);
+    // const readBookNow = booksTraining.find(item=>item.id===id)
     return (
         
         <li key={`book${title}`} className={style.bookItem}>
-            <div className={readBookNow.read ? style.iconWrapperRead : style.iconWrapper}>
-                <svg className={readBookNow.read ? style.iconBookListRead : style.iconBookList} width="12" height="8">
+            <div className={read ? style.iconWrapperRead : style.iconWrapper}>
+                <svg className={read ? style.iconBookListRead : style.iconBookList} width="12" height="8">
                     <use xlinkHref={`${iconSprite}#icon-done`} />
                 </svg>
             </div>

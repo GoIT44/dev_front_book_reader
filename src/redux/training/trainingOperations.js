@@ -6,7 +6,7 @@ export const getTrainingOperations = () => async (dispatch) => {
     dispatch(getTrainingRequest());
     try {
         const training = await getCurrentTraining()
-        // console.log(training)
+        console.log(training)
         dispatch(getTrainingSuccess(training))
     } catch (error) {
         dispatch(getTrainingError())
