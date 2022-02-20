@@ -10,6 +10,8 @@ import { token } from "../../services/auth";
 // import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
+import LibraryPage from '../../pages/LibraryPage/LibraryPage'
+
 import LibraryForm from "../LibraryForm/LibraryForm";
 
 function App() {
@@ -22,13 +24,12 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <div className="App">
-        <Navbar />
-        <Routes />
-        <LibraryModal />
-        <Timer />
-        <LibraryForm />
-      </div>
+      <Navbar />
+      <Routes />
+      <LibraryModal />
+      <Timer />
+      <LibraryForm />
+      {jwt && <LibraryPage/>}
     </div>
   );
 }
