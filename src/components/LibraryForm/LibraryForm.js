@@ -20,32 +20,30 @@ const getYear = () => {
 
 //   year: Joi.number().min(1500).max(getYear()).required(),
 
-//   numbOfPages: Joi.number().min(1).required(),
+//   numberOfPages: Joi.number().min(1).required(),
 // });
 
 const schema = Yup.object().shape({
-  bookTitle: Yup.string()
-      .min(2)
-      .required(),
-  author: Yup.string().required(),
-  publicDate: Yup.number()
-      .min(1500)
-      .max(getYear())
-      .required()
-      .typeError(),
-  numbOfPages: Yup.number()
-      .min(1)
-      .required()
-      .typeError(),
+  title: Yup.string()
+      .min(2, 'Занадто коротка назва!')
+      .required('Заповніть поле "Назва книги"'),
+  author: Yup.string().required('Заповніть поле "Автор книги"'),
+  year: Yup.number()
+      .min(1500, 'Min значення 1500')
+      .max(getYear(), 'Не більш, ніж поточний рік')
+      .required('Заповніть поле "Рік випуску"')
+      .typeError('Введіть число'),
+  numberOfPages: Yup.number()
+      .min(1, 'Min значення 1')
+      .required('Заповніть поле "Кількість сторінок"')
+      .typeError('Введіть число'),
 });
 
 const initialState = {
-  bookTitle: "",
+  title: "",
   author: "",
-  publicDate: "",
-  // year: "",
-  numbOfPages: ""
-  
+  year: "",
+  numberOfPages: "",
 };
 
 
@@ -79,14 +77,14 @@ const LibraryForm = () => {
                       className={styles.bookFormInput}
                       type="text"
                       value={values.title}
-                      name="bookTitle"
+                      name="title"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="bookTitle"
+                      name="title"
                     />
                   </div>
                 </label>
@@ -115,15 +113,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.publicDate}
-                      name="publicDate"
+                      value={values.year}
+                      name="year"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="publicDate"
+                      name="year"
                     />
                   </div>
                 </label>
@@ -136,15 +134,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.numbOfPages}
-                      name="numbOfPages"
+                      value={values.numberOfPages}
+                      name="numberOfPages"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="numbOfPages"
+                      name="numberOfPages"
                     />
                   </div>
                 </label>

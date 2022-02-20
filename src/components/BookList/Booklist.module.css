@@ -9,6 +9,10 @@
     display: none;
 }
 @media (min-width: min-width-tablet) {
+    .bookList{
+        height: 220px;
+        overflow-y: scroll;
+    }
     .bookDescrList{
         display: flex;
         /* justify-content: space-between; */
@@ -38,5 +42,10 @@
     }
     .bookDescrItem:nth-child(4){
         width: 17%;
+    }
+}
+@media (min-width: max-width-desktop) {
+    .bookList{
+        height: 214px;
     }
 }
