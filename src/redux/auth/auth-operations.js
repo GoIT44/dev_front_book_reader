@@ -28,6 +28,8 @@ const logIn = createAsyncThunk(
     try {
       const data = await onLogIn(credentials);
       token.set(data.data.token);   
+      localStorage.setItem('tokena', data.data.token)
+
 
       return data;
     } catch (error) {
