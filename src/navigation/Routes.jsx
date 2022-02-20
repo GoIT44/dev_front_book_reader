@@ -5,7 +5,7 @@ import PublicRoute from "../components/Routes/PublicRoutes";
 import InfoPage from "../pages/InfoPage";
 import useMedia from "../components/hooks";
 import GooglePage from "../pages/Google-auth/GooglePage";
-import LibraryPage from "../pages/library/LibraryPage";
+import LibraryPage from "../pages/LibraryPage/LibraryPage";
 import StatisticPage from "../pages/StatisticPage/StatisticPage";
 
 const LoginPage = lazy(() => import("../pages/LoginPage"));
