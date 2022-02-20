@@ -7,6 +7,8 @@ import { fetchToken } from "../../redux/auth/auth-selectors";
 import { token } from "../../services/auth";
 import "./App.css";
 
+import LibraryPage from '../../pages/LibraryPage/LibraryPage'
+
 import LibraryForm from "../LibraryForm/LibraryForm";
 
 function App() {
@@ -14,13 +16,12 @@ function App() {
   token.set(jwt);
   return (
     <div className="App">
-      <div className="App">
-        <Navbar />
-        <Routes />
-        <LibraryModal />
-        <Timer />
-        <LibraryForm />
-      </div>
+      <Navbar />
+      <Routes />
+      <LibraryModal />
+      <Timer />
+      <LibraryForm />
+      {jwt && <LibraryPage/>}
     </div>
   );
 }
