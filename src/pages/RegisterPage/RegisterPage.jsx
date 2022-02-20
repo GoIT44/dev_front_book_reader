@@ -7,6 +7,8 @@ import InfoPage from "../InfoPage";
 import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
 import useMedia from "../../components/hooks";
+import { useLocation, useHistory } from "react-router-dom";
+import { token } from "../../services/auth";
 
 const initialState = {
   email: "",
@@ -18,22 +20,27 @@ const RegisterForm = () => {
   const isDesc = useMedia.useMedia().DESK;
   const isTabl = useMedia.useMedia().TABL;
   const dispatch = useDispatch();
+  const history = useHistory();
   const onSubmit = (values) => {
     if (values.password === values.passwordCheck) {
-      return dispatch(
+      dispatch(
         authOperations.register({
           email: data.email,
           password: data.password,
           name: data.name,
         })
       );
+      history.push("/login");
+      return;
     }
     Notify.failure("Password doesn't match");
   };
-  // const googleAuth = () => {
-  //   dispatch(authOperations.googleIn());
-  // };
+
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
+  const location = useLocation();
+  const tokens = location.search.slice(1).split("=")[1];
+  token.set(tokens);
+
   return (
     <>
       <div className={styles.container}>
@@ -63,6 +70,7 @@ const RegisterForm = () => {
                   required
                   placeholder="..."
                   value={data.name}
+                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 />
               </label>
               <label className={styles.registerInput}>
@@ -78,6 +86,7 @@ const RegisterForm = () => {
                   required
                   placeholder="your@email.com"
                   value={data.email}
+                  pattern="[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*"
                 />
               </label>
               <label className={styles.registerInput}>
@@ -93,6 +102,9 @@ const RegisterForm = () => {
                   required
                   placeholder="..."
                   value={data.password}
+                  // minlength="8"
+                  // pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).+"
+                  title="Введите минимум 8 символов, обязательно должны присутствовать цифры и буквы разного регистра"
                 />
               </label>
               <label className={styles.registerInput}>
@@ -107,9 +119,17 @@ const RegisterForm = () => {
                   required
                   placeholder="..."
                   value={data.passwordCheck}
+                  // pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).+"
+                  title="Введите минимум 8 символов, обязательно должны присутствовать цифры и буквы разного регистра"
                 />
               </label>
-              <button className={styles.registerBtn}>
+              <button
+                type="submit"
+                className={styles.registerBtn}
+                // onClick={() => {
+                //   history.push("/login");
+                // }}
+              >
                 <p className={styles.registerBtnText}>Зареєструватися</p>
               </button>
               <p className={styles.authText}>

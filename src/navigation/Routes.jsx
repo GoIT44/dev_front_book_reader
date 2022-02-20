@@ -1,11 +1,13 @@
 import { Suspense, lazy } from "react";
-import { Route, Switch } from "react-router-dom";
-// import PrivateRoute from "../components/Routes/PrivateRoutes";
+import { Switch } from "react-router-dom";
+import PrivateRoute from "../components/Routes/PrivateRoutes";
 import PublicRoute from "../components/Routes/PublicRoutes";
 import InfoPage from "../pages/InfoPage";
 import useMedia from "../components/hooks";
 import GooglePage from "../pages/Google-auth/GooglePage";
+import LibraryPage from "../pages/LibraryPage/LibraryPage";
 import StatisticPage from "../pages/StatisticPage/StatisticPage";
+import TrainingPage from "../pages/TrainingPage/TrainingPage";
 
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage"));
@@ -27,24 +29,22 @@ const Routes = () => {
         <PublicRoute restricted exact path="/register" redirectTo="/login">
           <RegisterPage />
         </PublicRoute>
-        <PublicRoute restricted exact path="/login">
+        <PublicRoute restricted exact path="/login" redirectTo="/library">
           <LoginPage />
         </PublicRoute>
-        <PublicRoute restricted exact path="/google-auth">
-          <LoginPage />
-        </PublicRoute>
-        <PublicRoute path="http://localhost:3000/google-auth1/">
+        <PublicRoute path="/google-auth" redirectTo="/library">
           <GooglePage />
         </PublicRoute>
-        {/* <PrivateRoute exact path="/" redirectTo="/login">
-         <></>
+        <PrivateRoute exact path="/library" redirectTo="/login">
+          <LibraryPage />
         </PrivateRoute>
-        <PrivateRoute exact path="" redirectTo="/login">
-        <></>
-        </PrivateRoute> */}
-        <Route path="/statistic">
+        {/* <PrivateRoute path="/training"> */}
+          {/* {isTraining ? <StatisticPage/> : <TrainingPage/>} */}
+          {/* <TrainingPage/>> */}
+        {/* </PrivateRoute> */}
+        <PrivateRoute exact path="/statistic" redirectTo="/login">
           <StatisticPage />
-        </Route>
+        </PrivateRoute>
       </Switch>
     </Suspense>
   );

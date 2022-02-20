@@ -1,58 +1,46 @@
 import React, { useState } from "react";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
 import * as Yup from 'yup';
 
-
-import { addBookOperation } from '../../redux/operations/bookOperation';
-
+import { addBookOperation, getUsersBooksOperation } from '../../redux/operations/bookOperation';
 
 const getYear = () => {
   return new Date().getFullYear();
 };
 
-// const schema = Joi.object({
-//   title: Joi.string().min(2).required(),
-
-//   author: Joi.string().min().required(),
-
-//   year: Joi.number().min(1500).max(getYear()).required(),
-
-//   numberOfPages: Joi.number().min(1).required(),
-// });
-
 const schema = Yup.object().shape({
-  title: Yup.string()
-      .min(2, 'Занадто коротка назва!')
-      .required('Заповніть поле "Назва книги"'),
-  author: Yup.string().required('Заповніть поле "Автор книги"'),
-  year: Yup.number()
-      .min(1500, 'Min значення 1500')
-      .max(getYear(), 'Не більш, ніж поточний рік')
-      .required('Заповніть поле "Рік випуску"')
-      .typeError('Введіть число'),
-  numberOfPages: Yup.number()
-      .min(1, 'Min значення 1')
-      .required('Заповніть поле "Кількість сторінок"')
-      .typeError('Введіть число'),
+  bookTitle: Yup.string()
+  .min(2, 'Занадто коротка назва!')
+  .required('Заповніть поле "Назва книги"'),
+  author: Yup.string().min(2, 'Занадто коротка назва!').required('Заповніть поле "Автор книги"'),
+  publicDate: Yup.number()
+  .min(1500, 'Min значення 1500')
+  .max(getYear(), 'Не більш, ніж поточний рік')
+  .required('Заповніть поле "Рік випуску"')
+  .typeError('Введіть число'),
+  numbOfPages: Yup.number()
+  .min(1, 'Min значення 1')
+  .required('Заповніть поле "Кількість сторінок"')
+  .typeError('Введіть число'),
 });
 
 const initialState = {
   title: "",
   author: "",
-  year: "",
-  numberOfPages: "",
+  publicDate: "",
+  numbOfPages: ""
 };
-
 
 const LibraryForm = () => {
   const dispatch = useDispatch();
   const [state] = useState({ ...initialState });
 
   const onHandlerSubmit = values => {
-    dispatch(addBookOperation(values));
+    const book = {...values, publicDate: values.publicDate.toString()}
+    dispatch(addBookOperation(book));
+    dispatch(getUsersBooksOperation())
   };
 
   return (
@@ -64,7 +52,7 @@ const LibraryForm = () => {
           onHandlerSubmit({ ...values });
 
           actions.resetForm({ ...state });
-      }}
+        }}
       >
         {({ values }) => (
           <div className={styles.formWrapper}>
