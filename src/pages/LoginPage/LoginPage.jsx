@@ -4,8 +4,6 @@ import styles from "../LoginPage/LoginPage.module.css";
 import { useDispatch } from "react-redux";
 import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { token } from "../../services/auth";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const initialState = {
@@ -24,13 +22,7 @@ const LoginForm = () => {
     history.push("/library");
   };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
-  const location = useLocation();
   const history = useHistory();
-  const tokens = location.search.slice(1).split("=")[1];
-  // console.log(location);
-  // console.log(window.location);
-  // console.log(tokens);
-  token.set(tokens);
   return (
     <>
       <div className={styles.container}>

@@ -30,6 +30,7 @@ export const authSlice = createSlice({
       state.token = payload.data.token;
       state.userId = payload.id;
       state.userName = payload.data.UserName;
+      state.isRegister = true;
     },
     [authOperations.logIn.rejected](state, { payload }) {
       state.error = payload;
@@ -40,6 +41,17 @@ export const authSlice = createSlice({
     },
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
+    },
+    // [authOperations.googleLogin.fulfilled](state, { payload }) {
+    //   state.token = payload.data.token;
+    // },
+    // [authOperations.googleLogin.rejected](state, { payload }) {
+    //   state.error = payload;
+    // },
+
+    [authOperations.googleAuth](state, { payload }) {
+      state.token = payload.token;
+      state.isRegister = true;
     },
   },
 });

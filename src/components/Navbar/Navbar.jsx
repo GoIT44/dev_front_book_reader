@@ -21,7 +21,9 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div>
-        <p className={styles.navbarLogo}>BR</p>
+        <Link to="/training" className={styles.navbarLogo}>
+          BR
+        </Link>
       </div>
       {isAuth && (
         <>
