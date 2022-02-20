@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to="/library" className={styles.bookButton}>
               <BookButton />
             </Link>
-            <Link to="/training" className={styles.homeButton}>
+            <Link to="/statistic" className={styles.homeButton}>
               <HomeButton />
             </Link>
             <span className={styles.borderLine}></span>

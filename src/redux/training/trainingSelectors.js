@@ -3,6 +3,6 @@ export const totalPages = (state) => (state.training.training.training.totalPage
 export const pagesResultRead = (state) => (state.training.training.training.pagesResult);
 export const getTotalBook = (state) =>(state.training.training.training.trainingBooks);
 export const readBook = (state) =>(state.training.training.training.trainingBooks);
-export const endTraining = (state) =>(state.training.training.training.endTrain);
+export const endTraining = (state) =>(state.training.training.training);
 export const startTraining = (state) =>(state.training.training.training.startTrain);
-export const getTrainingBooks = (state) =>(state.training.training.books)
+export const getTraining= (state) =>(state.training.training.training)

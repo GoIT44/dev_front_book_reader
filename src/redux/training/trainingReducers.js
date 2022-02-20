@@ -2,7 +2,7 @@ import { createReducer, combineReducers } from "@reduxjs/toolkit";
 import { addTrainingResultError, addTrainingResultRequest, addTrainingResultSuccess, getTrainingError, getTrainingRequest, getTrainingResultError, getTrainingResultRequest, getTrainingResultSuccess, getTrainingSuccess } from "./trainingActions";
 
 const training = createReducer({}, {
-    [getTrainingSuccess]: (_, action) => ({...action.payload}),
+    [getTrainingSuccess]: (_, action) => action.payload,
     [addTrainingResultSuccess]: (state, action) =>  action.payload,
     [getTrainingResultSuccess]: (_, action) => action.payload,
 })
