@@ -26,10 +26,12 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes />
-      <LibraryModal />
+      {/* <LibraryModal /> */}
       <Timer />
-      <LibraryForm />
-      {jwt && <LibraryPage/>}
+      {/* <LibraryForm /> */}
+      {/* {jwt && <LibraryPage/>} */}
+      {<LibraryPage/>}
+
     </div>
   );
 }

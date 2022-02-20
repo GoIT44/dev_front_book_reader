@@ -1,3 +1,4 @@
+import { circularProgressClasses } from "@mui/material";
 import axios from "axios";
 
 export const instance = axios.create({
@@ -6,7 +7,7 @@ export const instance = axios.create({
 
 export const token = {
   set(token) {
-    localStorage.setItem('token', token)
+    localStorage.setItem("token", token)
     instance.defaults.headers.authorization = `Bearer ${token}`;
   },
   unset() {

@@ -11,13 +11,6 @@ import {
     getUsersBooksError,
 } from '../actions/userLibraryAction';
 
-import {
-    changeBookSuccess,
-    changeBookRequest,
-    changeBookError,
-} from '../actions/userLibraryAction';
-
-
 const addBookOperation = book => async dispatch => {
     dispatch(addNewBookRequest());
     try {

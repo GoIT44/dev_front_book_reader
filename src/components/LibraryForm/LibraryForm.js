@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch} from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
 import * as Yup from 'yup';
-
 
 import { addBookOperation } from '../../redux/operations/bookOperation';
 
@@ -13,39 +11,27 @@ const getYear = () => {
   return new Date().getFullYear();
 };
 
-// const schema = Joi.object({
-//   title: Joi.string().min(2).required(),
-
-//   author: Joi.string().min().required(),
-
-//   year: Joi.number().min(1500).max(getYear()).required(),
-
-//   numbOfPages: Joi.number().min(1).required(),
-// });
-
 const schema = Yup.object().shape({
   bookTitle: Yup.string()
-      .min(2)
-      .required(),
-  author: Yup.string().required(),
+  .min(2, 'Занадто коротка назва!')
+  .required('Заповніть поле "Назва книги"'),
+  author: Yup.string().required('Заповніть поле "Автор книги"'),
   publicDate: Yup.number()
-      .min(1500)
-      .max(getYear())
-      .required()
-      .typeError(),
+  .min(1500, 'Min значення 1500')
+  .max(getYear(), 'Не більш, ніж поточний рік')
+  .required('Заповніть поле "Рік випуску"')
+  .typeError('Введіть число'),
   numbOfPages: Yup.number()
-      .min(1)
-      .required()
-      .typeError(),
+  .min(1, 'Min значення 1')
+  .required('Заповніть поле "Кількість сторінок"')
+  .typeError('Введіть число'),
 });
 
 const initialState = {
   bookTitle: "",
   author: "",
   publicDate: "",
-  // year: "",
   numbOfPages: ""
-  
 };
 
 
@@ -54,7 +40,8 @@ const LibraryForm = () => {
   const [state] = useState({ ...initialState });
 
   const onHandlerSubmit = values => {
-    dispatch(addBookOperation(values));
+    const book = {...values, publicDate: values.publicDate.toString()}
+    dispatch(addBookOperation(book));
   };
 
   return (
