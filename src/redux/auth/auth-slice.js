@@ -8,6 +8,8 @@ const initialState = {
   token: "",
   error: null,
   userId: null,
+  userName: "User",
+  isRegister: false,
 };
 
 export const authSlice = createSlice({
@@ -17,14 +19,17 @@ export const authSlice = createSlice({
     [authOperations.register.fulfilled](state, { payload }) {
       state.user.email = payload.email;
       state.token = payload.token;
+      state.isRegister = true;
     },
     [authOperations.register.rejected](state, { payload }) {
       state.error = payload;
+      state.isRegister = false;
     },
     [authOperations.logIn.fulfilled](state, { payload }) {
       state.user = payload.user;
       state.token = payload.data.token;
       state.userId = payload.id;
+      state.userName = payload.data.UserName;
     },
     [authOperations.logIn.rejected](state, { payload }) {
       state.error = payload;
@@ -36,17 +41,6 @@ export const authSlice = createSlice({
     [authOperations.logOut.rejected](state, { payload }) {
       state.error = payload;
     },
-    // [authOperations.CheckedIsLoginCurrentUser.fulfilled](state, { payload }) {
-    //   state.user.email = payload.data.email;
-    //   state.userId = payload.data.id;
-    // },
-    // [authOperations.CheckedIsLoginCurrentUser.rejected](state, { payload }) {
-    //   state.user = initialState.user;
-    //   state.token = "";
-    // },
-    // [authOperations.googleIn.fulfilled](state, { payload }) {
-    //   // state.token = payload.data.token;
-    // },
   },
 });
 

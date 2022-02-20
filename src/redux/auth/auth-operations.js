@@ -27,20 +27,8 @@ const logIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const data = await onLogIn(credentials);
-      token.set(data.accessToken);
-      return data;
-    } catch (error) {
-      return rejectWithValue(Notify.failure(error.response.data.message));
-    }
-  }
-);
+      token.set(data.data.token);   
 
-const googleIn = createAsyncThunk(
-  "auth/google",
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const data = await googleAuth(credentials);
-      token.set(data.accessToken);
       return data;
     } catch (error) {
       return rejectWithValue(Notify.failure(error.response.data.message));
@@ -60,29 +48,9 @@ const logOut = createAsyncThunk(
   }
 );
 
-// const CheckedIsLoginCurrentUser = createAsyncThunk(
-//   "auth/checked",
-//   async (_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue();
-//     }
-//     token.set(persistedToken);
-//     try {
-//       const data = await CheckedCurrentUser(persistedToken);
-//       return data;
-//     } catch (err) {
-//       return thunkAPI.rejectWithValue();
-//     }
-//   }
-// );
-
 const authOperations = {
   register,
   logIn,
   logOut,
-  // CheckedIsLoginCurrentUser,
-  googleIn,
 };
 export default authOperations;

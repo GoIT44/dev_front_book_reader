@@ -6,6 +6,7 @@ import GoodleLogo from "../../images/auth/google_icon.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { token } from "../../services/auth";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const initialState = {
   email: "",
@@ -14,16 +15,21 @@ const initialState = {
 const LoginForm = () => {
   const dispatch = useDispatch();
   const onSubmit = () => {
-    return dispatch(
+    dispatch(
       authOperations.logIn({
         email: data.email,
         password: data.password,
       })
     );
+    history.push("/library");
   };
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
   const location = useLocation();
+  const history = useHistory();
   const tokens = location.search.slice(1).split("=")[1];
+  // console.log(location);
+  // console.log(window.location);
+  // console.log(tokens);
   token.set(tokens);
   console.log(location)
   return (
@@ -56,6 +62,7 @@ const LoginForm = () => {
                   required
                   placeholder="your@email.com"
                   value={data.email}
+                  pattern="[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*"
                 />
               </label>
               <label className={styles.registerInput}>
@@ -70,10 +77,16 @@ const LoginForm = () => {
                   required
                   placeholder="Пароль"
                   value={data.password}
+                  pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).+"
                 />
               </label>
-              <button className={styles.registerBtn}>
-                <p className={styles.registerBtnText}>Увійти</p>
+              <button
+                className={styles.registerBtn}
+                onClick={() => {
+                  onSubmit();
+                }}
+              >
+                Увійти
               </button>
               <p className={styles.authText}>
                 <Link to="/register" className={styles.authTextEnter}>
