@@ -6,7 +6,6 @@ import styles from "./TrainingPage.module.css";
 const TrainingPage = () => {
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <TrainingSection />
       </div>

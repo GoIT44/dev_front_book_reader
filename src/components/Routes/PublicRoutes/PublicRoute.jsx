@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-// import useAuth from "../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 
 const PublicRoute = ({
   children,
@@ -7,12 +7,11 @@ const PublicRoute = ({
   redirectTo = "/",
   ...routeProps
 }) => {
-  // const isLoggedIn = useAuth();
-  // const shouldRedirect = isLoggedIn && restricted;
+  const isLoggedIn = useAuth();
+  const shouldRedirect = isLoggedIn && restricted;
   return (
     <Route {...routeProps}>
-      {children}
-      {/* {shouldRedirect ? <Redirect to={redirectTo} /> : children} */}
+      {shouldRedirect ? <Redirect to={redirectTo} /> : children}
     </Route>
   );
 };
