@@ -5,12 +5,14 @@ import LibraryModal from "../LibraryModal";
 import { useSelector } from "react-redux";
 import { fetchToken } from "../../redux/auth/auth-selectors";
 import { token } from "../../services/auth";
+import Spinner from "../Spinner/Spinner";
 // import { useDispatch } from "react-redux";
 // import { useEffect } from "react";
 // import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
 import LibraryForm from "../LibraryForm/LibraryForm";
+import LibraryList from "../Library/LibraryList/LibraryList";
 
 function App() {
   const jwt = useSelector(fetchToken);
@@ -24,9 +26,11 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes />
+      <Spinner/>
       <LibraryModal />
       <Timer />
       <LibraryForm />
+      <LibraryList/>
     </div>
   );
 }

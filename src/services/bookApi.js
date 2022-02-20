@@ -10,3 +10,11 @@ export const addBook = (book) => {
             throw new Error(err.response.data.message);
         });
 }
+//
+export const getAllBooks = async () => (await axios.get('/books')).data;
+
+export const formatError = ({ name, message, response }) => ({
+    name,
+    message,
+    status: response?.status,
+  });
