@@ -1,0 +1,110 @@
+@value fontMontserrat from '../../../../styles/variables.module.css';
+@value main-text-color from '../../../../styles/variables.module.css';
+@value secondary-text-color from '../../../../styles/variables.module.css';
+@value min-width-tablet from '../../../../styles/variables.module.css';
+@value max-width-desktop from '../../../../styles/variables.module.css';
+@value background-primary-color from '../../../../styles/variables.module.css';
+
+.bookItem {
+  padding-top: 20px;
+  border-top: 1px solid #e0e5eb;
+}
+.bookDescrList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 13px;
+}
+.bookDescrItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.titleBook {
+  font-family: fontMontserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: main-text-color;
+}
+.bookDesc {
+  composes: titleBook;
+  display: block;
+  line-height: 12px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.subTitle {
+  width: 50%;
+  font-family: fontMontserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: secondary-text-color;
+  text-align: left;
+}
+.titleBook > .subTitle {
+  display: none;
+}
+
+.btnDelete {
+  border: none;
+  background-color: background-primary-color;
+}
+.bookItem {
+  display: flex;
+}
+
+@media (min-width: min-width-tablet) {
+  .bookDescrList {
+    display: flex;
+    flex-direction: row;
+  }
+  .subTitle {
+    display: none;
+  }
+  .bookDescrItem {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .bookDescrItem:first-child {
+    width: 36%;
+  }
+  .bookDescrItem:nth-child(2) {
+    width: 28%;
+  }
+  .bookDescrItem:nth-child(3) {
+    width: 20%;
+  }
+  .bookDescrItem:nth-child(4) {
+    width: 14%;
+  }
+  .titleBook {
+    margin-bottom: 0;
+  }
+  .bookItem {
+    padding: 12px 0;
+  }
+  .bookDesc {
+    font-size: 14px;
+    text-align: left;
+  }
+  .titleBook {
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+}
+
+@media (min-width: max-width-desktop) {
+  .bookItemTitle {
+    display: flex;
+    flex-direction: row;
+  }
+  .bookDeskList {
+    justify-content: space-between;
+  }
+}

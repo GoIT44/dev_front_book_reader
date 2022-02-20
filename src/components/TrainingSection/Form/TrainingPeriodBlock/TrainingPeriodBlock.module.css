@@ -1,0 +1,46 @@
+.dateInputBlock {
+  width: auto;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.input__list {
+  text-align: center;
+}
+
+.input__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contactForm__btn {
+  font-size: 14px;
+  width: 120px;
+  height: 30px;
+  margin-top: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .input__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input__item:not(:first-child) {
+    margin-left: 45px;
+  }
+
+  .bookSelect {
+    width: 482px;
+    contain: content;
+  }
+
+  .select__wrap {
+    width: 482px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .input__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

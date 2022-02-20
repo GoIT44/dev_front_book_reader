@@ -1,0 +1,13 @@
+.btn__back {
+  width: 24px;
+  height: 12px;
+  margin: 0 0 25px 0;
+  border: none;
+  cursor: pointer;
+  background-color: #f6f7fb;
+}
+
+.svg__wrap {
+  width: 20px;
+  height: 20px;
+}

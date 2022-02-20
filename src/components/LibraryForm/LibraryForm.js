@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
-import * as Yup from 'yup';
+// import * as Joi from "joi";
+import * as Yup from "yup";
 
-
-import { addBookOperation } from '../../redux/operations/bookOperation';
-
+import { addBookOperation } from "../../redux/operations/bookOperation";
 
 const getYear = () => {
   return new Date().getFullYear();
@@ -46,12 +44,11 @@ const initialState = {
   numberOfPages: "",
 };
 
-
 const LibraryForm = () => {
   const dispatch = useDispatch();
   const [state] = useState({ ...initialState });
 
-  const onHandlerSubmit = values => {
+  const onHandlerSubmit = (values) => {
     dispatch(addBookOperation(values));
   };
 
@@ -64,7 +61,7 @@ const LibraryForm = () => {
           onHandlerSubmit({ ...values });
 
           actions.resetForm({ ...state });
-      }}
+        }}
       >
         {({ values }) => (
           <div className={styles.formWrapper}>
