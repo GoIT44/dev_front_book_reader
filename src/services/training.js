@@ -1,7 +1,7 @@
 import axios from "axios";
 
 axios.defaults.baseURL = 'https://api-br.herokuapp.com/api';
-axios.defaults.headers.authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMGVkMGYxNjM0ZTE0ZDVjZjgxOGMyOCIsImlhdCI6MTY0NTMxMDUzMCwiZXhwIjoxNjQ1MzQ2NTMwfQ.ZqX6-Wgg2mg7MrO5QpVWsI0YtnqHnVIfvVciPE5Ieqg`;
+axios.defaults.headers.authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMGVkMGYxNjM0ZTE0ZDVjZjgxOGMyOCIsImlhdCI6MTY0NTM1NDgzNCwiZXhwIjoxNjQ1MzkwODM0fQ.enPggKiWbFIjzMZVXQszrtgpYXFmBT7YE9RkAG8U2hY`;
 
 export async function getCurrentTraining() {
     const { data } = await axios.get("/training");

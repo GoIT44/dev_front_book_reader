@@ -16,7 +16,7 @@ const ResultBox = () => {
     // })
     const resultItem = useSelector(getResultSelector)
     const [dateResult, setDateResult] = useState(initialDate.dateResult);
-    const [pagesResult, setPagesResult] = useState(null)
+    const [pagesResult, setPagesResult] = useState("")
     
     const dispatch = useDispatch()
     const onChange = (e)=>{
