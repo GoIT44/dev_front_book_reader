@@ -9,7 +9,6 @@ import "./App.css";
 
 import TrainingPage from "../../pages/TrainingPage/TrainingPage";
 import LibraryPage from "../../pages/LibraryPage/LibraryPage";
-
 import LibraryForm from "../LibraryForm/LibraryForm";
 
 function App() {
@@ -20,10 +19,9 @@ function App() {
       <Navbar />
       <Routes />
       <LibraryModal />
-      <Timer />
       <LibraryForm />
-      {jwt && <LibraryPage />}
       <TrainingPage />
+      {jwt && <LibraryPage />}
     </div>
   );
 }

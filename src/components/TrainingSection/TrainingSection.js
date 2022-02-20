@@ -14,7 +14,7 @@ const TrainingSection = () => {
     <>
       <section className={styles.section}>
         <StartTrainingForm />
-        <StatisticChart />
+        {/* <StatisticChart /> */}
         {MOB && <ModalOpenBtn />}
       </section>
     </>

@@ -12,16 +12,33 @@ import {
 import { Line } from "react-chartjs-2";
 import style from "./StatisticChart.module.css";
 import { useSelector } from "react-redux";
-import { getAmountPage } from "../../redux/resultTraining/resultTrainingSelectors";
+import {
+  endTraining,
+  getAmountPage,
+  getResultSelector,
+  pagesResultRead,
+  startTraining,
+  totalPages,
+} from "../../redux/training/trainingSelectors";
+// import { getAmountPage } from '../../redux/resultTraining/resultTrainingSelectors';
 
 const StatisticChart = () => {
-  const [arrPageOfDay, setArrPageOfDay] = useState([]);
+  const statisticRes = useSelector(getResultSelector).map((res) =>
+    Number(res.pagesResult)
+  );
+  const [arrPageOfDay, setArrPageOfDay] = useState(statisticRes);
   const [arrAveragePageOfDay, setArrAveragePageOfDay] = useState([]);
-  const statisticRes = useSelector(getAmountPage);
-  useEffect(() => {
-    setArrPageOfDay(statisticRes);
-    setArrAveragePageOfDay((prev) => [...prev, perDayPage]);
-  }, [statisticRes]);
+  console.log(statisticRes);
+  // useEffect(() => {
+  //     setArrPageOfDay(statisticRes);
+  //     setArrAveragePageOfDay((prev)=>[...prev, perDayPage])
+
+  //   })
+  const totalPageNeedRead = useSelector(totalPages);
+  const totalPageRead = useSelector(pagesResultRead);
+  const dateStart = useSelector(startTraining); //дата начала
+  const endDate = useSelector(endTraining); //дата начала
+  // const endDate = new Date('2022-02-20') // дата окончания
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -54,35 +71,36 @@ const StatisticChart = () => {
       },
     },
   };
-  const totalPage = 600; // общее количество страниц которое нужно прочитать
-  const totalPageRead = arrPageOfDay.reduce((acc, item) => {
-    acc = acc + item;
-    return acc;
-  }, 0); // количество страниц которе прочитанно за период треновки
+  // const totalPage = 600 // общее количество страниц которое нужно прочитать
+  // const totalPageRead = arrPageOfDay.reduce((acc, item)=>{
+  //     acc = acc + item;
+  //     return acc
+  // }, 0);  // количество страниц которе прочитанно за период треновки
 
-  const dateStart = new Date("2022-02-14"); //дата начала
-  const endDate = new Date("2022-02-20"); // дата окончания
   const dayOfTraining = Math.floor(
-    (endDate - dateStart) / (1000 * 60 * 60 * 24)
+    (new Date(endDate) - new Date(dateStart)) / 1000 / 60 / 60 / 24
   ); // кол-во полных дней
   const perDayPage =
-    (totalPage - totalPageRead) / (dayOfTraining - arrPageOfDay.length); // среднее кол-во страниц которое нужно прочитать
+    (totalPageNeedRead - totalPageRead) / (dayOfTraining - arrPageOfDay.length); // среднее кол-во страниц которое нужно прочитать
   let arrDays = [];
   for (let i = 1; arrDays.length < dayOfTraining; i++) {
     arrDays.push(i);
   } // массив для отрисовки оси х
+  console.log(dayOfTraining);
+  // for (statisticRes of stat){
+
+  // }
   // console.log('totalPageRead', totalPageRead)
   // console.log('arrPageOfDay.length', arrPageOfDay.length)
   // console.log('arrPageOfDay', arrPageOfDay)
   // console.log('arrAveragePageOfDay', arrAveragePageOfDay)
   const labels = arrDays;
-
   const data = {
     labels,
     datasets: [
       {
         label: "Факт",
-        data: arrDays.map((day, idx) => arrPageOfDay[idx]),
+        data: arrPageOfDay.map((day, idx) => arrPageOfDay[idx]),
         borderColor: "#242A37",
         backgroundColor: "#242A37",
         lineTension: 0.5,
