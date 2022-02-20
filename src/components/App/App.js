@@ -19,11 +19,9 @@ function App() {
       <Navbar />
       <Routes />
       {/* <LibraryModal /> */}
-      <Timer />
+      {/* <Timer /> */}
       {/* <LibraryForm /> */}
       {/* {jwt && <LibraryPage/>} */}
-      {<LibraryPage/>}
-
     </div>
   );
 }

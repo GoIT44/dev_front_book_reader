@@ -3,7 +3,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://api-br.herokuapp.com/api/'
 
 export const addBook = (book) => {
-    const tokenAPI = localStorage.getItem('tokena')   
+    const tokenAPI = localStorage.getItem('token')   
     axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
     return axios
         .post('/library/addbook', book)

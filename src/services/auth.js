@@ -1,4 +1,3 @@
-import { circularProgressClasses } from "@mui/material";
 import axios from "axios";
 
 export const instance = axios.create({

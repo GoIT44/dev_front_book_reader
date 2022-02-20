@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
 import * as Yup from 'yup';
 
-import { addBookOperation } from '../../redux/operations/bookOperation';
+import { addBookOperation, getUsersBooksOperation } from '../../redux/operations/bookOperation';
 
 
 const getYear = () => {
@@ -15,7 +15,7 @@ const schema = Yup.object().shape({
   bookTitle: Yup.string()
   .min(2, 'Занадто коротка назва!')
   .required('Заповніть поле "Назва книги"'),
-  author: Yup.string().required('Заповніть поле "Автор книги"'),
+  author: Yup.string().min(2, 'Занадто коротка назва!').required('Заповніть поле "Автор книги"'),
   publicDate: Yup.number()
   .min(1500, 'Min значення 1500')
   .max(getYear(), 'Не більш, ніж поточний рік')
@@ -35,6 +35,8 @@ const initialState = {
 };
 
 
+
+
 const LibraryForm = () => {
   const dispatch = useDispatch();
   const [state] = useState({ ...initialState });
@@ -42,6 +44,7 @@ const LibraryForm = () => {
   const onHandlerSubmit = values => {
     const book = {...values, publicDate: values.publicDate.toString()}
     dispatch(addBookOperation(book));
+    dispatch(getUsersBooksOperation())
   };
 
   return (
