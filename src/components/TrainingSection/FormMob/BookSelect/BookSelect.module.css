@@ -1,0 +1,12 @@
+.bookSelect {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.select__wrap {
+  display: flex;
+  justify-content: center;
+  width: 270px;
+  margin: 20px 0px;
+}

@@ -6,6 +6,7 @@ import {fetchToken} from '../../redux/auth/auth-selectors'
 import { getUsersBooksOperation } from '../../redux/operations/bookOperation';
 
 
+
 const LibraryPage =() => {
     const dispatch = useDispatch();
     const isAuth = useSelector(fetchToken);
@@ -18,6 +19,7 @@ const LibraryPage =() => {
 
     return(<div>
         <h1>Library Page </h1>  
+        <LibraryForm />
     </div>)
 }
 

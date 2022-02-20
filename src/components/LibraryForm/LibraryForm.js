@@ -1,60 +1,46 @@
 import React, { useState } from "react";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
 import * as Yup from 'yup';
 
-
-import { addBookOperation } from '../../redux/operations/bookOperation';
-
+import { addBookOperation, getUsersBooksOperation } from '../../redux/operations/bookOperation';
 
 const getYear = () => {
   return new Date().getFullYear();
 };
 
-// const schema = Joi.object({
-//   title: Joi.string().min(2).required(),
-
-//   author: Joi.string().min().required(),
-
-//   year: Joi.number().min(1500).max(getYear()).required(),
-
-//   numbOfPages: Joi.number().min(1).required(),
-// });
-
 const schema = Yup.object().shape({
   bookTitle: Yup.string()
-      .min(2)
-      .required(),
-  author: Yup.string().required(),
+  .min(2, 'Занадто коротка назва!')
+  .required('Заповніть поле "Назва книги"'),
+  author: Yup.string().min(2, 'Занадто коротка назва!').required('Заповніть поле "Автор книги"'),
   publicDate: Yup.number()
-      .min(1500)
-      .max(getYear())
-      .required()
-      .typeError(),
+  .min(1500, 'Min значення 1500')
+  .max(getYear(), 'Не більш, ніж поточний рік')
+  .required('Заповніть поле "Рік випуску"')
+  .typeError('Введіть число'),
   numbOfPages: Yup.number()
-      .min(1)
-      .required()
-      .typeError(),
+  .min(1, 'Min значення 1')
+  .required('Заповніть поле "Кількість сторінок"')
+  .typeError('Введіть число'),
 });
 
 const initialState = {
-  bookTitle: "",
+  title: "",
   author: "",
   publicDate: "",
-  // year: "",
   numbOfPages: ""
-  
 };
-
 
 const LibraryForm = () => {
   const dispatch = useDispatch();
   const [state] = useState({ ...initialState });
 
   const onHandlerSubmit = values => {
-    dispatch(addBookOperation(values));
+    const book = {...values, publicDate: values.publicDate.toString()}
+    dispatch(addBookOperation(book));
+    dispatch(getUsersBooksOperation())
   };
 
   return (
@@ -66,7 +52,7 @@ const LibraryForm = () => {
           onHandlerSubmit({ ...values });
 
           actions.resetForm({ ...state });
-      }}
+        }}
       >
         {({ values }) => (
           <div className={styles.formWrapper}>
@@ -79,14 +65,14 @@ const LibraryForm = () => {
                       className={styles.bookFormInput}
                       type="text"
                       value={values.title}
-                      name="bookTitle"
+                      name="title"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="bookTitle"
+                      name="title"
                     />
                   </div>
                 </label>
@@ -115,15 +101,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.publicDate}
-                      name="publicDate"
+                      value={values.year}
+                      name="year"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="publicDate"
+                      name="year"
                     />
                   </div>
                 </label>
@@ -136,15 +122,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.numbOfPages}
-                      name="numbOfPages"
+                      value={values.numberOfPages}
+                      name="numberOfPages"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="numbOfPages"
+                      name="numberOfPages"
                     />
                   </div>
                 </label>

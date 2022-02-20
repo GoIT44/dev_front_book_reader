@@ -74,7 +74,13 @@
     border-radius: 1px;
 }
 .iconWrapperRead{
+    display: block;
+    width: 15px;
+    height: 15px;
+    padding: 3px 1px 2px 1px;
+    margin-right: 20px;
     border: 1px solid #FF6B08;
+    border-radius: 1px;
 }
 .bookItem{
     display: flex;
