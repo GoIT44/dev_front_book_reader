@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,7 +14,6 @@ import style from './StatisticChart.module.css';
 import { useSelector } from 'react-redux';
 import { endTraining, getAmountPage, getResultSelector, getTraining, pagesResultRead, startTraining, totalPages } from '../../redux/training/trainingSelectors';
 // import { getAmountPage } from '../../redux/resultTraining/resultTrainingSelectors';
-
 
 const StatisticChart = () => {
   const training = useSelector(getTraining);

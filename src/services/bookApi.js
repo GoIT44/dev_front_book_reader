@@ -20,18 +20,8 @@ export const getLibraryInfo = () => {
     return axios
         .get('/library')
         .then(res => {
-            console.log(res.data.data.books);
             return (res.data.data.books)})
         .catch(err => {
             throw new Error(err.response.data.message);
         });
 }
-
-// export const addReviewToBook = (id, book) => {
-//     return axios
-//         .patch('/library/addReview', book)
-//         .then(res => res.data.data)
-//         .catch(err => {
-//             throw new Error(err.response.data.message);
-//         });
-// }

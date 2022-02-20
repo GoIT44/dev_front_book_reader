@@ -7,8 +7,8 @@ import { fetchToken } from "../../redux/auth/auth-selectors";
 import { token } from "../../services/auth";
 import "./App.css";
 
+import TrainingPage from "../../pages/TrainingPage/TrainingPage";
 import LibraryPage from "../../pages/LibraryPage/LibraryPage";
-
 import LibraryForm from "../LibraryForm/LibraryForm";
 import { useEffect } from "react";
 import { getTrainingOperations } from "../../redux/training/trainingOperations";

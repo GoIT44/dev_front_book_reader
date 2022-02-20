@@ -49,6 +49,10 @@ const Routes = () => {
         <PrivateRoute exact path="/library" redirectTo="/login">
           <LibraryPage />
         </PrivateRoute>
+        {/* <PrivateRoute path="/training"> */}
+          {/* {isTraining ? <StatisticPage/> : <TrainingPage/>} */}
+          {/* <TrainingPage/>> */}
+        {/* </PrivateRoute> */}
         <PrivateRoute exact path="/statistic" redirectTo="/login">
           {isTraining ? <StatisticPage /> : <p>нет тренировки</p>}
         </PrivateRoute>
