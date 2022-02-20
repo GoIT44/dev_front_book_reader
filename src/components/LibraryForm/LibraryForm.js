@@ -28,7 +28,7 @@ const schema = Yup.object().shape({
 });
 
 const initialState = {
-  bookTitle: "",
+  title: "",
   author: "",
   publicDate: "",
   numbOfPages: ""
@@ -69,14 +69,14 @@ const LibraryForm = () => {
                       className={styles.bookFormInput}
                       type="text"
                       value={values.title}
-                      name="bookTitle"
+                      name="title"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="bookTitle"
+                      name="title"
                     />
                   </div>
                 </label>
@@ -105,15 +105,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.publicDate}
-                      name="publicDate"
+                      value={values.year}
+                      name="year"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="publicDate"
+                      name="year"
                     />
                   </div>
                 </label>
@@ -126,15 +126,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.numbOfPages}
-                      name="numbOfPages"
+                      value={values.numberOfPages}
+                      name="numberOfPages"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="numbOfPages"
+                      name="numberOfPages"
                     />
                   </div>
                 </label>

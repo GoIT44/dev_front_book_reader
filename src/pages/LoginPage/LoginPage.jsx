@@ -31,6 +31,7 @@ const LoginForm = () => {
   // console.log(window.location);
   // console.log(tokens);
   token.set(tokens);
+  console.log(location)
   return (
     <>
       <div className={styles.container}>

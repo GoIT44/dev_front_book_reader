@@ -12,10 +12,16 @@ const TimerItem = ({endTime}) => {
     
     useEffect(() => {
         const intervalId = setInterval(() => {
+            // console.log(intervalId)
             setDifferenceTime(timerDate - Date.now())
+            // console.log(intervalId)
+            
         }, 1000);
-        return ()=>clearInterval(intervalId)
-      });
+        return ()=>{
+            
+            return clearInterval(intervalId)
+        }
+      }, []);
     return (
         <div className={style.timerWrapper}>
                 <div className={style.timerBlock}>

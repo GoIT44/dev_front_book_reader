@@ -1,34 +1,43 @@
 import { useState, useEffect } from 'react';
 import{useDispatch, useSelector} from 'react-redux'
-import { addResultOperations, getResultOperations } from '../../redux/resultTraining/resultTrainingOperations';
-import { getResultSelector } from '../../redux/resultTraining/resultTrainingSelectors';
+import { addResultOperations, getResultOperations } from '../../redux/training/trainingOperations';
+import { getResultSelector } from '../../redux/training/trainingSelectors';
+// import { addResultOperations, getResultOperations } from '../../redux/resultTraining/resultTrainingOperations';
+// import { getResultSelector } from '../../redux/resultTraining/resultTrainingSelectors';
 import ResultListItem from '../ResultListItem/ResultListItem';
 import style from './ResultBox.module.css'
 
-const initialState = {
-    date: new Date().toLocaleDateString().split(".").reverse().join("-"),
-    time: "",
-    amountPage: "",
+const initialDate = {
+    dateResult: new Date().toLocaleDateString().split(".").reverse().join("-"),
 }
 const ResultBox = () => {
     // useEffect(() => {
     //     dispatch(getResultOperations());
     // })
-
-    const [result, setResult] = useState({...initialState});
-    const resultItem = useSelector(getResultSelector);
+    const resultItem = useSelector(getResultSelector)
+    const [dateResult, setDateResult] = useState(initialDate.dateResult);
+    const [pagesResult, setPagesResult] = useState("")
+    
     const dispatch = useDispatch()
     const onChange = (e)=>{
-        let {name, value} = e.target        
-        setResult((prev)=>({...prev, [name]: value, time: new Date().toLocaleTimeString()}));
+        let {name, value} = e.target    
+        if (name === "pagesResult") {
+            setPagesResult(+value);
+        }   
+        if (name === "dateResult") {
+            setDateResult(value)
+        }
+        // setResult((prev)=>({...prev, [name]: value}));
     };
     const onSubmit = async (e)=>{
         e.preventDefault()
         
-        dispatch(addResultOperations({...result, date: result.date.split('-').reverse().join('.')}));
-        setResult({...initialState});
+        dispatch(addResultOperations({dateResult, pagesResult}));
+        setPagesResult(null);
+        setDateResult(initialDate.dateResult)
 
     }
+
     return (
         <div className={style.resultBox} onSubmit={onSubmit}>
             <h3 className={style.resultBoxTitle}>Результати</h3>
@@ -37,13 +46,13 @@ const ResultBox = () => {
                     <label className={style.labelStatistic} htmlFor="statisticInputDate">
                     Дата
                     </label>
-                        <input type="date" name='date' value={result.date} min={result.date} onChange={onChange} className={style.inputDate} id='statisticInputDate'/>
+                        <input type="date" name='dateResult' value={dateResult} min={dateResult} onChange={onChange} className={style.inputDate} id='statisticInputDate' required/>
                 </div>
                 <div className={style.inputWrapper}>
                     <label className={style.labelStatistic} htmlFor='statisticInputText'>
                     Кількість сторінок
                     </label>
-                        <input type="text" name='amountPage' value={result.amountPage} onChange={onChange} className={style.inputDate} id='statisticInputText' required/>
+                        <input type="text" name='pagesResult' value={pagesResult} onChange={onChange} className={style.inputDate} id='statisticInputText' required/>
                 </div>
                 <button type='submit' className={style.formButton}>Додати результат</button>
             </form>
