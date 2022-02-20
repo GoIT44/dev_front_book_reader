@@ -45,7 +45,8 @@
   font-weight: 300;
   font-size: 14px;
   line-height: 38px;
-  /* text-decoration-line: underline; */
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
   color: #242a37;
   border: none;
   background: none;
