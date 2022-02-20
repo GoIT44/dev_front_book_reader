@@ -31,7 +31,7 @@ const Routes = () => {
         <PublicRoute restricted exact path="/login" redirectTo="/library">
           <LoginPage />
         </PublicRoute>
-        <PublicRoute path="https://breader.netlify.app/google-auth">
+        <PublicRoute path="/google-auth" redirectTo="/library">
           <GooglePage />
         </PublicRoute>
         <PrivateRoute exact path="/library" redirectTo="/login">
