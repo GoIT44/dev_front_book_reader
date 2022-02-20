@@ -23,19 +23,19 @@ const RegisterForm = () => {
   const history = useHistory();
   const onSubmit = (values) => {
     if (values.password === values.passwordCheck) {
-      return dispatch(
+      dispatch(
         authOperations.register({
           email: data.email,
           password: data.password,
           name: data.name,
         })
       );
+      history.push("/login");
+      return;
     }
     Notify.failure("Password doesn't match");
   };
-  // const googleAuth = () => {
-  //   dispatch(authOperations.googleIn());
-  // };
+
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
   const location = useLocation();
   const tokens = location.search.slice(1).split("=")[1];
@@ -124,10 +124,11 @@ const RegisterForm = () => {
                 />
               </label>
               <button
+                type="submit"
                 className={styles.registerBtn}
-                onClick={() => {
-                  history.push("/login");
-                }}
+                // onClick={() => {
+                //   history.push("/login");
+                // }}
               >
                 <p className={styles.registerBtnText}>Зареєструватися</p>
               </button>

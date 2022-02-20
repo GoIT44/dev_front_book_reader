@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { getUserName } from "../../redux/auth/auth-selectors";
 import { Avatar } from "@mui/material";
 import useAuth from "../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,12 +32,12 @@ const Navbar = () => {
             <p className={styles.userName}>{userName}</p>
           </div>
           <div className={styles.navButtons}>
-            <button className={styles.bookButton}>
+            <Link to="/library" className={styles.bookButton}>
               <BookButton />
-            </button>
-            <button className={styles.homeButton}>
+            </Link>
+            <Link to="/training" className={styles.homeButton}>
               <HomeButton />
-            </button>
+            </Link>
             <span className={styles.borderLine}></span>
             <button className={styles.logoutButton} onClick={onCLick}>
               Вихід

@@ -26,21 +26,7 @@ const logIn = createAsyncThunk(
   "auth/login",
   async (credentials, { rejectWithValue }) => {
     try {
-      console.log(credentials);
       const data = await onLogIn(credentials);
-      token.set(data.accessToken);
-      return data;
-    } catch (error) {
-      return rejectWithValue(Notify.failure(error.response.data.message));
-    }
-  }
-);
-
-const googleIn = createAsyncThunk(
-  "auth/google",
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const data = await googleAuth(credentials);
       token.set(data.accessToken);
       return data;
     } catch (error) {
@@ -65,6 +51,5 @@ const authOperations = {
   register,
   logIn,
   logOut,
-  googleIn,
 };
 export default authOperations;
