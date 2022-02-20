@@ -4,7 +4,7 @@ const getAllBooks = state => state.books.items; //
 const getResume = state => state.books.items; //
 
 const getPlanBooks = createSelector([getAllBooks], books =>
-  books.filter(({ status }) => status === 'going to read'),
+  books.filter(({ readStatus }) => readStatus === 'Going to read'),
 );
 
 const getLoading = state => state.books.loading;

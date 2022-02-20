@@ -10,7 +10,7 @@ import book from "../../../assets/svg/bookIcon.svg";
 
 const LibraryListDone = () => {
   const [showModal, setShowModal] = useState(false);
-  const [resume, setResume] = useState("");
+  const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
 
 
@@ -19,64 +19,64 @@ const LibraryListDone = () => {
   const books = [
     {
       "_id": 1,
-      "title": "Scrum. A revolutionary method of project management",
+      "bookTitle": "Scrum. A revolutionary method of project management",
       "author": "Jeff Sutherland",
-      "year": 2014,
-      "totalPages": 25,
-      "status": "already read",
+      "publicDate": 2014,
+      "numbOfPages": 25,
+      "readStatus": "Already read",
       "rating": 5,
-      "resume": "This book is zaebis!"
+      "comment": "This book is zaebis!"
     },
     {
       "_id": 2,
-      "title": "Deadline. A novel about project management",
+      "bookTitle": "Deadline. A novel about project management",
       "author": "Tom DeMarco",
-      "year": 2006,
+      "publicDate": 2006,
       "totalPages": 188,
-      "status": "already read",
+      "readStatus": "Already read",
       "rating": 1,
-      "resume": "A litttle bit govno!"
+      "comment": "A litttle bit govno!"
     },
     {
       "_id": 3,
-      "title": "5 Defects of the team. Proverbs about leadership",
+      "bookTitle": "5 Defects of the team. Proverbs about leadership",
       "author": "Patrick Lencioni",
-      "year": 2011,
+      "publicDate": 2011,
       "totalPages": 125,
-      "status": "reading now"
+      "readStatus": "Reading now"
     },
     {
       "_id": 4,
-      "title": "Development of valuable proposals",
+      "bookTitle": "Development of valuable proposals",
       "author": "Alex Osterwalder, Yves Pigneur",
-      "year": 2013,
+      "publicDate": 2013,
       "totalPages": 368,
-      "status": "going to read"
+      "readStatus": "Going to read"
     },
     {
       "_id": 5,
-      "title": "Product management in Scrum. Agile methods for your business",
+      "bookTitle": "Product management in Scrum. Agile methods for your business",
       "author": "Roman Pichler",
-      "year": 2010,
+      "publicDate": 2010,
       "totalPages": 92,
-      "status": "reading now"
+      "readStatus": "Reading now"
     },
     {
       "_id": 6,
-      "title": "A mental hospital in",
+      "bookTitle": "A mental hospital in",
       "author": "Cooper Alan",
-      "year": 2009,
+      "publicDate": 2009,
       "totalPages": 183,
-      "status": "going to read"
+      "readStatus": "Going to read"
     }
   ];
   
 
   const [id, setId] = useState(null);
 
-  const isShowModal = ({ _id: id, resume, rating }) => {
+  const isShowModal = ({ _id: id, comment, rating }) => {
     setId(id);
-    setResume(resume);
+    setComment(comment);
     setRating(rating);
     setShowModal(!showModal);
   };
@@ -88,11 +88,11 @@ const LibraryListDone = () => {
           id={id}
           showModal={showModal}
           setShowModal={setShowModal}
-          resume={resume}
+          comment={comment}
           rating={rating}
         />
       )}
-      {books.some((book) => book.status === "already read") && (
+      {books.some((book) => book.readStatus === "Already read") && (
         <div className={styles.category}>
           <h2 className={styles.categoryTitle}>Прочитано</h2>
           <div className={styles.categoryListTitle}>
@@ -106,22 +106,22 @@ const LibraryListDone = () => {
             {books.map(
               ({
                 _id,
-                title,
+                bookTitle,
                 author,
-                year,
-                totalPages,
-                status,
+                publicDate,
+                numbOfPages,
+                readStatus,
                 rating,
-                resume,
+                comment,
               }) =>
-                status === "already read" && (
+              readStatus === "Already read" && (
                   <li key={_id} className={styles.bookListItem}>
                     <ReactSVG src={book} className={styles.iconDone} />
                     <div className={styles.bookListItemNameDone}>
                       <span>
                         <ReactSVG src={book} className={styles.iconDoneMob} />
                       </span>
-                      <span className={styles.titleBookName}>{title}</span>
+                      <span className={styles.titleBookName}>{bookTitle}</span>
                     </div>
                     <p className={styles.bookListItemAuthorDone}>
                       <span className={styles.bookListItemMob}>Автор</span>
@@ -129,11 +129,11 @@ const LibraryListDone = () => {
                     </p>
                     <p className={styles.bookListItemYearDone}>
                       <span className={styles.bookListItemMob}>Рік</span>
-                      {year}
+                      {publicDate}
                     </p>
                     <p className={styles.bookListItemPageDone}>
                       <span className={styles.bookListItemMob}>Стор.</span>
-                      {totalPages}
+                      {numbOfPages}
                     </p>
                     <div className={styles.stars}>
                       <span className={styles.bookListItemMob}>Рейтинг</span>
@@ -143,7 +143,7 @@ const LibraryListDone = () => {
                     <button
                       type="button"
                       className={styles.buttonRezume}
-                      onClick={() => isShowModal({ _id, resume, rating })}               
+                      onClick={() => isShowModal({ _id, comment, rating })}               
                     >
                       Резюме
                     </button>
