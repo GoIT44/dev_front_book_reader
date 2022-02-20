@@ -3,6 +3,7 @@ import { ReactComponent as BookButton } from "../../assets/svg/nav_book.svg";
 import { ReactComponent as HomeButton } from "../../assets/svg/home.svg";
 import authOperations from "../../redux/auth/auth-operations";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const dispatch = useDispatch();

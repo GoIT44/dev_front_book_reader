@@ -5,9 +5,17 @@ import ResultBox from '../../components/ResultBox/ResultBox';
 import StatisticChart from '../../components/StatisticChart/StatisticChart';
 import style from './StatisticPage.module.css';
 import Booklist from '../../components/BookList/Booklist';
+import { useDispatch } from 'react-redux';
+// import { getTraining } from '../../redux/resultTraining/resultTrainingOperations';
+import { useEffect } from 'react';
+import { getCurrentTraining } from '../../services/training';
+import { getTrainingOperations } from '../../redux/training/trainingOperations';
 
 const StatisticPage = () => {
-
+    // const dispatch = useDispatch()
+    // useEffect(() => {
+    //     dispatch(getTrainingOperations());
+    // }, [dispatch])
     return (
         <section>
             <Container>
@@ -31,7 +39,6 @@ const StatisticPage = () => {
                         <ResultBox/>
                     </div>
                 </div>
-
             </Container>
         </section>
     );

@@ -5,8 +5,9 @@ import LibraryModal from "../LibraryModal";
 import { useSelector } from "react-redux";
 import { fetchToken } from "../../redux/auth/auth-selectors";
 import { token } from "../../services/auth";
-// import { useDispatch } from "react-redux";
-// import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import {getTrainingOperations} from '../../redux/training/trainingOperations';
 // import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
@@ -15,6 +16,10 @@ import LibraryForm from "../LibraryForm/LibraryForm";
 function App() {
   const jwt = useSelector(fetchToken);
   token.set(jwt);
+  const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getTrainingOperations());
+    }, [dispatch])
   // const dispatch = useDispatch();
 
   // useEffect(() => {
@@ -22,13 +27,11 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <div className="App">
         <Navbar />
         <Routes />
-        <LibraryModal />
-        <Timer />
-        <LibraryForm />
-      </div>
+        {/* <LibraryModal /> */}
+        {/* <Timer /> */}
+        {/* <LibraryForm /> */}
     </div>
   );
 }
