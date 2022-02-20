@@ -10,7 +10,7 @@ import { token } from "../../services/auth";
 // import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
-import LibraryPage from '../../pages/library/LibraryPage'
+import LibraryPage from '../../pages/LibraryPage/LibraryPage'
 
 import LibraryForm from "../LibraryForm/LibraryForm";
 
