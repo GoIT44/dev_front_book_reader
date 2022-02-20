@@ -4,13 +4,24 @@ export const instance = axios.create({
   baseURL: "https://api-br.herokuapp.com/api",
 });
 
+// export const token = {
+//   set(token) {
+//     localStorage.setItem("token", token);
+//     instance.defaults.headers.authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     localStorage.removeItem("token");
+//     instance.defaults.headers.common["Authorization"] = "";
+//   },
+// };
+
 export const token = {
   set(token) {
     localStorage.setItem("token", token);
-    instance.defaults.headers.authorization = `Bearer ${token}`;
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    instance.defaults.headers.common["Authorization"] = "";
+    instance.defaults.headers.common.Authorization = " ";
   },
 };
 
