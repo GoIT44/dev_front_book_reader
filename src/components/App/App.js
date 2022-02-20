@@ -7,7 +7,7 @@ import { fetchToken } from "../../redux/auth/auth-selectors";
 import { token } from "../../services/auth";
 import "./App.css";
 
-import LibraryPage from '../../pages/LibraryPage/LibraryPage'
+import LibraryPage from "../../pages/LibraryPage/LibraryPage";
 
 import LibraryForm from "../LibraryForm/LibraryForm";
 
@@ -19,9 +19,8 @@ function App() {
       <Navbar />
       <Routes />
       <LibraryModal />
-      <Timer />
       <LibraryForm />
-      {jwt && <LibraryPage/>}
+      {jwt && <LibraryPage />}
     </div>
   );
 }
