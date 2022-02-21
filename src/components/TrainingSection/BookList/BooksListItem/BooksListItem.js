@@ -1,12 +1,21 @@
 import style from "./BooksListItem.module.css";
 import iconSprite from "../../../../images/icons-sprite.svg";
+import { useDispatch } from "react-redux";
+import { deleteBookTrainingOperation } from "../../../../redux/trainingPlan/trainingPlanOperations";
 
 const BooksListItem = ({
   title = "...",
   author = "...",
   year = "...",
   pages = "...",
+  id,
 }) => {
+  const dispatch = useDispatch()
+  const onClick = (e) => {
+    dispatch(deleteBookTrainingOperation(e.currentTarget.id))
+    
+  }
+  // console.log(id)
   return (
     <li className={style.bookItem}>
       <div className={style.iconWrapper}>
@@ -38,7 +47,7 @@ const BooksListItem = ({
         {title === "..." ? (
           <div></div>
         ) : (
-          <button className={style.btnDelete} /*onClick={onHandleDelete}*/>
+          <button id={id} className={style.btnDelete} onClick={onClick}>
             <svg className={style.iconBookList} width="14px" height="18px">
               <use xlinkHref={`${iconSprite}#icon-delete`} />
             </svg>

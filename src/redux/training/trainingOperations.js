@@ -1,5 +1,5 @@
 import { addResultTraining, getCurrentTraining } from "../../services/training";
-import { addTrainingResultError, addTrainingResultRequest, addTrainingResultSuccess, getTrainingError, getTrainingRequest, getTrainingResultError, getTrainingResultRequest, getTrainingResultSuccess, getTrainingSuccess } from "./trainingActions";
+import { addTrainingBookRequest, addTrainingBookSuccess, addTrainingDateError, addTrainingDateRequest, addTrainingDateSuccess, addTrainingResultError, addTrainingResultRequest, addTrainingResultSuccess, getTrainingError, getTrainingRequest, getTrainingResultError, getTrainingResultRequest, getTrainingResultSuccess, getTrainingSuccess } from "./trainingActions";
 
 
 export const getTrainingOperations = () => async (dispatch) => {

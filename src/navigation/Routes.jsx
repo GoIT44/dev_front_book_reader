@@ -7,6 +7,7 @@ import useMedia from "../components/hooks";
 import GooglePage from "../pages/Google-auth/GooglePage";
 import LibraryPage from "../pages/LibraryPage/LibraryPage";
 import StatisticPage from "../pages/StatisticPage/StatisticPage";
+import TrainingPage from "../pages/TrainingPage/TrainingPage";
 import {useDispatch, useSelector} from 'react-redux';
 import {getTraining} from '../redux/training/trainingSelectors';
 import { fetchToken } from "../redux/auth/auth-selectors";
@@ -24,7 +25,7 @@ const Routes = () => {
 
   const isMobile = useMedia.useMedia().MOB;
   const isTraining = useSelector(getTraining);
-  // console.log(isTraining)
+  console.log(isTraining)
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
@@ -54,7 +55,7 @@ const Routes = () => {
           {/* <TrainingPage/>> */}
         {/* </PrivateRoute> */}
         <PrivateRoute exact path="/statistic" redirectTo="/login">
-          {isTraining ? <StatisticPage /> : <p>нет тренировки</p>}
+          {isTraining ? <StatisticPage /> : <TrainingPage/>}
         </PrivateRoute>
       </Switch>
     </Suspense>
