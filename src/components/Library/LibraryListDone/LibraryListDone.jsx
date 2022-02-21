@@ -32,7 +32,7 @@ const LibraryListDone = () => {
       "bookTitle": "Deadline. A novel about project management",
       "author": "Tom DeMarco",
       "publicDate": 2006,
-      "totalPages": 188,
+      "numbOfPages": 188,
       "readStatus": "Already read",
       "rating": 1,
       "comment": "A litttle bit govno!"
@@ -42,7 +42,7 @@ const LibraryListDone = () => {
       "bookTitle": "5 Defects of the team. Proverbs about leadership",
       "author": "Patrick Lencioni",
       "publicDate": 2011,
-      "totalPages": 125,
+      "numbOfPages": 125,
       "readStatus": "Reading now"
     },
     {
@@ -50,7 +50,7 @@ const LibraryListDone = () => {
       "bookTitle": "Development of valuable proposals",
       "author": "Alex Osterwalder, Yves Pigneur",
       "publicDate": 2013,
-      "totalPages": 368,
+      "numbOfPages": 368,
       "readStatus": "Going to read"
     },
     {
@@ -58,7 +58,7 @@ const LibraryListDone = () => {
       "bookTitle": "Product management in Scrum. Agile methods for your business",
       "author": "Roman Pichler",
       "publicDate": 2010,
-      "totalPages": 92,
+      "numbOfPages": 92,
       "readStatus": "Reading now"
     },
     {
@@ -66,7 +66,7 @@ const LibraryListDone = () => {
       "bookTitle": "A mental hospital in",
       "author": "Cooper Alan",
       "publicDate": 2009,
-      "totalPages": 183,
+      "numbOfPages": 183,
       "readStatus": "Going to read"
     }
   ];
