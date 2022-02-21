@@ -1,10 +1,15 @@
 import { useLocation } from "react-router-dom";
-import { token } from "../../services/auth";
+import auth from "../../redux/auth/auth-operations";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const GooglePage = () => {
   const location = useLocation();
   const tokens = location.search.slice(1).split("=")[1];
-  token.set(tokens);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(auth.googleAuth({ token: tokens }));
+  }, [dispatch, tokens]);
   return <></>;
 };
 export default GooglePage;
