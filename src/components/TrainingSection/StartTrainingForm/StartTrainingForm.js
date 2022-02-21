@@ -14,12 +14,12 @@ const StartTrainingForm = () => {
     <form>
       <div className={styles.section__centeredWrap}>
         <SideBarMyGoal />
-        <div className={styles.flex__position}>
-          {/* если MOB и modalIsOpen тогда = FormMob || Form */}
+        {/* <div className={styles.flex__position}>
+          если MOB и modalIsOpen тогда = FormMob || Form
           <Form />
-          {/* <FormMob /> */}
+          <FormMob />
           <Booklist />
-        </div>
+        </div> */}
       </div>
       {/* рендерить кнопку по условию, если books.length < 1 */}
       <div className={styles.btn__wrap}>

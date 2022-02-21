@@ -19,3 +19,11 @@ export async function addResultTraining(result) {
     // if (!data.data.training) return
     return data.data;
   }
+export async function addTraining(result) {
+    const tokenAPI = localStorage.getItem('token')   
+    axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
+    const { data } = await axios.post("/training/addtraining", result);
+    console.log(data.data)
+    // if (!data.data.training) return
+    return data.data;
+  }

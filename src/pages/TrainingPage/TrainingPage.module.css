@@ -1,5 +1,7 @@
 @value min-width-tablet from '../../styles/variables.module.css';
 @value max-width-desktop from '../../styles/variables.module.css';
+@value fontMontserrat from '../../styles/variables.module.css';
+@value accent-color from '../../styles/variables.module.css';
 
 .container {
   width: 320px;
@@ -10,12 +12,32 @@
   margin-left: auto;
   margin-right: auto;
 }
+.btn__wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin-bottom: 40px;
+  width: 171px;
+  height: 42px;
+  color: #fff;
+  background-color: accent-color;
+  border: none;
+  font-size: 14px;
+  font-family: fontMontserrat;
+  font-weight: 500;
+}
 
 @media (min-width: min-width-tablet) {
   .container {
     width: 768px;
     padding-right: 45px;
     padding-left: 45px;
+  }
+  .btn {
+    width: 200px;
+    height: 40px;
   }
 }
 
