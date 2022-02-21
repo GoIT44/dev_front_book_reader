@@ -6,7 +6,7 @@ export const instance = axios.create({
 
 export const token = {
   set(token) {
-    localStorage.setItem('token', token)
+    localStorage.setItem("token", token)
     instance.defaults.headers.authorization = `Bearer ${token}`;
   },
   unset() {
@@ -27,10 +27,7 @@ export async function onLogOut() {
   const { data } = await instance.get("/auth/logout");
   return data;
 }
-export async function CheckedCurrentUser() {
-  const { data } = await instance.get("/auth/google");
-  return data;
-}
+
 export async function googleAuth() {
   const { data } = await instance.get("/auth/google");
   return data;

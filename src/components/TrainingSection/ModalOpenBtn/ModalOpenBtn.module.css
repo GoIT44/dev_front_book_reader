@@ -1,0 +1,14 @@
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.btn__more {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border: none;
+  object-fit: contain;
+  background-color: #11ffee00;
+  bottom: 25px;
+}
