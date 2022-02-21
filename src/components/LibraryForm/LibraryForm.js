@@ -4,7 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
 import * as Yup from 'yup';
 
-import { addBookOperation, getUsersBooksOperation } from '../../redux/operations/bookOperation';
+import { addBookOperation } from '../../redux/operations/bookOperation';
+
 
 const getYear = () => {
   return new Date().getFullYear();
@@ -27,7 +28,7 @@ const schema = Yup.object().shape({
 });
 
 const initialState = {
-  title: "",
+  bookTitle: "",
   author: "",
   publicDate: "",
   numbOfPages: ""
@@ -40,7 +41,6 @@ const LibraryForm = () => {
   const onHandlerSubmit = values => {
     const book = {...values, publicDate: values.publicDate.toString()}
     dispatch(addBookOperation(book));
-    dispatch(getUsersBooksOperation())
   };
 
   return (
@@ -64,15 +64,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="text"
-                      value={values.title}
-                      name="title"
+                      value={values.bookTitle}
+                      name="bookTitle"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="title"
+                      name="bookTitle"
                     />
                   </div>
                 </label>
@@ -101,15 +101,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.year}
-                      name="year"
+                      value={values.publicDate}
+                      name="publicDate"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="year"
+                      name="publicDate"
                     />
                   </div>
                 </label>
@@ -122,15 +122,15 @@ const LibraryForm = () => {
                     <Field
                       className={styles.bookFormInput}
                       type="number"
-                      value={values.numberOfPages}
-                      name="numberOfPages"
+                      value={values.numbOfPages}
+                      name="numbOfPages"
                       placeholder="..."
                       autoComplete="off"
                     />
                     <ErrorMessage
                       className={styles.bookFormError}
                       component="div"
-                      name="numberOfPages"
+                      name="numbOfPages"
                     />
                   </div>
                 </label>
