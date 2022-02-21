@@ -6,24 +6,15 @@ const {
   fetchBooksRequest,
   fetchBooksSuccess,
   fetchBooksError,
-
-  // firstVisitSuccess,
-  // secondVisitSuccess,
 } = booksActions;
 
-const fetchBooks = () => async dispatch => {
+export const fetchBooks = () => async (dispatch) => {
   dispatch(fetchBooksRequest());
 
   try {
     const data = await getAllBooks();
+    console.log(data)
     dispatch(fetchBooksSuccess(data));
-    
-    // if (data.data.books.length === 0) {
-    //   dispatch(firstVisitSuccess());
-    // }
-    // if (data.data.books.length > 0) {
-    //   dispatch(secondVisitSuccess());
-    // }
   } catch (error) {
     dispatch(fetchBooksError(formatError(error)));
   }

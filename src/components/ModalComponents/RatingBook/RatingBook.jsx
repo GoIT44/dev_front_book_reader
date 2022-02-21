@@ -9,18 +9,18 @@ import ChooseRating from './ChooseRating/ChooseRating';
 import schemaValidChooseRating from '../validation/schemaValidChooseRating';
 import styles from './RatingBook.module.scss';
 
-const RatingBook = ({ toogleModal, id, resume, rating }) => {
+const RatingBook = ({ toogleModal, id, comment, rating }) => {
   const [ratingValue, setRatingValue] = useState(rating);
 
   const dispatch = useDispatch();
 
-  const onSave = ({ resume }) => {
-    dispatch(booksOperations.updateResumeBook(id, ratingValue, resume));
+  const onSave = ({ comment }) => {
+    dispatch(booksOperations.updateResumeBook(id, ratingValue, comment));
   };
 
   return (
     <Formik
-      initialValues={{ resume: resume }}
+      initialValues={{ resume: comment }}
       validationSchema={schemaValidChooseRating}
       onSubmit={onSave}
     >

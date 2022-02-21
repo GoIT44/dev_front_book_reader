@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const fetchBooksRequest = createAction('books/fetchRequest');
-const fetchBooksSuccess = createAction('books/fetchSuccess');
-const fetchBooksError = createAction('books/fetchError');
+const fetchBooksRequest = createAction('books/fetchBooksRequest');
+const fetchBooksSuccess = createAction('books/fetchBooksSuccess');
+const fetchBooksError = createAction('books/fetchBooksError');
 
 
 const booksActions = {

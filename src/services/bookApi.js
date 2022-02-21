@@ -15,7 +15,12 @@ export const addBook = (book) => {
 }
 
 //
-export const getAllBooks = async () => (await axios.get('/books')).data;
+export const getAllBooks = async () => {
+    const tokenAPI = localStorage.getItem('token')   
+    axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
+    const {data} = await axios.get('/library');
+    return data.data
+};
 
 export const formatError = ({ name, message, response }) => ({
     name,
