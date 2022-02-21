@@ -14,18 +14,25 @@ import "./App.css";
 import TrainingPage from "../../pages/TrainingPage/TrainingPage";
 import LibraryPage from "../../pages/LibraryPage/LibraryPage";
 import LibraryForm from "../LibraryForm/LibraryForm";
+
 import LibraryList from "../Library/LibraryList/LibraryList";
 import { useEffect } from "react";
 import { fetchBooks } from "../../redux/books/booksOperations";
 
-function App() {
+// import { getTrainingOperations } from "../../redux/training/trainingOperations";
 
-  const jwt = useSelector(fetchToken);
-  token.set(jwt);
-  const dispatch = useDispatch();
-  useEffect(()=>{
-    dispatch(fetchBooks())
-  })
+// function App() {
+
+
+
+function App() {
+  
+  // const jwt = useSelector(fetchToken);
+  // token.set(jwt);
+  // const dispatch = useDispatch();
+  // useEffect(()=>{
+  //   dispatch(fetchBooks())
+  // })
   return (
     <div className="App">
       <Navbar />

@@ -16,6 +16,7 @@ import authReducer from "./auth/auth-slice";
 import { booksReducer } from "./books";
 
 import { trainingReducer } from "./training/trainingReducers";
+import { trainingPlanReducer } from "./trainingPlan/trainingPlanReducers";
 
 const persistConfig = {
   key: "user",
@@ -28,6 +29,7 @@ export const store = configureStore({
     auth: persistReducer(persistConfig, authReducer),
     bookReducer: booksReducer,
     training: trainingReducer,
+    trainingPlan: trainingPlanReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

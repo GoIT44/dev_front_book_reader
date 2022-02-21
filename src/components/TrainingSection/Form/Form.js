@@ -7,17 +7,21 @@ import styles from "./Form.module.css";
 
 const Form = () => {
   const { MOB } = useMedia();
+  
+  const onSubmitTraining = ()=>{
+
+  }
   return (
     !MOB && (
       <>
         <TitleSection />
+        {/* <form onSubmit={onSubmitTraining}> */}
         <TrainingPeriodBlock />
-        <div className={styles.flex__centered}>
-          <BookSelect />
-          <div className={styles.btn__wrap}>
-            <button className={styles.btn__add}>Додати</button>
+          <div className={styles.flex__centered}>
+            <BookSelect />
+            
           </div>
-        </div>
+        {/* </form> */}
       </>
     )
   );

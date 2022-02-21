@@ -1,12 +1,10 @@
 import React from "react";
 import style from "./Buttons.module.css";
 
-const ButtonRegister = () => {
+export const ButtonRegister = () => {
   return <div className={style.container}></div>;
 };
 
-const ButtonLogin = () => {
+export const ButtonLogin = () => {
   return <div className={style.container}></div>;
 };
-
-// export ButtonRegister, ButtonLogin;

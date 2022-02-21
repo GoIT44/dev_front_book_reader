@@ -36,6 +36,10 @@ const RegisterForm = () => {
     Notify.failure("Password doesn't match");
   };
 
+  const googleAuth = () => {
+    dispatch(authOperations.googleLogin());
+  };
+
   const [data, handleChange, handleSubmit] = useForm(initialState, onSubmit);
   const location = useLocation();
   const tokens = location.search.slice(1).split("=")[1];
@@ -49,6 +53,7 @@ const RegisterForm = () => {
             <a
               className={styles.googleBtn}
               href="https://api-br.herokuapp.com/api/auth/google"
+              onClick={googleAuth}
             >
               <img className={styles.googleBtnLogo} src={GoodleLogo} alt="" />
               <p className={styles.googleBtnText}>Google</p>
@@ -123,13 +128,7 @@ const RegisterForm = () => {
                   title="Введите минимум 8 символов, обязательно должны присутствовать цифры и буквы разного регистра"
                 />
               </label>
-              <button
-                type="submit"
-                className={styles.registerBtn}
-                // onClick={() => {
-                //   history.push("/login");
-                // }}
-              >
+              <button className={styles.registerBtn}>
                 <p className={styles.registerBtnText}>Зареєструватися</p>
               </button>
               <p className={styles.authText}>

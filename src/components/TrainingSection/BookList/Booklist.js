@@ -2,63 +2,8 @@ import { nanoid } from "nanoid";
 import styles from "./Booklist.module.css";
 import BooksListItem from "./BooksListItem/BooksListItem";
 
-const Booklist = () => {
-  const books = [
-    {
-      title: "Book",
-      year: 2002,
-      author: "Author",
-      pages: 356,
-    },
-    {
-      title: "Animate Book",
-      year: 2007,
-      author: "Animate Author",
-      pages: 549,
-    },
-    {
-      title: "Interesting Book",
-      year: 2000,
-      author: "Ivan Franko",
-      pages: 326,
-    },
-    {
-      title: "Book",
-      year: 2002,
-      author: "Author",
-      pages: 356,
-    },
-    {
-      title: "Animate Book",
-      year: 2007,
-      author: "Animate Author",
-      pages: 549,
-    },
-    {
-      title: "Interesting Book",
-      year: 2000,
-      author: "Ivan Franko",
-      pages: 326,
-    },
-    {
-      title: "Book",
-      year: 2002,
-      author: "Author",
-      pages: 356,
-    },
-    {
-      title: "Animate Book",
-      year: 2007,
-      author: "Animate Author",
-      pages: 549,
-    },
-    {
-      title: "Interesting Book",
-      year: 2000,
-      author: "Ivan Franko",
-      pages: 326,
-    },
-  ];
+const Booklist = ({bookList}) => {
+  
 
   return (
     <ul className={styles.bookList}>
@@ -78,14 +23,15 @@ const Booklist = () => {
           </li>
         </ul>
       </li>
-      {books.length > 0 ? (
-        books.map((book) => (
+      {bookList.length > 0 ? (
+        bookList.map((book) => (
           <BooksListItem
             key={nanoid()}
-            title={book.title}
+            title={book.bookTitle}
             author={book.author}
-            year={book.year}
-            pages={book.pages}
+            year={book.publicDate.split('-')[0]}
+            pages={book.numbOfPages}
+            id={book._id}
           />
         ))
       ) : (

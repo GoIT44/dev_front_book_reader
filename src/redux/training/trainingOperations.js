@@ -1,12 +1,12 @@
 import { addResultTraining, getCurrentTraining } from "../../services/training";
-import { addTrainingResultError, addTrainingResultRequest, addTrainingResultSuccess, getTrainingError, getTrainingRequest, getTrainingResultError, getTrainingResultRequest, getTrainingResultSuccess, getTrainingSuccess } from "./trainingActions";
+import { addTrainingBookRequest, addTrainingBookSuccess, addTrainingDateError, addTrainingDateRequest, addTrainingDateSuccess, addTrainingResultError, addTrainingResultRequest, addTrainingResultSuccess, getTrainingError, getTrainingRequest, getTrainingResultError, getTrainingResultRequest, getTrainingResultSuccess, getTrainingSuccess } from "./trainingActions";
 
 
 export const getTrainingOperations = () => async (dispatch) => {
     dispatch(getTrainingRequest());
     try {
         const training = await getCurrentTraining()
-        // console.log(training)
+        console.log(training)
         dispatch(getTrainingSuccess(training))
     } catch (error) {
         dispatch(getTrainingError())

@@ -21,7 +21,9 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div>
-        <p className={styles.navbarLogo}>BR</p>
+        <Link to="/training" className={styles.navbarLogo}>
+          BR
+        </Link>
       </div>
       {isAuth && (
         <>
@@ -35,7 +37,7 @@ const Navbar = () => {
             <Link to="/library" className={styles.bookButton}>
               <BookButton />
             </Link>
-            <Link to="/training" className={styles.homeButton}>
+            <Link to="/statistic" className={styles.homeButton}>
               <HomeButton />
             </Link>
             <span className={styles.borderLine}></span>
