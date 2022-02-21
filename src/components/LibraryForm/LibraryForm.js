@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch} from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
-import * as Joi from "joi";
 import * as Yup from 'yup';
-
 
 import { addBookOperation } from '../../redux/operations/bookOperation';
 
@@ -12,16 +10,6 @@ import { addBookOperation } from '../../redux/operations/bookOperation';
 const getYear = () => {
   return new Date().getFullYear();
 };
-
-// const schema = Joi.object({
-//   title: Joi.string().min(2).required(),
-
-//   author: Joi.string().min().required(),
-
-//   year: Joi.number().min(1500).max(getYear()).required(),
-
-//   numbOfPages: Joi.number().min(1).required(),
-// });
 
 const schema = Yup.object().shape({
   bookTitle: Yup.string()
@@ -43,7 +31,6 @@ const initialState = {
   bookTitle: "",
   author: "",
   publicDate: "",
-  // year: "",
   numbOfPages: ""
   
 };
@@ -54,7 +41,8 @@ const LibraryForm = () => {
   const [state] = useState({ ...initialState });
 
   const onHandlerSubmit = values => {
-    dispatch(addBookOperation(values));
+    const book = {...values, publicDate: values.publicDate.toString()}
+    dispatch(addBookOperation(book));
   };
 
   return (
