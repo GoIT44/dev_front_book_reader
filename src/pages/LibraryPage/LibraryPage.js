@@ -4,6 +4,8 @@ import LibraryModal from '../../components/LibraryModal/LibraryModal';
 import LibraryForm from '../../components/LibraryForm'
 import {fetchToken} from '../../redux/auth/auth-selectors'
 import { getUsersBooksOperation } from '../../redux/operations/bookOperation';
+import LibraryList from '../../components/Library/LibraryList/LibraryList';
+import LibraryListPlan from '../../components/Library/LibraryListPlan/LibraryListPlan';
 
 
 
@@ -18,6 +20,8 @@ const LibraryPage =() => {
 
     return(<div>
         <LibraryForm/>
+        {/* <LibraryList/> */}
+        {/* <LibraryListPlan/> */}
     </div>)
 }
 

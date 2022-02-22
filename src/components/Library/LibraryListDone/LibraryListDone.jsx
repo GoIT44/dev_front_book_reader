@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
-import booksSelectors from "../../../redux/books/booksSelectors";
+// import booksSelectors from "../../../redux/books/booksSelectors";
+import { getFinishRead } from "../../../redux/selectors/bookSelector";
 import RatingReadOnly from "../../ModalComponents/RatingBook/ChooseRating/RatingReadOnly";
 import RatingBook from "../../ModalComponents/RatingBook/RatingBook";
 
@@ -15,61 +16,62 @@ const LibraryListDone = () => {
 
 
   // const books = useSelector(booksSelectors.getAllBooks);
+  const books = useSelector(getFinishRead)
 
-  const books = [
-    {
-      "_id": 1,
-      "bookTitle": "Scrum. A revolutionary method of project management",
-      "author": "Jeff Sutherland",
-      "publicDate": 2014,
-      "numbOfPages": 25,
-      "readStatus": "Already read",
-      "rating": 5,
-      "comment": "This book is zaebis!"
-    },
-    {
-      "_id": 2,
-      "bookTitle": "Deadline. A novel about project management",
-      "author": "Tom DeMarco",
-      "publicDate": 2006,
-      "numbOfPages": 188,
-      "readStatus": "Already read",
-      "rating": 1,
-      "comment": "A litttle bit govno!"
-    },
-    {
-      "_id": 3,
-      "bookTitle": "5 Defects of the team. Proverbs about leadership",
-      "author": "Patrick Lencioni",
-      "publicDate": 2011,
-      "numbOfPages": 125,
-      "readStatus": "Reading now"
-    },
-    {
-      "_id": 4,
-      "bookTitle": "Development of valuable proposals",
-      "author": "Alex Osterwalder, Yves Pigneur",
-      "publicDate": 2013,
-      "numbOfPages": 368,
-      "readStatus": "Going to read"
-    },
-    {
-      "_id": 5,
-      "bookTitle": "Product management in Scrum. Agile methods for your business",
-      "author": "Roman Pichler",
-      "publicDate": 2010,
-      "numbOfPages": 92,
-      "readStatus": "Reading now"
-    },
-    {
-      "_id": 6,
-      "bookTitle": "A mental hospital in",
-      "author": "Cooper Alan",
-      "publicDate": 2009,
-      "numbOfPages": 183,
-      "readStatus": "Going to read"
-    }
-  ];
+  // const books = [
+  //   {
+  //     "_id": 1,
+  //     "bookTitle": "Scrum. A revolutionary method of project management",
+  //     "author": "Jeff Sutherland",
+  //     "publicDate": 2014,
+  //     "numbOfPages": 25,
+  //     "readStatus": "Already read",
+  //     "rating": 5,
+  //     "comment": "This book is zaebis!"
+  //   },
+  //   {
+  //     "_id": 2,
+  //     "bookTitle": "Deadline. A novel about project management",
+  //     "author": "Tom DeMarco",
+  //     "publicDate": 2006,
+  //     "numbOfPages": 188,
+  //     "readStatus": "Already read",
+  //     "rating": 1,
+  //     "comment": "A litttle bit govno!"
+  //   },
+  //   {
+  //     "_id": 3,
+  //     "bookTitle": "5 Defects of the team. Proverbs about leadership",
+  //     "author": "Patrick Lencioni",
+  //     "publicDate": 2011,
+  //     "numbOfPages": 125,
+  //     "readStatus": "Reading now"
+  //   },
+  //   {
+  //     "_id": 4,
+  //     "bookTitle": "Development of valuable proposals",
+  //     "author": "Alex Osterwalder, Yves Pigneur",
+  //     "publicDate": 2013,
+  //     "numbOfPages": 368,
+  //     "readStatus": "Going to read"
+  //   },
+  //   {
+  //     "_id": 5,
+  //     "bookTitle": "Product management in Scrum. Agile methods for your business",
+  //     "author": "Roman Pichler",
+  //     "publicDate": 2010,
+  //     "numbOfPages": 92,
+  //     "readStatus": "Reading now"
+  //   },
+  //   {
+  //     "_id": 6,
+  //     "bookTitle": "A mental hospital in",
+  //     "author": "Cooper Alan",
+  //     "publicDate": 2009,
+  //     "numbOfPages": 183,
+  //     "readStatus": "Going to read"
+  //   }
+  // ];
   
 
   const [id, setId] = useState(null);

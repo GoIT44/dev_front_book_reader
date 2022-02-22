@@ -1,23 +1,21 @@
-import { createSelector } from '@reduxjs/toolkit';
+// import { createSelector } from '@reduxjs/toolkit';
 
-const getAllBooks = state => state.books.items; //
-const getResume = state => state.books.items; //
+// const getAllBooks = state => state.library.items; //
+// const getResume = state => state.library.items; //
 
-const getPlanBooks = createSelector([getAllBooks], books =>
-  books.filter(({ readStatus }) => readStatus === 'Going to read'),
-);
+// const getPlanBooks = createSelector([getAllBooks], books =>
+//   books.filter(({ readStatus }) => readStatus === 'Going to read'),
+// );
 
-const getLoading = state => state.books.loading;
+// const getLoading = state => state.library.loading;
 
-const getError = state => state.books.error;
-// const isFirstVisit = state => state.books.firstVisit;
+// const getError = state => state.library.error;
 
-const booksSelectors = {
-  getAllBooks,
-  getPlanBooks,
-  getLoading,
-  getError,
-  // isFirstVisit,
-  getResume,
-};
-export default booksSelectors;
+// const booksSelectors = {
+//   getAllBooks,
+//   getPlanBooks,
+//   getLoading,
+//   getError,
+//   getResume,
+// };
+// export default booksSelectors;

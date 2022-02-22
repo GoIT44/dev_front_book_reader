@@ -12,8 +12,8 @@ import {
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/auth-slice";
 
-// import { bookReducer } from "./reducers/bookReducer";
-import { booksReducer } from "./books";
+import { bookReducer } from "./reducers/bookReducer";
+// import { booksReducer } from "./books";
 
 import { trainingReducer } from "./training/trainingReducers";
 import { trainingPlanReducer } from "./trainingPlan/trainingPlanReducers";
@@ -27,7 +27,8 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
-    bookReducer: booksReducer,
+    bookReducer: bookReducer,
+    // books: bookReducer,
     training: trainingReducer,
     trainingPlan: trainingPlanReducer,
   },

@@ -1,4 +1,6 @@
 import * as api from '../../services/bookApi';
+import axios from 'axios';
+
 import {
     addNewBookRequest,
     addNewBookSuccess,
@@ -9,6 +11,12 @@ import {
     getUsersBooksRequest,
     getUsersBooksSuccess,
     getUsersBooksError,
+
+  updateResumeBookRequest,
+  updateResumeBookSuccess,
+  updateResumeBookError,
+
+
 } from '../actions/userLibraryAction';
 
 const addBookOperation = book => async dispatch => {
@@ -33,4 +41,21 @@ const getUsersBooksOperation = () => async (dispatch, getState) => {
     }
 };
 
-export { addBookOperation, getUsersBooksOperation };
+const updateResumeBook = (id, rating, comment) => async dispatch => {
+    dispatch(updateResumeBookRequest());
+    try {
+      const { data } = await axios.post(
+        `https://api-br.herokuapp.com/api/library/addReview/${id}`,
+        {
+          rating,
+          comment,
+        },
+      );
+      dispatch(updateResumeBookSuccess(data));
+    } catch (error) {
+      console.log(error);
+      dispatch(updateResumeBookError());
+    }
+  };
+
+export { addBookOperation, getUsersBooksOperation, updateResumeBook };

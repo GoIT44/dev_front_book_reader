@@ -1,6 +1,7 @@
-const getWillRead = state => state.library.willRead;
-const getNowRead = state => state.library.readNow;
-const getFinishRead = state => state.library.readFinish;
+const getWillRead = state => state.willRead;
+// console.log(getWillRead);
+const getNowRead = state => state.readNow;
+const getFinishRead = state => state.readFinish;
 const getTraining = state => state.training;
 const getUserTraining = state => state.auth.user.training;
 

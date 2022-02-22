@@ -15,19 +15,20 @@ export const addBook = (book) => {
     });
 };
 
-//
-export const getAllBooks = async () => {
-    const tokenAPI = localStorage.getItem('token')   
-    axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
-    const {data} = await axios.get('/library');
-    return data.data
-};
+
+// export const getAllBooks = async () => {
+//     const tokenAPI = localStorage.getItem('token')   
+//     axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
+//     const {data} = await axios.get('/library');
+//     return data.data
+// };
 
 export const formatError = ({ name, message, response }) => ({
     name,
     message,
     status: response?.status,
   });
+  // getLibraryInfo
 
 export const getLibraryInfo = () => {
   const tokenAPI = localStorage.getItem("token");

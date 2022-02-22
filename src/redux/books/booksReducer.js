@@ -5,53 +5,45 @@
 //   fetchBooksRequest,
 //   fetchBooksSuccess,
 //   fetchBooksError,
-//   addBookRequest,
-// //   addBookSuccess,
-//   addBookError,
+  
 //   updateResumeBookRequest,
-// //   updateResumeBookSuccess,
+//   updateResumeBookSuccess,
 //   updateResumeBookError,
-//   removeBookRequest,
-// //   removeBookSuccess,
-//   removeBookError,
-//   firstVisitSuccess,
-//   secondVisitSuccess,
+ 
 // } = booksActions;
 
-
 // const items = createReducer([], {
-//   [fetchBooksSuccess]: (_, action) => (action.payload)
-// });
+//     [fetchBooksSuccess]: (_, { payload }) => payload,
+//     [updateResumeBookSuccess]: (state, { payload }) => {
+//       const id = payload.data.book._id;
+//       const stateBook = payload.data.book;
+  
+//       return state.map(book =>
+//         book._id === id ? { ...book, ...stateBook } : book,
+//       );
+//     },
+//   });
 
-// const loading = createReducer(false, {
-//   [fetchBooksRequest]: () => true,
-//   [fetchBooksSuccess]: () => false,
-//   [fetchBooksError]: () => false,
-// });
+//   const loading = createReducer(false, {
+//     [fetchBooksRequest]: () => true,
+//     [fetchBooksSuccess]: () => false,
+//     [fetchBooksError]: () => false,
+   
+//     [updateResumeBookRequest]: () => true,
+//     [updateResumeBookSuccess]: () => false,
+//     [updateResumeBookError]: () => false,
+//   });
 
-// const error = createReducer(null, {
-//   [fetchBooksRequest]: () => null,
-//   [addBookRequest]: () => null,
-//   [updateResumeBookRequest]: () => null,
-//   [removeBookRequest]: () => null,
-// //   [logoutRequest]: () => null,
-
-//   [fetchBooksError]: (_, { payload }) => payload,
-//   [addBookError]: (_, { payload }) => payload,
-//   [updateResumeBookError]: (_, { payload }) => payload,
-//   [removeBookError]: (_, { payload }) => payload,
-// //   [logoutError]: (_, { payload }) => payload,
-// });
-
-// const firstVisit = createReducer(false, {
-//   [firstVisitSuccess]: () => true,
-//   [secondVisitSuccess]: () => false,
-// //   [logoutSuccess]: () => false,
-// });
-
+//   const error = createReducer(null, {
+//     [fetchBooksRequest]: () => null,
+//     [updateResumeBookRequest]: () => null,
+  
+//     [fetchBooksError]: (_, { payload }) => payload,
+//     [updateResumeBookError]: (_, { payload }) => payload,
+//   });
+  
 // export default combineReducers({
 //   items,
-//   firstVisit,
 //   loading,
 //   error,
 // });

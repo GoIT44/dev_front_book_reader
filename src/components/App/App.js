@@ -27,22 +27,18 @@ import { fetchBooks } from "../../redux/books/booksOperations";
 
 function App() {
   
-  // const jwt = useSelector(fetchToken);
-  // token.set(jwt);
-  // const dispatch = useDispatch();
-  // useEffect(()=>{
-  //   dispatch(fetchBooks())
-  // })
+  const jwt = useSelector(fetchToken);
+  token.set(jwt);
   return (
     <div className="App">
       <Navbar />
       <Routes />
-      <Spinner/>
-      <LibraryModal />
-      <LibraryForm />
-      <LibraryList/>
-      <TrainingPage />
-      {jwt && <LibraryPage />}
+      {/* <Spinner/> */}
+      {/* <LibraryModal /> */}
+      {/* <LibraryForm /> */}
+       {/* <LibraryList/> */}
+      {/* <TrainingPage />
+      {jwt && <LibraryPage />} */}
     </div>
   );
 }
