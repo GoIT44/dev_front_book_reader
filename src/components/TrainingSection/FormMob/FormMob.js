@@ -5,11 +5,11 @@ import TrainingPeriodBlock from "./TrainingPeriodBlock/TrainingPeriodBlock";
 import BookSelect from "./BookSelect/BookSelect";
 import styles from "./FormMob.module.css";
 
-const FormMob = () => {
+const FormMob = ({onClick, isHidden}) => {
   return (
-    <>
+    <div className={isHidden ? styles.isHidden : styles.formMobWrapper}>
       <div className={styles.modalCloseBtn__wrap}>
-        <ModalCloseBtn />
+        <ModalCloseBtn onClick={onClick}/>
       </div>
       <TitleSection />
       <TrainingPeriodBlock />
@@ -19,7 +19,7 @@ const FormMob = () => {
           <button className={styles.btn__add}>Add</button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

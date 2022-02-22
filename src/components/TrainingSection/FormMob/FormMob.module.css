@@ -1,3 +1,11 @@
+@value min-width-tablet from '../../../styles/variables.module.css';
+
+.isHidden{
+  display: none;
+}
+.formMobWrapper{
+  display: block;
+}
 .modalCloseBtn__wrap {
   width: 100%;
   display: flex;
@@ -20,4 +28,9 @@
   font-size: 14px;
   font-weight: 500;
   font-family: Montserrat, sans-serif;
+}
+@media (min-width: min-width-tablet) {
+  .formMobWrapper{
+    display: none;
+  }
 }

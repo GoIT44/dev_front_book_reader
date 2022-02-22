@@ -19,13 +19,14 @@ import { addTraining } from "../../services/training";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { useHistory } from "react-router-dom";
 import ModalOpenBtn from '../../components/TrainingSection/ModalOpenBtn/ModalOpenBtn';
-
+import FormMob from '../../components/TrainingSection/FormMob/FormMob';
 
 const TrainingPage = () => {
   useEffect(async () => {
     const book = await getLibraryInfo()
     setBookSelect(book)
   }, [])
+  const [isHidden, setIsHidden] = useState(true)
   const history = useHistory();
   const bookTrain = useSelector(getBookList)
   const dateTrain = useSelector(getDateTraining)
@@ -48,7 +49,9 @@ const TrainingPage = () => {
     // dispatch(addBookTrainingOperation())
     
   }
-  
+  const onClick = (e) => {
+    setIsHidden((prev)=>!prev)
+  }
   
   
   const arrSelectBooks = bookSelect.filter((book)=>bookTrain.includes(book._id));
@@ -81,7 +84,8 @@ const TrainingPage = () => {
                   </div>
                 }
               <Chart/>
-              <ModalOpenBtn/>
+              <ModalOpenBtn onClick={onClick}/>
+              <FormMob isHidden={isHidden}/>
             </div>
           </div>
         </section>
