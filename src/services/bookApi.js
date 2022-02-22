@@ -2,10 +2,10 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://api-br.herokuapp.com/api/";
 
-export const addBook = (book) => {
+export const addBook = async (book) => {
   const tokenAPI = localStorage.getItem("token");
   axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`;
-  return axios
+  await axios
     .post("/library/addbook", book)
     .then((res) => {
       return res.data.data;
@@ -30,15 +30,18 @@ export const formatError = ({ name, message, response }) => ({
   });
   // getLibraryInfo
 
-export const getLibraryInfo = () => {
+export const getLibraryInfo = async () => {
   const tokenAPI = localStorage.getItem("token");
   axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`;
-  return axios
-    .get("/library")
-    .then((res) => {
-      return res.data.data.books;
-    })
-    .catch((err) => {
-      throw new Error(err.response.data.message);
-    });
+  const {data} = await axios.get("/library")
+  console.log(data);
+  return data.data.books;
+  //  await axios
+  //   .get("/library")
+  //   .then((res) => {
+  //     return res.data.data.books;
+  //   })
+  //   .catch((err) => {
+  //     throw new Error(err.response.data.message);
+  //   });
 };

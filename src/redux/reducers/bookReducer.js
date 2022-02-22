@@ -7,7 +7,7 @@ const initialState = {
     readNow: [],
     readFinish: [],
 };
-
+console.log(initialState);
 const bookReducer = createReducer(initialState, {
     [addNewBookSuccess]: (state, action) => ({
         ...state,

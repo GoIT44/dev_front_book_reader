@@ -3,67 +3,14 @@ import { useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
 
 // import booksSelectors from "../../../redux/books/booksSelectors";
-import { getFinishRead } from "../../../redux/selectors/bookSelector";
+import { getNowRead } from "../../../redux/selectors/bookSelector";
 
 import styles from "../LibraryList/LibraryList.module.scss";
 import book from "../../../assets/svg/bookIcon.svg";
 
 const LibraryListRead = () => {
-  const books = useSelector(getFinishRead);
-  // const books = [
-  //   {
-  //     "_id": 1,
-  //     "bookTitle": "Scrum. A revolutionary method of project management",
-  //     "author": "Jeff Sutherland",
-  //     "publicDate": 2014,
-  //     "numbOfPages": 25,
-  //     "readStatus": "Already read",
-  //     "rating": 5,
-  //     "comment": "This book is zaebis!"
-  //   },
-  //   {
-  //     "_id": 2,
-  //     "bookTitle": "Deadline. A novel about project management",
-  //     "author": "Tom DeMarco",
-  //     "publicDate": 2006,
-  //     "totalPages": 188,
-  //     "readStatus": "Already read",
-  //     "rating": 1,
-  //     "comment": "A litttle bit govno!"
-  //   },
-  //   {
-  //     "_id": 3,
-  //     "bookTitle": "5 Defects of the team. Proverbs about leadership",
-  //     "author": "Patrick Lencioni",
-  //     "publicDate": 2011,
-  //     "totalPages": 125,
-  //     "readStatus": "Reading now"
-  //   },
-  //   {
-  //     "_id": 4,
-  //     "bookTitle": "Development of valuable proposals",
-  //     "author": "Alex Osterwalder, Yves Pigneur",
-  //     "publicDate": 2013,
-  //     "totalPages": 368,
-  //     "readStatus": "Going to read"
-  //   },
-  //   {
-  //     "_id": 5,
-  //     "bookTitle": "Product management in Scrum. Agile methods for your business",
-  //     "author": "Roman Pichler",
-  //     "publicDate": 2010,
-  //     "totalPages": 92,
-  //     "readStatus": "Reading now"
-  //   },
-  //   {
-  //     "_id": 6,
-  //     "bookTitle": "A mental hospital in",
-  //     "author": "Cooper Alan",
-  //     "publicDate": 2009,
-  //     "totalPages": 183,
-  //     "readStatus": "Going to read"
-  //   }
-  // ];
+  const books = useSelector(getNowRead);
+ 
   return (
     <>
       {books.some((book) => book.readStatus === "Reading now") && (

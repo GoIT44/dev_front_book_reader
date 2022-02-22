@@ -11,6 +11,7 @@ import Spinner from "../Spinner/Spinner";
 // import authOperations from "../../redux/auth/auth-operations";
 import "./App.css";
 
+import {getUsersBooksOperation} from '../../redux/operations/bookOperation'
 import TrainingPage from "../../pages/TrainingPage/TrainingPage";
 import LibraryPage from "../../pages/LibraryPage/LibraryPage";
 import LibraryForm from "../LibraryForm/LibraryForm";
@@ -26,19 +27,18 @@ import { fetchBooks } from "../../redux/books/booksOperations";
 
 
 function App() {
-  
+// const dispatch = useDispatch()
+//   useEffect(() => {
+//      dispatch(getUsersBooksOperation());    
+// }, [dispatch]);
+
   const jwt = useSelector(fetchToken);
   token.set(jwt);
   return (
     <div className="App">
+      
       <Navbar />
       <Routes />
-      {/* <Spinner/> */}
-      {/* <LibraryModal /> */}
-      {/* <LibraryForm /> */}
-       {/* <LibraryList/> */}
-      {/* <TrainingPage />
-      {jwt && <LibraryPage />} */}
     </div>
   );
 }

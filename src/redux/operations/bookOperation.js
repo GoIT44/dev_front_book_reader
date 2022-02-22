@@ -34,10 +34,11 @@ const getUsersBooksOperation = () => async (dispatch, getState) => {
 
     try {
         const data = await api.getLibraryInfo();
-
+        console.log(data);
         dispatch(getUsersBooksSuccess(data));
     } catch (error) {
         dispatch(getUsersBooksError(error.message));
+        console.log(error);
     }
 };
 
@@ -51,6 +52,7 @@ const updateResumeBook = (id, rating, comment) => async dispatch => {
           comment,
         },
       );
+
       dispatch(updateResumeBookSuccess(data));
     } catch (error) {
       console.log(error);
