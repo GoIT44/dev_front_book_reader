@@ -3,6 +3,13 @@
     justify-content: center;
     text-align: center;
   }
+  .selectBook {
+    display: flex;
+    justify-content: center;
+    width: 482px;
+    margin: 0;
+  }
+    /* contain:content */
   
   .select__wrap {
     display: flex;

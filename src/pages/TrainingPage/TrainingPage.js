@@ -24,6 +24,7 @@ import FormMob from '../../components/TrainingSection/FormMob/FormMob';
 const TrainingPage = () => {
   useEffect(async () => {
     const book = await getLibraryInfo()
+    console.log(book)
     setBookSelect(book)
   }, [])
   const [isHidden, setIsHidden] = useState(true)
@@ -37,7 +38,7 @@ const TrainingPage = () => {
     endTrain: dateTrain.endTrain,
     booksTrain: bookTrain,
   }
-  const amountDay = (new Date(dateTrain.endTrain)-new Date(dateTrain.startTrain)) / 1000/60/60/24;
+  const amountDay = Math.floor((new Date(dateTrain.endTrain)-new Date(dateTrain.startTrain)) / 1000/60/60/24);
   console.log(amountDay)
   const sendTrain = async (e)=>{
     try {
@@ -85,7 +86,7 @@ const TrainingPage = () => {
                 }
               <Chart/>
               <ModalOpenBtn onClick={onClick}/>
-              <FormMob isHidden={isHidden}/>
+              <FormMob onClick={onClick} bookSelect={bookSelect} isHidden={isHidden}/>
             </div>
           </div>
         </section>
