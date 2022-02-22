@@ -3,57 +3,62 @@
 @value secondary-text-color from '../../../styles/variables.module.css';
 @value input-text-color from '../../../styles/variables.module.css';
 @value background-primary-color from '../../../styles/variables.module.css';
+@value min-width-tablet from '../../../styles/variables.module.css';
+@value max-width-desktop from '../../../styles/variables.module.css';
 
-.trainingPeriodBlock {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: background-primary-color;
-}
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
-}
-.inputWrapper:first-child {
-  margin-right: 45px;
-}
-.inputDate {
-  position: relative;
-  font-family: fontMontserrat;
-  width: 250px;
-  padding-left: 13px;
-  padding-right: 13px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 38px;
-  color: main-text-color;
-  background-color: background-primary-color;
-  border: 1px solid #a6abb9;
-  outline: none;
-}
-.inputDate::before {
-  content: "";
-  margin-right: 13px;
-  top: 50%;
-  left: 50%;
-  width: 17px;
-  height: 17px;
-  background-image: url("../../../images/training_page_icons/calendar.svg");
-}
-.inputDate::-webkit-calendar-picker-indicator {
-  background-image: url("../../../images/Polygon.svg");
-  width: 13px;
-  height: 7px;
-  padding-left: 20px;
-  margin: 0;
-}
 
-.labelInput {
-  font-family: fontMontserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 22px;
-  color: secondary-text-color;
+@media (min-width: min-width-tablet) {
+  .trainingPeriodBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: background-primary-color;
+  }
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputWrapper:first-child {
+    margin-right: 45px;
+  }
+  .inputDate {
+    position: relative;
+    font-family: fontMontserrat;
+    width: 250px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 38px;
+    color: main-text-color;
+    background-color: background-primary-color;
+    border: 1px solid #a6abb9;
+    outline: none;
+  }
+  .inputDate::before {
+    content: "";
+    margin-right: 13px;
+    top: 50%;
+    left: 50%;
+    width: 17px;
+    height: 17px;
+    background-image: url("../../../images/training_page_icons/calendar.svg");
+  }
+  .inputDate::-webkit-calendar-picker-indicator {
+    background-image: url("../../../images/Polygon.svg");
+    width: 13px;
+    height: 7px;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .labelInput {
+    font-family: fontMontserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 22px;
+    color: secondary-text-color;
+  }
 }

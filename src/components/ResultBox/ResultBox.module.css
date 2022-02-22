@@ -152,6 +152,9 @@
     .statisticList{
         width: 50%;
     }
+    .statisticItem{
+        grid-gap: 12px
+    }
     .resultBoxTitleStatistic{
         text-align: left;
     }
