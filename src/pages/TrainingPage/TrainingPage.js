@@ -18,6 +18,7 @@ import { getBookList, getDateTraining } from "../../redux/trainingPlan/trainingP
 import { addTraining } from "../../services/training";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { useHistory } from "react-router-dom";
+import ModalOpenBtn from '../../components/TrainingSection/ModalOpenBtn/ModalOpenBtn';
 
 
 const TrainingPage = () => {
@@ -65,11 +66,11 @@ const TrainingPage = () => {
             </div>
             
             <div className={styles.gridsform}>
-              {/* <div className={styles.wrapperForm}> */}
+              <div className={styles.wrapperForm}>
                 <TitleSection/>
                 <TrainingPeriodBlock/>
                 <BookSelect bookSelect={bookSelect}/>
-              {/* </div> */}
+              </div>
               <Booklist bookList={arrSelectBooks}/>
                 {
                   typeof(training.startTrain) === "string" &&
@@ -80,6 +81,7 @@ const TrainingPage = () => {
                   </div>
                 }
               <Chart/>
+              <ModalOpenBtn/>
             </div>
           </div>
         </section>
