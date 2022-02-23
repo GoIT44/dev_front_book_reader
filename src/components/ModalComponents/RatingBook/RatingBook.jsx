@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { booksOperations } from '../../../redux/books';
+import {updateResumeBook} from '../../../redux/books/operations/bookOperation'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import CancelButton from '../../Buttons/ModalButton/CancelButton/CancelButton';
 import DoneButton from '../../Buttons/ModalButton/DoneButton/DoneButton';
@@ -15,7 +15,7 @@ const RatingBook = ({ toogleModal, id, comment, rating }) => {
   const dispatch = useDispatch();
 
   const onSave = ({ comment }) => {
-    dispatch(booksOperations.updateResumeBook(id, ratingValue, comment));
+    dispatch(updateResumeBook(id, ratingValue, comment));
   };
 
   return (

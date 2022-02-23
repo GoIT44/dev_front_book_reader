@@ -1,23 +1,21 @@
-import * as api from '../../services/bookApi';
+import * as api from '../../../services/bookApi'
 import axios from 'axios';
 
 import {
     addNewBookRequest,
     addNewBookSuccess,
     addNewBookError,
-} from '../actions/bookAction';
+} from '../actions/bookAction.js'
 
 import {
-    getUsersBooksRequest,
-    getUsersBooksSuccess,
-    getUsersBooksError,
+  getUsersBooksRequest,
+  getUsersBooksSuccess,
+  getUsersBooksError,
 
   updateResumeBookRequest,
   updateResumeBookSuccess,
-  updateResumeBookError,
-
-
-} from '../actions/userLibraryAction';
+  updateResumeBookError 
+} from '../actions/userLibraryAction'
 
 const addBookOperation = book => async dispatch => {
     dispatch(addNewBookRequest());
@@ -46,8 +44,9 @@ const updateResumeBook = (id, rating, comment) => async dispatch => {
     dispatch(updateResumeBookRequest());
     try {
       const { data } = await axios.post(
-        `https://api-br.herokuapp.com/api/library/addReview/${id}`,
+        `https://api-br.herokuapp.com/api/library/addReview`,
         {
+          id,
           rating,
           comment,
         },

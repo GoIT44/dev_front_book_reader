@@ -1,9 +1,6 @@
-// import React, { useContext } from 'react';
 import { useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
-
-// import booksSelectors from "../../../redux/books/booksSelectors";
-import { getNowRead } from "../../../redux/selectors/bookSelector";
+import { getNowRead } from "../../../redux/books/selectors/bookSelector";
 
 import styles from "../LibraryList/LibraryList.module.scss";
 import book from "../../../assets/svg/bookIcon.svg";

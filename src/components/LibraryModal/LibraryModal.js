@@ -6,7 +6,7 @@ import book from "../../assets/svg/book.svg"
 import vector from '../../assets/svg/vector.svg';
 import flag from '../../assets/svg/flag.svg';
 
-const LibraryModal = () =>{
+const LibraryModal = ({ isBookModal, setIsBookModal }) =>{
     const [isOpenModal, setIsOpenModal] = useState(true);
 
     const closeModal = () => {

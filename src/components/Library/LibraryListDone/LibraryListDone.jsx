@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
 // import booksSelectors from "../../../redux/books/booksSelectors";
-import { getFinishRead } from "../../../redux/selectors/bookSelector";
+import { getFinishRead } from "../../../redux/books/selectors/bookSelector";
 import RatingReadOnly from "../../ModalComponents/RatingBook/ChooseRating/RatingReadOnly";
 import RatingBook from "../../ModalComponents/RatingBook/RatingBook";
 

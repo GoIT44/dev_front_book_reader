@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 
 // import booksSelectors from "../../../redux/books/booksSelectors";
-import { getWillRead } from "../../../redux/selectors/bookSelector";
+import { getWillRead } from "../../../redux/books/selectors/bookSelector";
 // import booksOperations from "../../../redux/books/booksOperations";
 import LibraryModal from "../../LibraryModal/LibraryModal";
 

@@ -15,14 +15,6 @@ export const addBook = async (book) => {
     });
 };
 
-
-// export const getAllBooks = async () => {
-//     const tokenAPI = localStorage.getItem('token')   
-//     axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`
-//     const {data} = await axios.get('/library');
-//     return data.data
-// };
-
 export const formatError = ({ name, message, response }) => ({
     name,
     message,
@@ -36,12 +28,4 @@ export const getLibraryInfo = async () => {
   const {data} = await axios.get("/library")
   console.log(data);
   return data.data.books;
-  //  await axios
-  //   .get("/library")
-  //   .then((res) => {
-  //     return res.data.data.books;
-  //   })
-  //   .catch((err) => {
-  //     throw new Error(err.response.data.message);
-  //   });
 };

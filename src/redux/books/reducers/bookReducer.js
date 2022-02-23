@@ -8,6 +8,7 @@ const initialState = {
     readFinish: [],
 };
 console.log(initialState);
+
 const bookReducer = createReducer(initialState, {
     [addNewBookSuccess]: (state, action) => ({
         ...state,
@@ -22,19 +23,10 @@ const bookReducer = createReducer(initialState, {
         };
     },
 });
-// const initialState = {
-//     willRead: [],
-//     readNow: [],
-//     readFinish: [],
-// };
-//  const addBook = (state = [], action) => {
-//     return [...state, action.payload.data];
-//   };
 
 
-// const bookReducer = createReducer([], {
-//     [getUsersBooksSuccess]: (_, { payload }) => payload.data.books,
-//     [addNewBookSuccess]: addBook,
+// export const resumebookReducer = createReducer([], {
+ 
 //     [updateResumeBookSuccess]: (state, { payload }) => {
 //         const id = payload.data.book._id;
 //         const stateBook = payload.data.book;
