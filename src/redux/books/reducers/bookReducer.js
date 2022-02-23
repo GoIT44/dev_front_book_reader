@@ -7,6 +7,7 @@ const initialState = {
     readNow: [],
     readFinish: [],
 };
+// console.log(initialState);
 
 const bookReducer = createReducer(initialState, {
     [addNewBookSuccess]: (state, action) => ({
@@ -22,5 +23,17 @@ const bookReducer = createReducer(initialState, {
         };
     },
 });
+
+
+// export const resumebookReducer = createReducer([], {
+ 
+//     [updateResumeBookSuccess]: (state, { payload }) => {
+//         const id = payload.data.book._id;
+//         const stateBook = payload.data.book;
+    
+//         return state.map(book =>
+//           book._id === id ? { ...book, ...stateBook } : book,
+//         );
+// }});
 
 export { bookReducer };

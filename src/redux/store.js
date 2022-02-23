@@ -12,7 +12,8 @@ import {
 import storage from "redux-persist/lib/storage";
 import authReducer from "./auth/auth-slice";
 
-import { bookReducer } from "./reducers/bookReducer";
+import { bookReducer } from "./books/reducers/bookReducer";
+
 import { trainingReducer } from "./training/trainingReducers";
 import { trainingPlanReducer } from "./trainingPlan/trainingPlanReducers";
 

@@ -4,6 +4,8 @@ export const getUsersBooksRequest = createAction('userLibrary/getUsersBooksReque
 export const getUsersBooksSuccess = createAction('userLibrary/getUsersBooksSuccess');
 export const getUsersBooksError = createAction('userLibrary/getUsersBooksError');
 
-
+export const updateResumeBookRequest = createAction('books/updateResumeBookRequest');
+export const updateResumeBookSuccess = createAction('books/updateResumeBookSuccess');
+export const updateResumeBookError = createAction('books/updateResumeBookError');
 
  

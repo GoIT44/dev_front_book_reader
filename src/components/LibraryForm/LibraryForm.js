@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./LibraryForm.module.css";
 import * as Yup from 'yup';
 
-import { addBookOperation } from '../../redux/operations/bookOperation';
+import { addBookOperation } from '../../redux/books/operations/bookOperation';
 
 
 const getYear = () => {
