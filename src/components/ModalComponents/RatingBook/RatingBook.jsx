@@ -11,16 +11,16 @@ import styles from './RatingBook.module.scss';
 
 const RatingBook = ({ toogleModal, id, comment, rating }) => {
   const [ratingValue, setRatingValue] = useState(rating);
-
+console.log([ratingValue, setRatingValue]);
   const dispatch = useDispatch();
 
   const onSave = ({ comment }) => {
     dispatch(updateResumeBook(id, ratingValue, comment));
   };
-
+  console.log(comment);
   return (
     <Formik
-      initialValues={{ resume: comment }}
+      initialValues={{ comment: comment }}
       validationSchema={schemaValidChooseRating}
       onSubmit={onSave}
     >
@@ -42,20 +42,20 @@ const RatingBook = ({ toogleModal, id, comment, rating }) => {
               as="textarea"
               placeholder="..."
               type="text"
-              name="resume"
+              name="comment"
               className={
-                `${touched.resume && errors.resume}` ? `${styles.textarea}` : ''
+                `${touched.comment && errors.comment}` ? `${styles.textarea}` : ''
               }
             />
             <ErrorMessage
               component="div"
-              name="resume"
+              name="comment"
               className={styles.errorMessage}
             />
             <CancelButton styleBtn={styles.canselBtn} onCbClick={toogleModal}>
             Назад
             </CancelButton>
-            <DoneButton styleBtn={styles.doneBtn}>
+            <DoneButton styleBtn={styles.doneBtn} onCbClick={toogleModal}>
             Зберегти
             </DoneButton>
           </div>

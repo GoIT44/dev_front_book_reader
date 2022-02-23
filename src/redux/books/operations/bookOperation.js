@@ -51,10 +51,9 @@ const updateResumeBook = (id, rating, comment) => async dispatch => {
           comment,
         },
       );
-
+        console.log(data);
       dispatch(updateResumeBookSuccess(data));
     } catch (error) {
-      console.log(error);
       dispatch(updateResumeBookError());
     }
   };

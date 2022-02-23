@@ -14,7 +14,8 @@ const LibraryListDone = () => {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
   
-  const books = useSelector(getFinishRead)
+  const books = useSelector(getFinishRead);
+  console.log(books);
 
   const [id, setId] = useState(null);
 

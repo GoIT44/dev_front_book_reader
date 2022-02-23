@@ -1,5 +1,5 @@
 const getWillRead = (state) => state.bookReducer.willRead;
-console.log(getWillRead);
+// console.log(getWillRead);
 const getNowRead = (state) => state.bookReducer.readNow;
 const getFinishRead = (state) => state.bookReducer.readFinish;
 const getTraining = (state) => state.training;

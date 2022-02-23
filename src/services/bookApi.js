@@ -28,3 +28,11 @@ export const getLibraryInfo = async () => {
   console.log(data);
   return data.data.books;
 };
+
+export const postBookResume = async () => {
+  // const tokenAPI = localStorage.getItem("token");
+  // axios.defaults.headers.common.Authorization = `Bearer ${tokenAPI}`;
+  const {data} = await axios.post("/library/addReview")
+  console.log(data);
+  return data.data.books;
+};

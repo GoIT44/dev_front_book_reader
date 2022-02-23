@@ -1,13 +1,13 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { addNewBookSuccess } from '../actions/bookAction';
-import { getUsersBooksSuccess, updateResumeBookSuccess } from '../actions/userLibraryAction';
+import { getUsersBooksSuccess } from '../actions/userLibraryAction';
 
 const initialState = {
     willRead: [],
     readNow: [],
     readFinish: [],
 };
-console.log(initialState);
+// console.log(initialState);
 
 const bookReducer = createReducer(initialState, {
     [addNewBookSuccess]: (state, action) => ({

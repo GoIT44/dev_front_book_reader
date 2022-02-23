@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 const schemaValidChooseRating = Yup.object().shape({
-  resume: Yup.string()
+  comment: Yup.string()
     .min(2, 'Відгук не може бути таким коротким!')
     .max(5000, 'Відгук занадто довгий!')
     .required('Залиште Ваш відгук!')

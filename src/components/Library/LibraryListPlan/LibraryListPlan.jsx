@@ -3,25 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 
-// import booksSelectors from "../../../redux/books/booksSelectors";
 import { getWillRead } from "../../../redux/books/selectors/bookSelector";
-// import booksOperations from "../../../redux/books/booksOperations";
+
 import LibraryModal from "../../LibraryModal/LibraryModal";
 
 import styles from "../LibraryList/LibraryList.module.scss";
 import book from "../../../assets/svg/bookIcon.svg";
-// import trash from "../../../assets/svg/delete.svg";
+
 
 const LibraryListPlan = () => {
-  // const dispatch = useDispatch();
 
   const books = useSelector(getWillRead);
   console.log(books);
-  // const onRemove = (_id) => {
-  //   dispatch(booksOperations.removeBook(_id));
-  // };
-
-
 
   const [isBookModal, setIsBookModal] = useState(false);
   const openAddBookModal = () => setIsBookModal(!isBookModal);
@@ -61,13 +54,6 @@ const LibraryListPlan = () => {
                       <span className={styles.bookListItemMob}>Стор.</span>
                       {numbOfPages}
                     </p>
-                    {/* <button
-                      type="button"
-                      onClick={() => onRemove(_id)}
-                      className={styles.btnTrash}
-                    >
-                      <ReactSVG src={trash} className={styles.trash} />
-                    </button> */}
                   </li>
                 )
             )}
