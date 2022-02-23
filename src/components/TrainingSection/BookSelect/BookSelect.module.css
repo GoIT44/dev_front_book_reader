@@ -1,101 +1,134 @@
+@value fontMontserrat from '../../../styles/variables.module.css';
+@value main-text-color from '../../../styles/variables.module.css';
+@value secondary-text-color from '../../../styles/variables.module.css';
+@value input-text-color from '../../../styles/variables.module.css';
+@value background-primary-color from '../../../styles/variables.module.css';
+
 .bookSelect {
+  text-align: left;
+}
+.select__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 35px 0px 50px;
+}
+
+.labelSelect {
+  font-family: fontMontserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 22px;
+  color: secondary-text-color;
+}
+
+.form {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select {
+  width: 270px;
+  height: 42px;
+  padding-left: 13px;
+  padding-right: 13px;
+  font-family: fontMontserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 38px;
+  color: input-text-color;
+  background-color: background-primary-color;
+  border: 1px solid #a6abb9;
+  outline: none;
+  background-image: url("../../../images/Polygon.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 18px top 50%, 0 0;
+  background-size: 13px 7px, 100%;
+}
+
+.select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.select::-ms-expand {
+  display: none;
+}
+
+.btn__wrap {
+  text-align: center;
+}
+
+.btn__add {
+  display: inline-block;
+  width: 171px;
+  height: 42px;
+  text-align: center;
+  border: 1px solid #242a37;
+  background-color: #f6f7fb;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Montserrat, sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .input__list {
+    /* width: 100vh; */
     display: flex;
     justify-content: center;
-    text-align: center;
   }
-  .selectBook {
+  .form {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  .input__item:not(:first-child) {
+    margin-left: 45px;
+  }
+
+  .select__wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: flex-start;
+  }
+
+  .select {
     display: flex;
     justify-content: center;
     width: 482px;
     margin: 0;
   }
-    /* contain:content */
-  
+
+  .btn__add {
+    display: block;
+    justify-content: center;
+    width: 171px;
+    margin-top: 22px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .select {
+    width: 669px;
+  }
   .select__wrap {
     display: flex;
     justify-content: center;
-    width: 270px;
-    margin: 20px 0px;
+    width: 100%;
+    flex-shrink: initial;
+    margin: 0;
   }
-  @media screen and (min-width: 768px) {
-    .input__list {
-      /* width: 100vh; */
-      display: flex;
-      justify-content: center;
-    }
-  .form{
-      display: flex;
+
+  .bookSelect {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
-    .input__item:not(:first-child) {
-      margin-left: 45px;
-    }
-  
-    .selectBook {
-      display: flex;
-      justify-content: center;
-      width: 482px;
-      margin: 0;
-      
-      /* contain:content */
-    }
-  }
-  @media screen and (min-width: 1280px) {
-    .select__wrap {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      flex-shrink: initial;
-      margin: 0;
-    }
-  
-    .bookSelect {
-      width: 100%;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-  .btn__wrap {
-    text-align: center;
-  }
-  
-  .btn__add {
-    display: inline-block;
-    width: 171px;
-    height: 42px;
-    margin-top: 28px;
-    text-align: center;
-    border-radius: 4px;
-    border: 1px solid #242a37;
-    background-color: #f6f7fb;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: Montserrat, sans-serif;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .flex__centered {
-      width: 100%;
-      height: 56px;
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 3;
-    }
-  
-    .btn__add {
-      display: block;
-      width: 171px;
-      margin-left: 25px;
-      height: 56px;
-      margin-top: 0px;
-      text-align: center;
-    }
-  }
-  
-  @media screen and (min-width: 1279px) {
-    .flex__centered {
-      align-items: start;
-    }
-  }
-  
+}

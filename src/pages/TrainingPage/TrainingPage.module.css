@@ -13,7 +13,10 @@
   margin-right: auto;
 }
 
-
+.btn__wrap {
+  display: flex;
+  justify-content: center;
+}
 .btn {
   margin-bottom: 40px;
   width: 171px;
@@ -25,11 +28,11 @@
   font-family: fontMontserrat;
   font-weight: 500;
 }
-.wrapperForm{
+.wrapperForm {
   display: none;
 }
 @media (min-width: min-width-tablet) {
-  .wrapperForm{
+  .wrapperForm {
     display: block;
   }
   .btn__wrap {
@@ -57,7 +60,7 @@
     padding-top: 50px;
     padding-bottom: 40px;
   }
-  .grids{
+  .grids {
     display: flex;
     flex-direction: row-reverse;
   }
