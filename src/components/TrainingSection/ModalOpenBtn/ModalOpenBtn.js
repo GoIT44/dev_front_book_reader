@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as ReactLogoBtnMore } from "../../../images/training_page_icons/more.svg";
 import styles from "./ModalOpenBtn.module.css";
 
-const TrainingModalBtn = () => {
+const TrainingModalBtn = ({onClick}) => {
   const onHandleClick = () => {};
 
   return (
@@ -10,7 +10,7 @@ const TrainingModalBtn = () => {
       <button
         type="button"
         className={styles.btn__more}
-        onClick={onHandleClick}
+        onClick={onClick}
       >
         <ReactLogoBtnMore />
       </button>

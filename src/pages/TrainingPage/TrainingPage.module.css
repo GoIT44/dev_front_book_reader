@@ -12,10 +12,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.btn__wrap {
-  display: flex;
-  justify-content: center;
-}
+
 
 .btn {
   margin-bottom: 40px;
@@ -28,12 +25,23 @@
   font-family: fontMontserrat;
   font-weight: 500;
 }
-
+.wrapperForm{
+  display: none;
+}
 @media (min-width: min-width-tablet) {
+  .wrapperForm{
+    display: block;
+  }
+  .btn__wrap {
+    display: flex;
+    justify-content: center;
+  }
   .container {
     width: 768px;
     padding-right: 45px;
     padding-left: 45px;
+    padding-top: 30px;
+    padding-bottom: 56px;
   }
   .btn {
     width: 200px;
@@ -46,5 +54,11 @@
     width: 1280px;
     padding-right: 39px;
     padding-left: 39px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .grids{
+    display: flex;
+    flex-direction: row-reverse;
   }
 }

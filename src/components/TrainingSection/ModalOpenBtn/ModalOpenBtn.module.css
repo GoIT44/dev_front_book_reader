@@ -1,3 +1,5 @@
+@value min-width-tablet from '../../../styles/variables.module.css';
+
 .centered {
   display: flex;
   justify-content: center;
@@ -11,4 +13,9 @@
   object-fit: contain;
   background-color: #11ffee00;
   bottom: 25px;
+}
+@media (min-width: min-width-tablet) {
+  .centered{
+    display: none;
+  }
 }
