@@ -20,7 +20,6 @@ export const formatError = ({ name, message, response }) => ({
     message,
     status: response?.status,
   });
-  // getLibraryInfo
 
 export const getLibraryInfo = async () => {
   const tokenAPI = localStorage.getItem("token");
